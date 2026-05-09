@@ -1,6 +1,9 @@
 node_modules/
+**/node_modules/
 .next/
+**/.next/
 .venv/
+**/.venv/
 *.env
 *.env.local
 *.log
@@ -8,7 +11,9 @@ node_modules/
 dist/
 build/
 backend/app/data/
+backend/data/
 __pycache__/
+**/__pycache__/
 *.pyc
 .agents/
 .codex/

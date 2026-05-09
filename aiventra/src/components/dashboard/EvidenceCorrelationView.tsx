@@ -234,7 +234,6 @@ export default function EvidenceCorrelationView() {
   const eventChain = useMemo(() => {
     return [...edges]
       .sort((a, b) => b.confidence - a.confidence)
-      .slice(0, 8)
       .map(e => {
         const src = nodes.find(n => n.id === e.source);
         const tgt = nodes.find(n => n.id === e.target);
@@ -243,7 +242,7 @@ export default function EvidenceCorrelationView() {
   }, [edges, nodes]);
 
   // Matrix: unique node types for axes
-  const matrixNodes = useMemo(() => nodes.slice(0, 10), [nodes]);
+  const matrixNodes = useMemo(() => nodes.slice(0, 12), [nodes]);
   const matrixStrengthAt = useCallback((aId: string, bId: string): string | null => {
     const e = edges.find(e =>
       (e.source === aId && e.target === bId) || (e.source === bId && e.target === aId)
@@ -254,7 +253,7 @@ export default function EvidenceCorrelationView() {
   // ── Render ────────────────────────────────────────────────────────────────
   return (
     <div className="h-full min-h-0 overflow-hidden bg-transparent text-slate-100">
-      <div className="grid h-full min-h-0 grid-rows-[48px_1fr_150px] gap-4 p-4">
+      <div className="grid h-full min-h-0 grid-rows-[48px_1fr_195px] gap-4 p-4">
 
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <header className="flex items-center gap-3 border-b border-white/8 pb-3">
@@ -311,7 +310,7 @@ export default function EvidenceCorrelationView() {
         <div className="grid min-h-0 grid-cols-[185px_minmax(0,1fr)_220px] gap-4">
 
           {/* Left sidebar */}
-          <aside className="grid min-h-0 gap-3 content-start">
+          <aside className="flex flex-col min-h-0 gap-3 overflow-y-auto">
             <Panel title="Node Types">
               <div className="space-y-3">
                 {nodeTypeCounts.map(([type, count]) => (
@@ -384,15 +383,26 @@ export default function EvidenceCorrelationView() {
           </aside>
 
           {/* ── Center: Graph / Chain / Matrix ──────────────────────────── */}
-          <section className="relative min-h-0 overflow-hidden border border-white/8 bg-[#050910]/84">
+          <section className="relative min-h-[380px] overflow-hidden border border-white/8 bg-[#050910]/84">
             <div className="absolute inset-0 correlation-grid" />
             <div className="absolute inset-0 dashboard-noise opacity-40" />
             
-            {!graph ? (
+            {loading && !graph && (
+              <div className="absolute inset-0 z-50 flex flex-col items-center justify-center gap-5 p-12">
+                <Loader2 size={32} className="animate-spin text-teal-400" />
+                <div className="font-orbitron text-xs text-slate-400 uppercase tracking-widest animate-pulse">
+                  Building correlation graph…
+                </div>
+                <div className="w-48 h-1 bg-white/8 rounded-full overflow-hidden">
+                  <div className="h-full w-2/3 bg-teal-400/60 animate-pulse rounded-full" />
+                </div>
+              </div>
+            )}
+            {!loading && !graph ? (
               <div className="absolute inset-0 z-50 flex items-center justify-center p-12">
                 <EmptyState message="No evidence correlation graph available. Upload multiple evidence files to reveal hidden relationships." />
               </div>
-            ) : (
+            ) : graph ? (
               <>
 
             {/* Stats overlay */}
@@ -647,8 +657,11 @@ export default function EvidenceCorrelationView() {
             {/* ── CHAIN OF EVENTS VIEW ──────────────────────────────────── */}
             {mode === "Chain Of Events" && (
               <div className="absolute inset-0 overflow-y-auto p-6">
-                <div className="font-orbitron text-xs text-slate-400 uppercase tracking-widest mb-6">
-                  Event Chain — sorted by correlation strength
+                <div className="flex items-center justify-between mb-5">
+                  <div className="font-orbitron text-xs text-slate-400 uppercase tracking-widest">
+                    Event Chain — {eventChain.length} links · sorted by confidence
+                  </div>
+                  <div className="font-mono text-[10px] text-slate-500 uppercase">{graph?.case_id}</div>
                 </div>
                 <div className="space-y-0">
                   {eventChain.map(({ edge, src, tgt }, i) => {
@@ -705,8 +718,15 @@ export default function EvidenceCorrelationView() {
             {/* ── MATRIX VIEW ───────────────────────────────────────────── */}
             {mode === "Matrix View" && (
               <div className="absolute inset-0 overflow-auto p-6">
-                <div className="font-orbitron text-xs text-slate-400 uppercase tracking-widest mb-5">
-                  Correlation Matrix — top {matrixNodes.length} nodes
+                <div className="flex items-center justify-between mb-5">
+                  <div className="font-orbitron text-xs text-slate-400 uppercase tracking-widest">
+                    Correlation Matrix — {matrixNodes.length} × {matrixNodes.length} nodes
+                  </div>
+                  <div className="flex gap-3 font-mono text-[10px] text-slate-500">
+                    <span><span className="text-crimson">■</span> Very High</span>
+                    <span><span className="text-amber-400">■</span> High</span>
+                    <span><span className="text-teal-400">■</span> Medium</span>
+                  </div>
                 </div>
                 <div className="overflow-auto">
                   <table className="border-collapse">
@@ -767,12 +787,12 @@ export default function EvidenceCorrelationView() {
               </div>
             )}
           </>
-        )}
+        ) : null}
       </section>
 
           {/* ── Right: Chain of Events panel ──────────────────────────── */}
-          <aside className="grid min-h-0 content-start">
-            <Panel title="Chain Of Events Mode">
+          <aside className="flex flex-col min-h-0 overflow-hidden">
+            <Panel title="Evidence Chain" className="flex-1 min-h-0 flex flex-col">
               <div className="mb-4 flex items-center justify-between font-mono text-xs text-slate-300">
                 Follow sequence
                 <span className="h-5 w-9 rounded-full bg-teal-data/80 shadow-[0_0_12px_rgba(24,243,226,0.55)]" />
@@ -814,8 +834,8 @@ export default function EvidenceCorrelationView() {
                 Clear Selection
               </button>
 
-              <div className="space-y-2 overflow-y-auto" style={{ maxHeight: "240px" }}>
-                {eventChain.slice(0, 7).map(({ edge, src }, i) => {
+              <div className="flex-1 min-h-0 space-y-2 overflow-y-auto pr-1">
+                {eventChain.slice(0, 9).map(({ edge, src }, i) => {
                   const srcColor = NODE_COLORS[src?.node_type ?? "device"] ?? "#18f3e2";
                   const SrcIcon = resolveIcon(src as any);
                   return (
@@ -851,7 +871,7 @@ export default function EvidenceCorrelationView() {
 
           {/* Graph overview minimap */}
           <Panel title="Graph Overview">
-            <div className="relative h-20 overflow-hidden border border-white/8 bg-black/35">
+            <div className="relative h-[108px] overflow-hidden border border-white/8 bg-black/35">
               <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
                 {edges.map((edge, i) => {
                   const a = layout[edge.source], b = layout[edge.target];
@@ -921,7 +941,7 @@ export default function EvidenceCorrelationView() {
                     ))}
                   </div>
                 ) : (
-                  <p className="font-mono text-xs leading-relaxed text-slate-300 line-clamp-3">
+                  <p className="font-mono text-xs leading-relaxed text-slate-300 line-clamp-4">
                     {aiInsight ?? graph?.ai_insight ?? "Load correlation data to generate AI insight."}
                   </p>
                 )}
@@ -949,11 +969,11 @@ export default function EvidenceCorrelationView() {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function Panel({ title, children }: { title: string; children: React.ReactNode }) {
+function Panel({ title, children, className = "" }: { title: string; children: React.ReactNode; className?: string }) {
   return (
-    <section className="relative overflow-hidden border border-white/10 bg-[#07101a]/78 p-4 shadow-[inset_0_0_40px_rgba(255,255,255,0.02)] backdrop-blur-md">
+    <section className={`relative overflow-hidden border border-white/10 bg-[#07101a]/78 p-4 shadow-[inset_0_0_40px_rgba(255,255,255,0.02)] backdrop-blur-md ${className}`}>
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-crimson/60 to-transparent" />
-      <h2 className="mb-4 font-orbitron text-xs font-bold uppercase tracking-widest text-slate-100">
+      <h2 className="mb-3 shrink-0 font-orbitron text-xs font-bold uppercase tracking-widest text-slate-100">
         {title}
       </h2>
       {children}

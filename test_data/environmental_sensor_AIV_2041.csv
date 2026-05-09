@@ -1,0 +1,21 @@
+sensor_id,timestamp,location,latitude,longitude,temperature_celsius,humidity_percent,wind_speed_kmh,wind_direction,precipitation_mm,visibility_m,air_quality_index,noise_level_db,uv_index,barometric_pressure_hpa,soil_moisture_percent,light_intensity_lux,case_id,anomaly_flag,notes
+ENV-BLR-017,2025-05-21T20:00:00,Phoenix Mall Area,12.9716,77.6441,28.4,68.2,4.3,NW,0.0,4500,72,68,0.0,1012.4,42.1,320,AIV-2041-77,NONE,Normal evening conditions — mall area
+ENV-BLR-017,2025-05-21T21:00:00,Phoenix Mall Area,12.9716,77.6441,27.1,71.5,3.8,NW,0.0,4200,74,65,0.0,1012.1,43.8,85,AIV-2041-77,NONE,Slight cooling — sunset conditions
+ENV-BLR-017,2025-05-21T22:00:00,Phoenix Mall Area,12.9716,77.6441,25.8,74.3,3.2,N,0.0,3800,71,52,0.0,1011.8,45.2,12,AIV-2041-77,NONE,Night onset — reduced visibility
+ENV-BLR-022,2025-05-21T22:00:00,Outer Ring Road Marathahalli,12.9565,77.7010,25.6,75.1,5.1,NE,0.0,3500,78,71,0.0,1011.7,41.3,45,AIV-2041-77,NONE,ORR corridor — moderate traffic noise
+ENV-BLR-022,2025-05-21T23:00:00,Outer Ring Road Marathahalli,12.9565,77.7010,24.3,78.4,4.7,NE,0.0,3200,76,48,0.0,1011.5,42.7,8,AIV-2041-77,NONE,Traffic noise dropping — fewer vehicles
+ENV-BLR-031,2025-05-21T23:00:00,Doddanekundi Industrial Area,12.9632,77.7388,24.1,79.8,2.8,E,0.0,2800,89,35,0.0,1011.4,48.5,3,AIV-2041-77,AQI_ELEVATED,Industrial area — baseline AQI higher due to manufacturing residue
+ENV-BLR-031,2025-05-22T00:00:00,Doddanekundi Industrial Area,12.9632,77.7388,23.2,82.1,2.1,E,0.2,2400,91,32,0.0,1011.2,51.3,1,AIV-2041-77,AQI_ELEVATED,Light drizzle onset — reduced visibility below 2500m
+ENV-BLR-044,2025-05-22T00:00:00,Service Road Whitefield,12.9698,77.7500,23.0,83.5,1.8,SE,0.3,2100,85,28,0.0,1011.1,53.7,0,AIV-2041-77,LOW_VISIBILITY,*** Crime scene area — very low ambient light; drizzle reducing visibility
+ENV-BLR-044,2025-05-22T00:15:00,Service Road Whitefield,12.9698,77.7500,22.8,84.2,1.5,SE,0.5,1800,86,31,0.0,1011.0,54.1,0,AIV-2041-77,LOW_VISIBILITY|NOISE_SPIKE,*** ANOMALY: Noise spike from 28 to 31 dB at crime scene timestamp. Consistent with vehicle arrival and activity.
+ENV-BLR-044,2025-05-22T00:30:00,Service Road Whitefield,12.9698,77.7500,22.6,84.8,1.2,SE,0.4,1700,87,27,0.0,1010.9,54.8,0,AIV-2041-77,LOW_VISIBILITY,Noise returned to baseline — activity ceased
+ENV-BLR-044,2025-05-22T01:00:00,Service Road Whitefield,12.9698,77.7500,22.1,86.3,0.8,S,0.6,1500,84,25,0.0,1010.7,56.2,0,AIV-2041-77,LOW_VISIBILITY,Continued drizzle — poor visibility supports delayed body discovery
+ENV-BLR-044,2025-05-22T02:00:00,Service Road Whitefield,12.9698,77.7500,21.4,88.1,0.5,S,0.8,1200,82,24,0.0,1010.4,58.4,0,AIV-2041-77,LOW_VISIBILITY|TEMP_DROP,Temperature dropping — consistent with autopsy body temp cooling calculation
+ENV-BLR-044,2025-05-22T03:00:00,Service Road Whitefield,12.9698,77.7500,20.8,89.7,0.3,S,1.1,1000,80,23,0.0,1010.2,60.1,0,AIV-2041-77,LOW_VISIBILITY|PRECIP_HEAVY,Heavier rainfall — explains partial evidence degradation at scene
+ENV-BLR-044,2025-05-22T04:00:00,Service Road Whitefield,12.9698,77.7500,20.5,90.2,0.6,SW,0.7,1100,79,24,0.0,1010.1,59.8,0,AIV-2041-77,LOW_VISIBILITY,Rain easing — dawn approaching
+ENV-BLR-044,2025-05-22T05:00:00,Service Road Whitefield,12.9698,77.7500,21.2,87.4,1.4,SW,0.2,1800,77,29,0.0,1010.3,57.3,2,AIV-2041-77,NONE,Pre-dawn — visibility improving
+ENV-BLR-044,2025-05-22T06:00:00,Service Road Whitefield,12.9698,77.7500,22.8,83.1,2.5,W,0.0,3200,75,38,0.1,1010.6,53.5,45,AIV-2041-77,NONE,Dawn — sanitation workers arriving; body discovered at 06:15
+ENV-BLR-031,2025-05-22T01:00:00,Doddanekundi Industrial Area,12.9632,77.7388,22.5,85.6,1.5,E,0.5,1900,88,26,0.0,1010.8,52.9,0,AIV-2041-77,AQI_ELEVATED,Industrial area overnight — minimal human activity detected
+ENV-BLR-031,2025-05-22T02:00:00,Doddanekundi Industrial Area,12.9632,77.7388,21.8,87.3,1.0,E,0.7,1600,86,24,0.0,1010.5,55.1,0,AIV-2041-77,AQI_ELEVATED,Rain contributing to air quality baseline shift
+ENV-BLR-022,2025-05-22T00:00:00,Outer Ring Road Marathahalli,12.9565,77.7010,23.4,81.2,3.5,NE,0.3,2600,77,36,0.0,1011.3,44.8,2,AIV-2041-77,NONE,Post-midnight ORR — very low traffic
+ENV-BLR-022,2025-05-22T01:00:00,Outer Ring Road Marathahalli,12.9565,77.7010,22.7,83.9,2.8,NE,0.6,2200,76,31,0.0,1010.9,47.2,0,AIV-2041-77,NONE,ORR near-empty — supports vehicle tracking confidence for white SUV

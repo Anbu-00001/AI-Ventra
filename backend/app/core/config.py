@@ -31,8 +31,8 @@ class Settings(BaseSettings):
     LLM_MAX_RETRIES: int = 3
 
     # ── Embeddings ────────────────────────────────────────────────────────
-    EMBEDDING_MODEL: str = "nomic-embed-text"
-    EMBEDDING_DIMENSION: int = 768  # nomic-embed-text uses 768 dims, not 384
+    EMBEDDING_MODEL: str = "all-MiniLM-L6-v2"
+    EMBEDDING_DIMENSION: int = 384
 
     # ── FAISS ─────────────────────────────────────────────────────────────
     FAISS_INDEX_PATH: str = str(BASE_DIR / "data" / "vectors" / "faiss.index")

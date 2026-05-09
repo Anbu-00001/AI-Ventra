@@ -1,0 +1,509 @@
+{
+  "case_id": "AIV-2041-77",
+  "report_type": "GPS Trace Analysis",
+  "generated_by": "AIVENTRA Geospatial Intelligence Module v2.0",
+  "date": "2025-05-22",
+  "devices_tracked": 2,
+  "traces": [
+    {
+      "device_id": "DEVICE_45",
+      "owner": "Arjun Mehta",
+      "role": "VICTIM",
+      "phone_number": "+91-9845012345",
+      "imei": "356789102345678",
+      "date": "2025-05-21",
+      "total_pings": 18,
+      "anomalies_detected": true,
+      "coverage_area_km2": 12.47,
+      "pings": [
+        {
+          "timestamp": "2025-05-21T18:15:00",
+          "latitude": 12.9340,
+          "longitude": 77.6120,
+          "speed_kmh": 0.0,
+          "accuracy_m": 8,
+          "tower_id": "BLR_4471",
+          "location_name": "Home — Koramangala 4th Block",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-21T19:30:00",
+          "latitude": 12.9345,
+          "longitude": 77.6125,
+          "speed_kmh": 0.0,
+          "accuracy_m": 10,
+          "tower_id": "BLR_4471",
+          "location_name": "Home — Koramangala 4th Block",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-21T20:10:22",
+          "latitude": 12.9412,
+          "longitude": 77.6201,
+          "speed_kmh": 28.4,
+          "accuracy_m": 12,
+          "tower_id": "BLR_4471",
+          "location_name": "Koramangala Inner Ring Road",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-21T20:28:15",
+          "latitude": 12.9588,
+          "longitude": 77.6355,
+          "speed_kmh": 35.2,
+          "accuracy_m": 15,
+          "tower_id": "BLR_5529",
+          "location_name": "Indiranagar — en route to Phoenix Mall",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-21T20:44:08",
+          "latitude": 12.9716,
+          "longitude": 77.6441,
+          "speed_kmh": 0.0,
+          "accuracy_m": 8,
+          "tower_id": "BLR_5529",
+          "location_name": "Phoenix Mall Area — Parking",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-21T21:15:00",
+          "latitude": 12.9718,
+          "longitude": 77.6443,
+          "speed_kmh": 0.0,
+          "accuracy_m": 6,
+          "tower_id": "BLR_5529",
+          "location_name": "Phoenix Mall — Restaurant Wing",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-21T22:00:00",
+          "latitude": 12.9717,
+          "longitude": 77.6442,
+          "speed_kmh": 0.0,
+          "accuracy_m": 7,
+          "tower_id": "BLR_6187",
+          "location_name": "Phoenix Mall — Restaurant Wing",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-21T22:35:30",
+          "latitude": 12.9716,
+          "longitude": 77.6440,
+          "speed_kmh": 2.1,
+          "accuracy_m": 9,
+          "tower_id": "BLR_6187",
+          "location_name": "Phoenix Mall — Parking Level B2",
+          "activity": "WALKING"
+        },
+        {
+          "timestamp": "2025-05-21T22:42:55",
+          "latitude": 12.9714,
+          "longitude": 77.6439,
+          "speed_kmh": 22.0,
+          "accuracy_m": 14,
+          "tower_id": "BLR_6187",
+          "location_name": "Phoenix Mall — Parking Exit",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-21T23:05:12",
+          "latitude": 12.9575,
+          "longitude": 77.6980,
+          "speed_kmh": 48.7,
+          "accuracy_m": 18,
+          "tower_id": "BLR_3302",
+          "location_name": "Outer Ring Road — approaching Marathahalli",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-21T23:18:44",
+          "latitude": 12.9601,
+          "longitude": 77.7155,
+          "speed_kmh": 55.3,
+          "accuracy_m": 22,
+          "tower_id": "BLR_3302",
+          "location_name": "ORR — past Marathahalli junction",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-21T23:32:08",
+          "latitude": 12.9635,
+          "longitude": 77.7380,
+          "speed_kmh": 42.1,
+          "accuracy_m": 25,
+          "tower_id": "BLR_7814",
+          "location_name": "Doddanekundi Industrial Area — entrance",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-21T23:41:30",
+          "latitude": 12.9652,
+          "longitude": 77.7425,
+          "speed_kmh": 18.4,
+          "accuracy_m": 30,
+          "tower_id": "BLR_7814",
+          "location_name": "Doddanekundi — inside industrial zone",
+          "activity": "DRIVING_SLOW"
+        },
+        {
+          "timestamp": "2025-05-21T23:55:17",
+          "latitude": 12.9678,
+          "longitude": 77.7468,
+          "speed_kmh": 12.8,
+          "accuracy_m": 35,
+          "tower_id": "BLR_7814",
+          "location_name": "Approaching Service Road, Whitefield",
+          "activity": "DRIVING_SLOW"
+        },
+        {
+          "timestamp": "2025-05-22T00:04:42",
+          "latitude": 12.9695,
+          "longitude": 77.7498,
+          "speed_kmh": 0.0,
+          "accuracy_m": 42,
+          "tower_id": "BLR_7814",
+          "location_name": "Service Road, Whitefield — CRIME SCENE",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-22T00:08:55",
+          "latitude": 12.9697,
+          "longitude": 77.7499,
+          "speed_kmh": 0.0,
+          "accuracy_m": 45,
+          "tower_id": "BLR_7814",
+          "location_name": "Service Road, Whitefield — CRIME SCENE",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-22T00:11:30",
+          "latitude": 12.9698,
+          "longitude": 77.7500,
+          "speed_kmh": 0.0,
+          "accuracy_m": 50,
+          "tower_id": "BLR_7814",
+          "location_name": "Service Road, Whitefield — CRIME SCENE (LAST PING)",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-22T00:11:30",
+          "latitude": 12.9698,
+          "longitude": 77.7500,
+          "speed_kmh": 0.0,
+          "accuracy_m": 50,
+          "tower_id": "BLR_7814",
+          "location_name": "*** DEVICE SIGNAL LOST — phone powered off or destroyed",
+          "activity": "SIGNAL_LOST"
+        }
+      ],
+      "route_anomalies": [
+        {
+          "type": "ROUTE_DEVIATION",
+          "description": "At 23:32, device deviated from expected homeward route (Koramangala) toward Doddanekundi Industrial Area. No known associations at this location.",
+          "timestamp": "2025-05-21T23:32:08",
+          "severity": "HIGH"
+        },
+        {
+          "type": "SPEED_ANOMALY",
+          "description": "Speed dropped from 55 km/h to 18 km/h inside industrial zone — vehicle slowing for unfamiliar route or surveillance avoidance.",
+          "timestamp": "2025-05-21T23:41:30",
+          "severity": "MEDIUM"
+        },
+        {
+          "type": "SIGNAL_LOST",
+          "description": "Device signal terminated abruptly at crime scene. No graceful shutdown pattern. Consistent with forcible power-off or physical destruction.",
+          "timestamp": "2025-05-22T00:11:30",
+          "severity": "CRITICAL"
+        }
+      ]
+    },
+    {
+      "device_id": "DEVICE_78",
+      "owner": "Vikram Singh",
+      "role": "SUSPECT",
+      "phone_number": "+91-9900176543",
+      "imei": "867530012345678",
+      "date": "2025-05-21",
+      "total_pings": 22,
+      "anomalies_detected": true,
+      "coverage_area_km2": 18.92,
+      "pings": [
+        {
+          "timestamp": "2025-05-21T18:00:00",
+          "latitude": 12.9350,
+          "longitude": 77.6248,
+          "speed_kmh": 0.0,
+          "accuracy_m": 8,
+          "tower_id": "BLR_2241",
+          "location_name": "Home — Koramangala 5th Block",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-21T19:45:00",
+          "latitude": 12.9355,
+          "longitude": 77.6252,
+          "speed_kmh": 0.0,
+          "accuracy_m": 10,
+          "tower_id": "BLR_2241",
+          "location_name": "Home — Koramangala 5th Block",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-21T20:15:33",
+          "latitude": 12.9420,
+          "longitude": 77.6280,
+          "speed_kmh": 32.5,
+          "accuracy_m": 14,
+          "tower_id": "BLR_2241",
+          "location_name": "Koramangala — departing toward Phoenix Mall",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-21T20:42:10",
+          "latitude": 12.9715,
+          "longitude": 77.6440,
+          "speed_kmh": 5.2,
+          "accuracy_m": 9,
+          "tower_id": "BLR_5529",
+          "location_name": "Phoenix Mall Area — Parking Level B2",
+          "activity": "DRIVING_SLOW"
+        },
+        {
+          "timestamp": "2025-05-21T21:00:00",
+          "latitude": 12.9718,
+          "longitude": 77.6443,
+          "speed_kmh": 0.0,
+          "accuracy_m": 7,
+          "tower_id": "BLR_5529",
+          "location_name": "Phoenix Mall — Restaurant Wing",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-21T22:15:00",
+          "latitude": 12.9718,
+          "longitude": 77.6443,
+          "speed_kmh": 0.0,
+          "accuracy_m": 6,
+          "tower_id": "BLR_6187",
+          "location_name": "Phoenix Mall — Restaurant Wing",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-21T22:30:45",
+          "latitude": 12.9717,
+          "longitude": 77.6442,
+          "speed_kmh": 1.5,
+          "accuracy_m": 8,
+          "tower_id": "BLR_6187",
+          "location_name": "Phoenix Mall — moving toward parking",
+          "activity": "WALKING"
+        },
+        {
+          "timestamp": "2025-05-21T22:41:18",
+          "latitude": 12.9714,
+          "longitude": 77.6439,
+          "speed_kmh": 20.0,
+          "accuracy_m": 12,
+          "tower_id": "BLR_6187",
+          "location_name": "Phoenix Mall — Parking Exit",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-21T23:02:44",
+          "latitude": 12.9570,
+          "longitude": 77.6970,
+          "speed_kmh": 52.3,
+          "accuracy_m": 16,
+          "tower_id": "BLR_3302",
+          "location_name": "Outer Ring Road — Marathahalli approach",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-21T23:15:22",
+          "latitude": 12.9598,
+          "longitude": 77.7148,
+          "speed_kmh": 58.1,
+          "accuracy_m": 20,
+          "tower_id": "BLR_3302",
+          "location_name": "ORR — Marathahalli to Whitefield corridor",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-21T23:30:55",
+          "latitude": 12.9630,
+          "longitude": 77.7385,
+          "speed_kmh": 45.0,
+          "accuracy_m": 22,
+          "tower_id": "BLR_7814",
+          "location_name": "Doddanekundi Industrial Area — entrance",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-21T23:38:17",
+          "latitude": 12.9648,
+          "longitude": 77.7418,
+          "speed_kmh": 15.2,
+          "accuracy_m": 28,
+          "tower_id": "BLR_7814",
+          "location_name": "Doddanekundi — deep inside industrial zone",
+          "activity": "DRIVING_SLOW"
+        },
+        {
+          "timestamp": "2025-05-21T23:52:40",
+          "latitude": 12.9675,
+          "longitude": 77.7462,
+          "speed_kmh": 10.5,
+          "accuracy_m": 32,
+          "tower_id": "BLR_7814",
+          "location_name": "Industrial zone — approaching service road",
+          "activity": "DRIVING_SLOW"
+        },
+        {
+          "timestamp": "2025-05-22T00:05:18",
+          "latitude": 12.9696,
+          "longitude": 77.7497,
+          "speed_kmh": 0.0,
+          "accuracy_m": 38,
+          "tower_id": "BLR_7814",
+          "location_name": "Service Road, Whitefield — CRIME SCENE",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-22T00:10:45",
+          "latitude": 12.9697,
+          "longitude": 77.7498,
+          "speed_kmh": 0.0,
+          "accuracy_m": 40,
+          "tower_id": "BLR_7814",
+          "location_name": "Service Road, Whitefield — CRIME SCENE",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-22T00:16:30",
+          "latitude": 12.9698,
+          "longitude": 77.7499,
+          "speed_kmh": 0.0,
+          "accuracy_m": 42,
+          "tower_id": "BLR_7814",
+          "location_name": "Service Road, Whitefield — CRIME SCENE",
+          "activity": "STATIONARY"
+        },
+        {
+          "timestamp": "2025-05-22T00:19:05",
+          "latitude": 12.9695,
+          "longitude": 77.7492,
+          "speed_kmh": 35.8,
+          "accuracy_m": 25,
+          "tower_id": "BLR_7814",
+          "location_name": "Departing crime scene — Service Road",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-22T00:35:22",
+          "latitude": 12.9580,
+          "longitude": 77.7100,
+          "speed_kmh": 72.4,
+          "accuracy_m": 18,
+          "tower_id": "BLR_3302",
+          "location_name": "ORR — high speed return westbound",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-22T00:44:50",
+          "latitude": 12.9565,
+          "longitude": 77.7010,
+          "speed_kmh": 68.9,
+          "accuracy_m": 15,
+          "tower_id": "BLR_3302",
+          "location_name": "Outer Ring Road, Marathahalli junction",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-22T01:05:33",
+          "latitude": 12.9420,
+          "longitude": 77.6350,
+          "speed_kmh": 42.0,
+          "accuracy_m": 12,
+          "tower_id": "BLR_2241",
+          "location_name": "Indiranagar — returning to Koramangala",
+          "activity": "DRIVING"
+        },
+        {
+          "timestamp": "2025-05-22T01:20:15",
+          "latitude": 12.9355,
+          "longitude": 77.6248,
+          "speed_kmh": 8.5,
+          "accuracy_m": 10,
+          "tower_id": "BLR_2241",
+          "location_name": "Koramangala 5th Block — approaching home",
+          "activity": "DRIVING_SLOW"
+        },
+        {
+          "timestamp": "2025-05-22T01:23:44",
+          "latitude": 12.9352,
+          "longitude": 77.6245,
+          "speed_kmh": 0.0,
+          "accuracy_m": 8,
+          "tower_id": "BLR_2241",
+          "location_name": "Home — Koramangala 5th Block (ARRIVED)",
+          "activity": "STATIONARY"
+        }
+      ],
+      "route_anomalies": [
+        {
+          "type": "CO_LOCATION",
+          "description": "Suspect device and victim device co-located at Phoenix Mall from 20:42 to 22:41 — confirms shared presence.",
+          "timestamp": "2025-05-21T20:42:10",
+          "severity": "HIGH"
+        },
+        {
+          "type": "PARALLEL_ROUTE",
+          "description": "Suspect GPS trace mirrors victim trace from mall to crime scene with 1-3 minute offset — confirms same vehicle.",
+          "timestamp": "2025-05-21T22:41:18",
+          "severity": "CRITICAL"
+        },
+        {
+          "type": "CRIME_SCENE_PRESENCE",
+          "description": "Suspect device stationary at crime scene for 13 minutes 12 seconds (00:05:18 to 00:19:05). Overlaps with CCTV body concealment activity.",
+          "timestamp": "2025-05-22T00:05:18",
+          "severity": "CRITICAL"
+        },
+        {
+          "type": "SPEED_ANOMALY",
+          "description": "Return trip speed 72.4 km/h — significantly above outbound speed of 52 km/h. Consistent with fleeing behavior.",
+          "timestamp": "2025-05-22T00:35:22",
+          "severity": "HIGH"
+        },
+        {
+          "type": "POST_INCIDENT_RETURN",
+          "description": "Suspect returns home at 01:23 — 64 minutes after departing crime scene. Route is direct with no stops.",
+          "timestamp": "2025-05-22T01:23:44",
+          "severity": "HIGH"
+        }
+      ]
+    }
+  ],
+  "cross_reference_summary": {
+    "co_location_events": [
+      {
+        "location": "Phoenix Mall",
+        "time_range": "20:42 — 22:41",
+        "duration_minutes": 119,
+        "both_devices_present": true
+      },
+      {
+        "location": "Service Road, Whitefield (Crime Scene)",
+        "time_range": "00:04 — 00:16",
+        "duration_minutes": 12,
+        "both_devices_present": true,
+        "note": "Victim device goes silent at 00:11. Suspect device remains active until 00:19."
+      }
+    ],
+    "tower_correlation": {
+      "shared_towers": ["BLR_5529", "BLR_6187", "BLR_3302", "BLR_7814"],
+      "tower_handoff_lag_seconds": 90,
+      "confidence": 0.94
+    }
+  }
+}

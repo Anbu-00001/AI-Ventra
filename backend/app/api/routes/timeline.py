@@ -26,7 +26,16 @@ async def demo_timeline():
 
 @router.post("/from-case/{case_id}")
 async def timeline_from_case(case_id: str):
-    """Reconstruct timeline from synthetic case data."""
+    """Reconstruct timeline from REAL uploaded evidence files first, synthetic fallback second."""
+    from app.services.evidence_parser import build_real_timeline
+
+    # 1. Try building from uploaded evidence
+    real = build_real_timeline()
+    if real.get("events") and len(real["events"]) >= 3:
+        save_timeline(real, f"{case_id}_evidence")
+        return success(real, message=f"Timeline for {case_id} — {real['total_events']} events from uploaded evidence")
+
+    # 2. Fallback to synthetic data + Ollama
     gps_data = load_all_synthetic("gps_logs")
     cctv_data = load_all_synthetic("cctv_logs")
     call_data = load_all_synthetic("call_logs")
@@ -36,6 +45,11 @@ async def timeline_from_case(case_id: str):
         "cctv_sample": random.choice(cctv_data) if cctv_data else {},
         "call_sample": random.choice(call_data) if call_data else {},
     }
-    timeline = await timeline_builder.build(context)
-    save_timeline(timeline.model_dump(), timeline.timeline_id)
-    return success(timeline.model_dump(), message=f"Timeline for case {case_id}")
+    try:
+        timeline = await timeline_builder.build(context)
+        save_timeline(timeline.model_dump(), timeline.timeline_id)
+        return success(timeline.model_dump(), message=f"Timeline for case {case_id}")
+    except Exception:
+        # Total fallback
+        timeline = build_timeline_fallback()
+        return success(timeline.model_dump(), message=f"Timeline for case {case_id} (fallback)")

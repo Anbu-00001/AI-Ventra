@@ -41,10 +41,46 @@ export const wipeAllData = () =>
 // ─── Autopsy ──────────────────────────────────────────────────────────────────
 export const getDemoAutopsy = () => apiFetch<ApiResponse<AutopsyFindings>>("/autopsy/demo");
 
+export const getAutopsyFromEvidence = () =>
+  apiFetch<ApiResponse<AutopsyFindings & { rag_forensic_context?: string }>>("/autopsy/from-evidence");
+
 export const analyzeAutopsy = (reportText: string) =>
   apiFetch<ApiResponse<AutopsyFindings>>("/autopsy/analyze", {
     method: "POST",
     body: JSON.stringify({ report_text: reportText }),
+  });
+
+// ─── Henssge Nomogram ─────────────────────────────────────────────────────────
+export interface HenssgeInput {
+  body_temp: number;
+  ambient_temp: number;
+  body_weight_kg: number;
+  clothing_factor?: number;
+  environment_factor?: number;
+}
+
+export interface HenssgeCurvePoint { t: number; temp: number; }
+
+export interface HenssgeResult {
+  estimated_pmi_hours: number | null;
+  pmi_lower: number | null;
+  pmi_upper: number | null;
+  cooling_rate_k: number;
+  temperature_ratio?: number;
+  confidence_percent: number;
+  tod_window: string;
+  curve: HenssgeCurvePoint[];
+  note: string;
+  rag_context: string;
+}
+
+export const getHenssgeDemo = () =>
+  apiFetch<ApiResponse<HenssgeResult>>("/autopsy/henssge/demo");
+
+export const calculateHenssge = (inp: HenssgeInput) =>
+  apiFetch<ApiResponse<HenssgeResult>>("/autopsy/henssge", {
+    method: "POST",
+    body: JSON.stringify(inp),
   });
 
 // ─── Timeline ─────────────────────────────────────────────────────────────────

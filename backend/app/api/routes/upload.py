@@ -65,58 +65,66 @@ async def _process_evidence(file_id: str, path: str, file_type: str, original_na
     """Background task: extract text → classify → embed → save."""
     logger.info(f"Background processing: {file_id}")
 
-    # 1. Extract text
-    if file_type == "pdf":
-        text = extract_text_from_pdf(path)
-    elif file_type == "csv":
-        csv_data = parse_csv(path)
-        text = csv_data.get("raw_preview", "")
-    elif file_type == "json":
-        json_data = parse_json_evidence(path)
-        import json
-        text = json.dumps(json_data.get("data", {}))[:2000]
-    elif file_type == "image":
-        text = ocr_image(path)
-    else:
-        try:
-            with open(path, "r", errors="ignore") as f:
-                text = f.read()[:3000]
-        except Exception:
-            text = ""
+    try:
+        # 1. Extract text
+        if file_type == "pdf":
+            text = extract_text_from_pdf(path)
+        elif file_type == "csv":
+            csv_data = parse_csv(path)
+            text = csv_data.get("raw_preview", "")
+            try:
+                with open(path, "r", errors="ignore") as f:
+                    text = f.read()
+            except Exception:
+                text = ""
+        elif file_type == "json":
+            json_data = parse_json_evidence(path)
+            import json
+            text = json.dumps(json_data.get("data", {}))
+        elif file_type == "image":
+            text = ocr_image(path)
+        else:
+            try:
+                with open(path, "r", errors="ignore") as f:
+                    text = f.read()
+            except Exception:
+                text = ""
 
-    # 2. Classify
-    classification = await evidence_classifier.classify(text[:500], original_name, file_type)
-    classification.file_id = file_id
+        # 2. Classify
+        classification = await evidence_classifier.classify(text[:500], original_name, file_type)
+        classification.file_id = file_id
 
-    # 3. Extract entities
-    entities = await entity_extractor.extract(text[:2000])
-    metadata = extract_metadata(path)
+        # 3. Extract entities
+        entities = await entity_extractor.extract(text[:2000])
+        metadata = extract_metadata(path)
 
-    # 4. Chunk + embed + add to FAISS
-    chunks = chunk_with_metadata(text or f"Evidence file: {original_name}", original_name, file_id)
-    if chunks:
-        chunk_texts = [c["text"] for c in chunks]
-        embeddings = await embed_texts(chunk_texts)
-        vector_store.add(embeddings, chunks)
-        vector_store.save()
+        # 4. Chunk + embed + add to FAISS
+        chunks = chunk_with_metadata(text or f"Evidence file: {original_name}", original_name, file_id)
+        if chunks:
+            chunk_texts = [c["text"] for c in chunks]
+            embeddings = await embed_texts(chunk_texts)
+            vector_store.add(embeddings, chunks)
+            vector_store.save()
 
-    # 5. Persist
-    extracted_payload = {
-        "file_id": file_id,
-        "original_name": original_name,
-        "file_type": file_type,
-        "text": text,
-        "text_preview": text[:500],
-        "metadata": metadata,
-        "classification": classification.model_dump(),
-        "entities": entities,
-        "chunk_count": len(chunks),
-    }
-    ensure_dir(settings.EXTRACTED_DIR)
-    save_json(extracted_payload, os.path.join(settings.EXTRACTED_DIR, f"{file_id}.json"))
-    save_finding(extracted_payload, file_id, "extraction")
+        # 5. Persist
+        extracted_payload = {
+            "file_id": file_id,
+            "original_name": original_name,
+            "file_type": file_type,
+            "text": text,
+            "text_preview": text[:500],
+            "metadata": metadata,
+            "classification": classification.model_dump(),
+            "entities": entities,
+            "chunk_count": len(chunks),
+        }
+        ensure_dir(settings.EXTRACTED_DIR)
+        save_json(extracted_payload, os.path.join(settings.EXTRACTED_DIR, f"{file_id}.json"))
+        save_finding(extracted_payload, file_id, "extraction")
 
-    logger.info(f"Evidence processed: {file_id} — {len(chunks)} chunks embedded")
+        logger.info(f"Evidence processed: {file_id} — {len(chunks)} chunks embedded")
+    except Exception as e:
+        logger.error(f"FATAL ERROR in _process_evidence for {file_id}: {str(e)}")
 
 
 @router.get("/stream/{file_id}")

@@ -1,0 +1,22 @@
+timestamp,caller_number,callee_number,call_type,duration_seconds,tower_id,signal_strength_dbm,cell_sector,caller_name,callee_name,case_id,notes
+2025-05-21T18:30:12,+91-9845012345,+91-8867054321,OUTGOING,142,BLR_4471,‐72,SECTOR_3,Arjun Mehta,Kavya Reddy,AIV-2041-77,Routine call to sister — no anomaly
+2025-05-21T19:15:44,+91-9845012345,+91-7760098432,OUTGOING,87,BLR_4471,-68,SECTOR_3,Arjun Mehta,Rohan Joshi,AIV-2041-77,Called colleague — dinner plans discussed
+2025-05-21T20:02:18,+91-7760098432,+91-9845012345,INCOMING,211,BLR_5529,-71,SECTOR_1,Rohan Joshi,Arjun Mehta,AIV-2041-77,Confirmed meeting location — Phoenix Mall Area
+2025-05-21T20:48:55,+91-9845012345,+91-9900176543,OUTGOING,34,BLR_5529,-65,SECTOR_1,Arjun Mehta,Vikram Singh,AIV-2041-77,Brief call to suspect Vikram — location inquiry
+2025-05-21T21:05:30,+91-9900176543,+91-9845012345,INCOMING,56,BLR_5529,-63,SECTOR_1,Vikram Singh,Arjun Mehta,AIV-2041-77,Vikram called back — confirmed he would join dinner
+2025-05-21T21:33:10,+91-9845012345,+91-8867054321,OUTGOING,95,BLR_6187,-74,SECTOR_2,Arjun Mehta,Kavya Reddy,AIV-2041-77,Second call to sister — mentioned meeting Vikram later
+2025-05-21T22:15:00,+91-9845012345,+91-7760098432,OUTGOING,28,BLR_6187,-77,SECTOR_2,Arjun Mehta,Rohan Joshi,AIV-2041-77,Short call — Rohan left dinner early
+2025-05-21T22:44:22,+91-9900176543,+91-9845012345,INCOMING,310,BLR_6187,-69,SECTOR_2,Vikram Singh,Arjun Mehta,AIV-2041-77,Long call with Vikram — discussed private business matter
+2025-05-21T23:18:05,+91-9845012345,+91-9900176543,OUTGOING,45,BLR_3302,-81,SECTOR_4,Arjun Mehta,Vikram Singh,AIV-2041-77,*** Tower shift detected — victim moving toward Whitefield
+2025-05-21T23:45:31,+91-9845012345,+91-9900176543,OUTGOING,12,BLR_3302,-84,SECTOR_4,Arjun Mehta,Vikram Singh,AIV-2041-77,Very short call — possible interrupted conversation
+2025-05-22T00:02:14,+91-9845012345,+91-9900176543,MISSED,0,BLR_7814,-89,SECTOR_6,Arjun Mehta,Vikram Singh,AIV-2041-77,*** MISSED CALL — signal degraded; entering industrial zone
+2025-05-22T00:15:00,,,SILENCE_GAP,0,,,,,,,*** COMMUNICATION SILENCE BEGINS — 27-minute gap
+2025-05-22T00:42:33,+91-9900176543,+91-9845012345,MISSED,0,BLR_7814,-92,SECTOR_6,Vikram Singh,Arjun Mehta,AIV-2041-77,Vikram attempted call to victim — no answer
+2025-05-22T01:05:17,+91-9900176543,+91-9845012345,MISSED,0,BLR_2241,-88,SECTOR_5,Vikram Singh,Arjun Mehta,AIV-2041-77,Second missed call attempt from Vikram
+2025-05-22T01:28:00,,,SILENCE_GAP,0,,,,,,,*** CRITICAL 87-MINUTE SILENCE — overlaps estimated TOD window
+2025-05-22T02:55:44,+91-9900176543,+91-8867054321,OUTGOING,23,BLR_2241,-71,SECTOR_5,Vikram Singh,Kavya Reddy,AIV-2041-77,*** ANOMALY: Vikram calls victim's sister at 2:55 AM — claims Arjun not answering
+2025-05-22T03:10:12,+91-8867054321,+91-9845012345,OUTGOING,0,BLR_4471,-95,SECTOR_3,Kavya Reddy,Arjun Mehta,AIV-2041-77,Sister tries victim phone — goes to voicemail; device likely powered off
+2025-05-22T03:22:05,+91-8867054321,+91-9900176543,OUTGOING,180,BLR_4471,-67,SECTOR_3,Kavya Reddy,Vikram Singh,AIV-2041-77,Extended call — sister and Vikram discuss concern over Arjun
+2025-05-22T04:01:30,+91-8867054321,+91-1001001000,OUTGOING,45,BLR_4471,-65,SECTOR_3,Kavya Reddy,Police Control,AIV-2041-77,Missing person report initiated
+2025-05-22T05:30:00,+91-9900176543,+91-7760098432,OUTGOING,67,BLR_2241,-70,SECTOR_5,Vikram Singh,Rohan Joshi,AIV-2041-77,Vikram informs Rohan — alibi coordination suspected
+2025-05-22T06:18:00,+91-1001001000,+91-8867054321,INCOMING,120,BLR_4471,-62,SECTOR_3,Police Control,Kavya Reddy,AIV-2041-77,Police notify sister — body found on Whitefield service road

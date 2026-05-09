@@ -1,0 +1,254 @@
+================================================================================
+              AIVENTRA FORENSIC INTELLIGENCE — POSTMORTEM EXAMINATION REPORT
+================================================================================
+
+CASE NUMBER:          AIV-2041-77
+REPORT ID:            AR-0077
+EXAMINER:             Dr. Meena Pillai, MD (Forensic Pathology)
+EXAMINATION DATE:     22 May 2025
+FACILITY:             AIVENTRA Central Forensic Laboratory, Bangalore
+JURISDICTION:         Karnataka State Forensic Sciences Division
+
+--------------------------------------------------------------------------------
+SECTION 1 — DECEDENT INFORMATION
+--------------------------------------------------------------------------------
+
+Name:                 Arjun Mehta
+Age:                  34 years
+Gender:               Male
+Height:               175 cm
+Weight:               72 kg
+Race/Ethnicity:       South Asian (Indian)
+Occupation:           Software Engineer, Nexus Technologies Pvt. Ltd.
+Identification:       Visual confirmation by next of kin (sister: Kavya Reddy)
+                      Aadhaar cross-match confirmed
+
+--------------------------------------------------------------------------------
+SECTION 2 — SCENE AND BODY RECOVERY
+--------------------------------------------------------------------------------
+
+Body discovered:      22 May 2025, 06:15 AM IST
+Location:             Service Road, Whitefield (near Doddanekundi Industrial Area)
+                      GPS: 12.9698°N, 77.7500°E
+Discovery:            Municipal sanitation worker reported body in drainage culvert
+                      adjacent to service road. Body was partially concealed with
+                      construction debris (tarpaulin, broken bricks).
+                      
+Body position:        Supine, left arm extended, right arm across chest.
+                      Clothing disheveled; shoes missing (one recovered 14m east).
+                      
+Ambient temperature:  27.4°C at scene
+Body temperature:     21.8°C (rectal, measured at 07:02 AM)
+
+--------------------------------------------------------------------------------
+SECTION 3 — EXTERNAL EXAMINATION
+--------------------------------------------------------------------------------
+
+General:              Well-nourished adult male. No signs of chronic disease.
+                      Moderate decomposition consistent with 8-12 hour interval.
+
+Rigor Mortis:         Full rigor present in all major muscle groups.
+                      Jaw, upper and lower extremities fully rigid.
+                      Consistent with TOD 8-12 hours prior to examination.
+
+Livor Mortis:         Fixed anterior lividity on chest and abdomen.
+                      *** CRITICAL: Body was found supine but lividity is ANTERIOR.
+                      This conclusively indicates the body was repositioned 
+                      POST-MORTEM (turned from prone to supine position).
+                      Lividity blanching absent — fixed for minimum 6 hours.
+
+Eyes:                 Petechial hemorrhages bilateral conjunctivae.
+                      Corneal clouding consistent with postmortem interval.
+
+Fingernails:          Broken on right index and middle fingers.
+                      Trace evidence (skin fragments, dirt) recovered and preserved.
+                      DNA processing requested — results pending.
+
+Clothing:             Blue cotton shirt (torn at right shoulder seam).
+                      Dark grey trousers (soil-stained, trace motor oil identified).
+                      No wallet or mobile device recovered on person.
+                      Watch (Titan, analog) stopped at 02:47 AM.
+
+--------------------------------------------------------------------------------
+SECTION 4 — INJURIES IDENTIFIED
+--------------------------------------------------------------------------------
+
+1. CRANIAL — Blunt Force Trauma [SEVERITY: SEVERE]
+   - 7.2 cm depressed fracture of right temporal-parietal bone
+   - Underlying subdural hematoma (approximately 85 mL)
+   - Contrecoup contusion on left frontal lobe
+   - Pattern: Consistent with heavy cylindrical weapon (pipe, rod)
+   - Minimum TWO distinct impact sites identified (repeated blows)
+
+2. CERVICAL — Compression Marks [SEVERITY: SEVERE]
+   - Bilateral ligature marks on anterior neck (3.1 cm width)
+   - Fracture of hyoid bone (right greater cornu)
+   - Hemorrhage in strap muscles
+   - Pattern: Consistent with ligature strangulation (rope/cord)
+   - Bruising indicates sustained pressure for 3-5 minutes minimum
+
+3. THORACIC — Rib Fractures [SEVERITY: MODERATE]
+   - Fractures of right ribs 4, 5, 6 (posterior axillary line)
+   - Associated pleural hemorrhage (120 mL right hemithorax)
+   - Pattern: Concentrated force — likely kicks or stomping
+
+4. UPPER EXTREMITY — Defensive Injuries [SEVERITY: MODERATE]
+   - Linear bruising on bilateral forearms (ulnar aspect)
+   - Abrasion on left palm (6 cm)
+   - Swelling of right metacarpophalangeal joints
+   - Pattern: Classic defensive posturing; victim attempted resistance
+
+5. FACIAL — Periorbital Trauma [SEVERITY: MODERATE]
+   - Bilateral periorbital ecchymosis ("raccoon eyes")
+   - Nasal bone fracture with septal deviation
+   - 2.4 cm laceration on right eyebrow (superficial)
+   - Lip contusion with mucosal tear (inner lower lip)
+
+6. DORSAL — Pattern Bruising [SEVERITY: MILD]
+   - Multiple parallel bruises (4 sets, spaced 2.5 cm apart)
+   - Location: mid-thoracic to lumbar region
+   - Pattern: Consistent with impact against ridged surface
+   - Suggests body dragged over corrugated material
+
+--------------------------------------------------------------------------------
+SECTION 5 — INTERNAL EXAMINATION
+--------------------------------------------------------------------------------
+
+Brain:                Massive subdural hematoma right hemisphere.
+                      Cerebral edema bilateral. Midline shift 8mm left.
+                      Herniation of right uncus through tentorial notch.
+
+Heart:                Normal size (340g). No coronary disease.
+                      No valvular abnormalities. Myocardium unremarkable.
+
+Lungs:                Right lung: pleural hemorrhage, 120 mL.
+                      Petechial hemorrhages on visceral pleura (bilateral).
+                      Consistent with asphyxia component.
+
+Liver/Spleen:         No significant trauma. Normal architecture.
+
+Stomach Contents:     Partially digested food material (~200 mL).
+                      Identifiable: rice, lentil fragments, vegetable matter.
+                      Suggests last meal 3-5 hours before death.
+                      *** Correlates with restaurant visit at 10:30 PM (per witness).
+
+--------------------------------------------------------------------------------
+SECTION 6 — TOXICOLOGY
+--------------------------------------------------------------------------------
+
+Blood Alcohol:        0.02 g/dL (negligible — one drink equivalent)
+
+Benzodiazepines:      DETECTED — above therapeutic level
+                      Quantification: 340 ng/mL (therapeutic: 100-300 ng/mL)
+                      Agent: Alprazolam metabolite identified
+                      *** Significance: Victim was likely sedated prior to assault.
+                      Level suggests ingestion 1.5-3 hours before death.
+
+Opiates:              NOT DETECTED
+Ketamine:             NOT DETECTED
+Cannabis:             NOT DETECTED
+Carbon Monoxide:      NOT DETECTED (COHb: 1.2% — normal urban ambient)
+
+Vitreous:             Potassium 8.4 mEq/L — supports 8-12 hour PMI.
+                      Glucose undetectable — consistent with perimortem stress.
+
+Urine Drug Screen:    Benzodiazepine positive. All others negative.
+
+--------------------------------------------------------------------------------
+SECTION 7 — TIME OF DEATH ESTIMATION
+--------------------------------------------------------------------------------
+
+Based on:
+  - Body/ambient temperature differential: 5.6°C cooling
+  - Henssge nomogram calculation: 9.2 hours (±1.5h)
+  - Rigor mortis: Full — 8-12 hours
+  - Stomach contents: 3-5 hours post-meal (meal at ~22:30)
+  - Vitreous potassium: 8.4 mEq/L → 8-12 hours
+  - Watch stopped at 02:47 AM
+  - Livor fixation: minimum 6 hours
+
+ESTIMATED TIME OF DEATH:  02:00 AM — 04:00 AM IST, 22 May 2025
+CONFIDENCE:               HIGH (92%) — multiple indicators converge
+
+*** CRITICAL WINDOW: 01:45 AM — 03:15 AM
+    All suspect GPS/call/CCTV data should be cross-referenced against
+    this interval for timeline reconstruction.
+
+--------------------------------------------------------------------------------
+SECTION 8 — CAUSE AND MANNER OF DEATH
+--------------------------------------------------------------------------------
+
+IMMEDIATE CAUSE:      Blunt force trauma to cranial region with
+                      subdural hematoma and cerebral herniation
+
+CONTRIBUTING:         Ligature strangulation (asphyxia component)
+                      Benzodiazepine sedation (reduced defensive capacity)
+
+MANNER OF DEATH:      HOMICIDE
+
+MECHANISM:            Combined craniocerebral trauma and asphyxia.
+                      Victim was pharmacologically impaired (benzodiazepines)
+                      reducing his ability to resist the attack.
+
+--------------------------------------------------------------------------------
+SECTION 9 — FORENSIC RECONSTRUCTION NOTES
+--------------------------------------------------------------------------------
+
+Sequence of Events (Forensic Opinion):
+1. Victim was administered benzodiazepines (likely covertly in drink)
+   approximately 1.5-3 hours before death. This is consistent with
+   the 10:30 PM restaurant visit — the drug was likely added to his
+   beverage between 11:00 PM and midnight.
+
+2. Victim was transported (voluntarily or otherwise) to the Service Road
+   area in Whitefield. GPS and CCTV data should confirm route.
+
+3. Victim was assaulted — initial defensive injuries suggest a brief
+   period of resistance despite sedation. The broken fingernails and
+   palm abrasion indicate a struggle.
+
+4. Fatal blows were delivered to the cranial region with a heavy
+   cylindrical object (pipe/rod). Minimum two distinct impacts.
+
+5. Ligature strangulation was applied — possibly to ensure death
+   after blunt force trauma.
+
+6. Body was initially left face-down (accounting for anterior lividity),
+   then repositioned to supine position. This indicates either:
+   (a) the attacker returned to reposition, or
+   (b) a second individual moved the body.
+
+7. Body was partially concealed with construction debris —
+   suggesting intent to delay discovery.
+
+Key Forensic Indicators of Premeditation:
+  - Benzodiazepine administration (planned sedation)
+  - Weapon brought to scene (not weapon of opportunity)
+  - Body repositioned and concealed post-mortem
+  - Victim's phone and wallet removed (evidence destruction)
+
+EVIDENCE PRESERVED:
+  - Fingernail scrapings (DNA pending)
+  - Ligature pattern impressions (photographed, cast)
+  - Blood samples (toxicology archive)
+  - Clothing fibers (trace analysis pending)
+  - Soil/debris samples from body and scene
+  - 47 scene photographs (high resolution, logged to AIVENTRA)
+
+--------------------------------------------------------------------------------
+SECTION 10 — EXAMINER CERTIFICATION
+--------------------------------------------------------------------------------
+
+I certify that this report represents my professional findings based on
+the postmortem examination conducted on 22 May 2025 at AIVENTRA Central
+Forensic Laboratory. All procedures followed standard forensic pathology
+protocols (NABL accredited).
+
+Signed: Dr. Meena Pillai, MD
+Forensic Pathologist — Registration No. KMC-47291
+Date: 23 May 2025
+
+================================================================================
+                    AIVENTRA CLASSIFICATION: HOMICIDE — HIGH CONFIDENCE
+                    CROSS-REFERENCE: GPS, CCTV, CALL LOGS FOR AIV-2041-77
+================================================================================
