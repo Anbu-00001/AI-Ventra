@@ -22,8 +22,12 @@ class OverlayRenderer:
         width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH) or 1280)
         height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT) or 720)
         Path(output_path).parent.mkdir(parents=True, exist_ok=True)
-        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-        writer = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
+        # Try H.264 first (browser-compatible), fallback to mp4v
+        for codec in ("avc1", "X264", "H264", "mp4v"):
+            fourcc = cv2.VideoWriter_fourcc(*codec)
+            writer = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
+            if writer.isOpened():
+                break
         event_lookup = {event.timestamp[:8]: event for event in events}
         trails: dict[str, list[tuple[int, int]]] = {}
         last_detections: list[VideoDetection] = []

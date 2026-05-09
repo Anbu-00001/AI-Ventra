@@ -331,14 +331,17 @@ export interface CorrelationGraph {
 
 export interface AnomalyFinding {
   anomaly_id: string;
+  case_id?: string;
   anomaly_type: string;
   description: string;
   severity: string;
   threat_score: number;
   detected_at: string;
+  evidence_source?: string;
   confidence: number;
   contributing_factors: Array<{ factor: string; weight: number; explanation: string }>;
   recommended_action: string;
+  generated_at?: string;
 }
 
 export interface AnomalyReport {

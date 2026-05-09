@@ -44,6 +44,9 @@ import {
   uploadEvidence,
   listUploadedFiles,
   wipeAllData,
+  getAnomalyFromEvidence,
+  getEvidenceCorrelation,
+  getTimelineFromCase,
 } from "@/lib/api";
 import type { HealthResponse, RAGStats, TriageReport } from "@/lib/api";
 
@@ -136,7 +139,8 @@ type DashboardView = "intake" | "autopsy" | "correlation" | "timeline" | "anomal
 type IntakeFile = {
   title: string;
   type: string;
-  size: string;
+  size: string;    // display string
+  byteSize: number; // real bytes for total-size calculation
   meta: string;
   color: string;
   icon: typeof FileText;
@@ -186,15 +190,7 @@ export default function DashboardPage() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const particleColumns = useMemo(() => Array.from({ length: 42 }), []);
   const totalBytes = useMemo(
-    () =>
-      files.reduce((sum, file) => {
-        const match = file.size.match(/([\d.]+)\s*(B|KB|MB|GB)/i);
-        if (!match) return sum;
-        const value = Number(match[1]);
-        const unit = match[2].toUpperCase();
-        const multiplier = unit === "GB" ? 1024 ** 3 : unit === "MB" ? 1024 ** 2 : unit === "KB" ? 1024 : 1;
-        return sum + value * multiplier;
-      }, 0),
+    () => files.reduce((sum, f) => sum + f.byteSize, 0),
     [files]
   );
   
@@ -261,7 +257,8 @@ export default function DashboardPage() {
         const loaded: IntakeFile[] = res.data.slice(0, 8).map((f, i) => ({
           title: f.filename.replace(/\.[^.]+$/, "").slice(0, 28),
           type: f.file_type.toUpperCase(),
-          size: `${f.chunk_count} chunks`,
+          size: `${f.chunk_count} chunk${f.chunk_count !== 1 ? "s" : ""}`,
+          byteSize: f.chunk_count * 1024, // estimate ~1 KB per chunk
           meta: f.file_id.slice(0, 12),
           color: evidenceColorFor(f.file_type),
           icon: evidenceIconFor(f.file_type),
@@ -318,33 +315,25 @@ export default function DashboardPage() {
   const handlePrimeRag = async () => {
     setIsUploading(true);
     setIsScanning(true);
-    setStatusLine("Initializing Forensic RAG Engine...");
-    
-    // Simulate step progress for visual feedback
-    setSteps(current => current.map(s => ({ ...s, value: 20, state: "Scanning" })));
-    
+    setStatusLine("Indexing forensic evidence into RAG vector store...");
+    setSteps(current => current.map((s, i) => ({ ...s, value: 10 + i * 5, state: "Indexing", sub: "Vectorizing evidence..." })));
+
     try {
-      // Step 1 & 2
       setTimeout(() => {
-        setSteps(current => current.map((s, i) => i < 2 ? { ...s, value: 100, state: "Complete" } : { ...s, value: 45, state: "Indexing" }));
-      }, 800);
+        setSteps(current => current.map((s, i) => i < 2 ? { ...s, value: 80, state: "Embedding" } : s));
+      }, 600);
 
       const res = await indexSyntheticData();
-      
+
       if (res.data) {
-        setRagStats({
-          total_vectors: res.data.total_vectors,
-          status: "ready",
-          dimension: 384,
-        });
-        
-        // Complete all steps
-        setSteps(current => current.map(s => ({ ...s, value: 100, state: "Complete" })));
-        setStatusLine(`RAG Intelligence Synced: ${res.data.total_vectors} vectors active.`);
+        setRagStats({ total_vectors: res.data.total_vectors, status: "ready", dimension: 384 });
+        setSteps(current => current.map(s => ({ ...s, value: 100, state: "Complete", sub: `${res.data.total_vectors} vectors indexed` })));
+        setStatusLine(`✓ RAG Vector Store Synced — ${res.data.total_vectors} evidence vectors active`);
       }
     } catch (err) {
       console.error(err);
-      setStatusLine("RAG Synchronization Error - check backend API");
+      setStatusLine("RAG sync error — check backend");
+      setSteps(current => current.map(s => ({ ...s, state: "Error" })));
     } finally {
       setIsUploading(false);
       setIsScanning(false);
@@ -354,61 +343,98 @@ export default function DashboardPage() {
   const runIntelligenceCycle = async () => {
     setIsUploading(true);
     setIsScanning(true);
-    setStatusLine("Executing Neural Forensic Inference...");
-    
-    // Reset steps for new cycle
-    setSteps(current => current.map(s => ({ ...s, value: 10, state: "Thinking" })));
-    
-    try {
-      // Simulate rapid progress through forensic stages
-      const intervals = [500, 1200, 2000, 2800];
-      intervals.forEach((ms, i) => {
-        setTimeout(() => {
-          setSteps(current => current.map((s, idx) => idx === i ? { ...s, value: 100, state: "Complete" } : s));
-        }, ms);
-      });
+    setSteps(current => current.map(s => ({ ...s, value: 5, state: "Queued", sub: "Waiting..." })));
 
-      const generated = await generateReport("AIV-2041-77");
-      
-      if (generated.data) {
-        setReport(generated.data);
-        setStatusLine(`Forensic Verdict: ${generated.data.threat_level} | Risk Score: ${Math.round(generated.data.risk_score)}`);
-        
-        // Navigation to Triage view with dramatic delay
+    try {
+      // ── Stage 1: Anomaly Intelligence ──────────────────────────────────────
+      setStatusLine("Running anomaly detection on uploaded evidence...");
+      setSteps(s => s.map((step, i) => i === 0
+        ? { ...step, value: 40, state: "Scanning", sub: "Anomaly engine active" } : step));
+      const anomalyRes = await getAnomalyFromEvidence().catch(() => null);
+      const anomalyLevel = anomalyRes?.data?.overall_threat_level ?? "UNKNOWN";
+      const anomalyScore = anomalyRes?.data?.overall_threat_score ?? 0;
+      setSteps(s => s.map((step, i) => i === 0
+        ? { ...step, value: 100, state: "Complete", sub: `Threat: ${anomalyLevel} · ${Math.round(anomalyScore)}%` } : step));
+
+      // ── Stage 2: Entity Extraction / Correlation ────────────────────────────
+      setStatusLine("Building evidence correlation graph...");
+      setSteps(s => s.map((step, i) => i === 1
+        ? { ...step, value: 40, state: "Linking", sub: "Entity correlation in progress" } : step));
+      const corrRes = await getEvidenceCorrelation().catch(() => null);
+      const nodeCount = corrRes?.data?.nodes?.length ?? 0;
+      const edgeCount = corrRes?.data?.edges?.length ?? 0;
+      setSteps(s => s.map((step, i) => i === 1
+        ? { ...step, value: 100, state: "Complete", sub: `${nodeCount} entities · ${edgeCount} links` } : step));
+
+      // ── Stage 3: Timeline Reconstruction ───────────────────────────────────
+      setStatusLine("Reconstructing forensic timeline from evidence...");
+      setSteps(s => s.map((step, i) => i === 2
+        ? { ...step, value: 40, state: "Indexing", sub: "Timeline engine running" } : step));
+      const timelineRes = await getTimelineFromCase("AIV-2041-77").catch(() => null);
+      const evtCount = timelineRes?.data?.events?.length ?? 0;
+      setSteps(s => s.map((step, i) => i === 2
+        ? { ...step, value: 100, state: "Complete", sub: `${evtCount} forensic events mapped` } : step));
+
+      // ── Stage 4: Final Verdict Generation ──────────────────────────────────
+      setStatusLine("Generating AI forensic verdict...");
+      setSteps(s => s.map((step, i) => i === 3
+        ? { ...step, value: 50, state: "Generating", sub: "RAG + LLM synthesis active" } : step));
+      const reportRes = await generateReport("AIV-2041-77");
+      setSteps(s => s.map((step, i) => i === 3
+        ? { ...step, value: 100, state: "Complete", sub: `${reportRes.data?.threat_level} · ${Math.round(reportRes.data?.risk_score ?? 0)}% risk` } : step));
+
+      if (reportRes.data) {
+        setReport(reportRes.data);
+        setStatusLine(`✓ Forensic Verdict: ${reportRes.data.threat_level} | Risk ${Math.round(reportRes.data.risk_score)}% | Confidence ${Math.round(reportRes.data.confidence_score ?? 0)}%`);
         setTimeout(() => {
           setActiveView("triage");
           setIsUploading(false);
           setIsScanning(false);
-        }, 3200);
+        }, 800);
       }
-    } catch {
-      setStatusLine("Forensic Engine Offline - check LLM API Key");
+    } catch (err) {
+      console.error("Analysis pipeline failed:", err);
+      setStatusLine("Analysis pipeline error — ensure backend is running on :8000");
       setIsUploading(false);
       setIsScanning(false);
+      setSteps(current => current.map(s => s.value < 100 ? { ...s, state: "Failed", sub: "Error — retry" } : s));
     }
   };
 
   const handleFiles = async (selected: FileList | null) => {
     if (!selected?.length || isUploading) return;
     setIsUploading(true);
-    setStatusLine(`Uploading ${selected.length} evidence file(s)...`);
-    
+    const fileArray = Array.from(selected);
+    setStatusLine(`Uploading ${fileArray.length} evidence file(s) to forensic intake...`);
+    setSteps(current => current.map(s => ({ ...s, value: 5, state: "Pending", sub: "Awaiting upload..." })));
+
     try {
       const uploaded: IntakeFile[] = [];
-      for (const file of Array.from(selected)) {
+      for (let idx = 0; idx < fileArray.length; idx++) {
+        const file = fileArray[idx];
+        setStatusLine(`Uploading ${idx + 1}/${fileArray.length}: ${file.name} (${formatBytes(file.size)})`);
+        // Reset steps for this file
+        setSteps(current => current.map((s, i) => ({
+          ...s, value: i === 0 ? 30 : 5, state: i === 0 ? "Uploading" : "Pending", sub: i === 0 ? file.name.slice(0, 28) : "Queued"
+        })));
+
         const response = await uploadEvidence(file, "AIV-2041-77");
         const data = response.data;
         uploaded.push({
           title: file.name.replace(/\.[^.]+$/, "").slice(0, 28) || file.name,
           type: (data.file_type?.toUpperCase?.() ?? file.type) || "FILE",
           size: formatBytes(file.size),
+          byteSize: file.size,
           meta: data.file_id,
           color: evidenceColorFor(data.file_type),
           icon: evidenceIconFor(data.file_type),
-          delay: 0.05,
+          delay: 0.05 * idx,
           fileId: data.file_id,
           status: data.status,
         });
+
+        setSteps(current => current.map((s, i) => i === 0
+          ? { ...s, value: 100, state: "Complete", sub: `${file.name.slice(0, 22)} uploaded` } : s));
 
         createProgressStream(
           data.file_id,
@@ -421,16 +447,18 @@ export default function DashboardPage() {
                 const matches =
                   stageLower.includes(labelLower) ||
                   labelLower.includes(stageLower) ||
+                  (stageLower.includes("extract") && labelLower.includes("entity")) ||
                   (stageLower.includes("graph") && labelLower.includes("graph")) ||
+                  (stageLower.includes("chunk") && labelLower.includes("decrypt")) ||
                   (stageLower.includes("timeline") && labelLower.includes("time"));
                 return matches
-                  ? { ...step, value: progress, state: progress >= 100 ? "Complete" : "In Progress", sub: detail }
+                  ? { ...step, value: progress, state: progress >= 100 ? "Complete" : "In Progress", sub: detail.slice(0, 40) }
                   : step;
               })
             );
           },
           async () => {
-            setStatusLine("Evidence extraction complete - refreshing RAG telemetry");
+            setStatusLine(`✓ ${file.name} extracted & indexed — ${fileArray.length} file(s) ready for analysis`);
             const stats = await getRagStats();
             setRagStats(stats.data);
           }
@@ -513,18 +541,10 @@ export default function DashboardPage() {
               <div className="hidden flex-1 items-center gap-4 px-10 lg:flex">
                 <div className="h-px flex-1 bg-gradient-to-r from-transparent via-crimson/40 to-transparent" />
                 <span className="font-orbitron text-sm font-semibold uppercase tracking-[0.18em] text-crimson-glow">
-                  {activeView === "autopsy"
-                    ? "Autopsy Intelligence"
-                    : activeView === "correlation"
-                      ? "Evidence Correlation Engine"
-                      : "Case Intake Terminal"}
+                  {{ intake: "Case Intake Terminal", camera: "Visual Intelligence", autopsy: "Autopsy Intelligence", correlation: "Evidence Correlation", timeline: "Timeline Analysis", anomaly: "Anomaly Detection", triage: "Forensic Triage Report" }[activeView] ?? "Case Intake Terminal"}
                 </span>
                 <span className="font-mono text-xs uppercase tracking-[0.16em] text-slate-500">
-                  {activeView === "autopsy"
-                    ? `// Postmortem Analysis Engine`
-                    : activeView === "correlation"
-                      ? `// Relationship Intelligence Analysis`
-                      : `// Digital Forensic Evidence Ingestion`}
+                  {{ intake: "// Digital Forensic Evidence Ingestion", camera: "// YOLOv8 CCTV Neural Analysis", autopsy: "// Postmortem Analysis Engine", correlation: "// Relationship Intelligence Analysis", timeline: "// Forensic Event Reconstruction", anomaly: "// Behavioral Pattern Intelligence", triage: "// AI Verdict & Intelligence Output" }[activeView] ?? "// Forensic Intelligence System"}
                 </span>
                 <div className="h-px flex-1 bg-gradient-to-r from-transparent via-teal-data/25 to-transparent" />
               </div>
@@ -600,9 +620,10 @@ export default function DashboardPage() {
                             setFiles([]);
                             setRagStats(prev => prev ? { ...prev, total_vectors: 0, status: "empty" } : null);
                             setReport(null);
+                            setActiveView("intake");
                             setWsStage("Secure intelligence channel idle");
                             setSteps(defaultParsingSteps);
-                            setStatusLine("Forensic database wiped - System ready for fresh intake");
+                            setStatusLine("✓ All evidence wiped — system ready for fresh intake");
                           } catch (e) {
                             console.error(e);
                           }
