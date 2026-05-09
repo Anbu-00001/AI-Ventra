@@ -24,6 +24,8 @@ from app.api.routes.rag import router as rag_router
 from app.api.routes.reports import router as reports_router, report_router
 from app.api.routes.gps import router as gps_router
 from app.api.routes.ws import router as ws_router
+from app.api.video_analysis import router as video_analysis_router
+from app.services.video_pipeline import VIDEO_PROCESSED_DIR, VIDEO_REPORTS_DIR, VIDEO_UPLOADS_DIR
 
 
 @asynccontextmanager
@@ -38,6 +40,7 @@ async def lifespan(app: FastAPI):
         settings.UPLOADS_DIR, settings.EXTRACTED_DIR, settings.FINDINGS_DIR,
         settings.TIMELINES_DIR, settings.REPORTS_DIR, settings.CORRELATIONS_DIR,
         settings.SYNTHETIC_DIR, os.path.dirname(settings.FAISS_INDEX_PATH),
+        VIDEO_UPLOADS_DIR, VIDEO_PROCESSED_DIR, VIDEO_REPORTS_DIR,
     ]:
         ensure_dir(d)
 
@@ -87,6 +90,7 @@ app.include_router(rag_router, prefix=API_PREFIX)
 app.include_router(reports_router, prefix=API_PREFIX)
 app.include_router(report_router, prefix=API_PREFIX)
 app.include_router(gps_router, prefix=API_PREFIX)
+app.include_router(video_analysis_router, prefix=API_PREFIX)
 
 # Bare routes are also exposed for hackathon frontends that call the contract
 # exactly as written: /upload, /autopsy/analyze, /rag/query, etc.
@@ -100,6 +104,7 @@ app.include_router(rag_router)
 app.include_router(reports_router)
 app.include_router(report_router)
 app.include_router(gps_router)
+app.include_router(video_analysis_router)
 app.include_router(ws_router)  # WebSocket routes have no /api prefix
 
 
@@ -119,5 +124,6 @@ async def root():
             "anomaly": "/api/anomaly",
             "rag": "/api/rag",
             "reports": "/api/reports",
+            "visual_intelligence": "/api/upload-video",
         },
     }

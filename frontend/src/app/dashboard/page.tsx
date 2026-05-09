@@ -11,6 +11,7 @@ import {
   Activity,
   ArrowLeft,
   Brain,
+  Camera,
   Clock3,
   Cpu,
   FileText,
@@ -160,6 +161,7 @@ const railItems = [
   { icon: UserRound, label: "Autopsy Intelligence", view: "autopsy" },
   { icon: Network, label: "Evidence Correlation", view: "correlation" },
   { icon: Clock3, label: "Timeline Analysis", view: "timeline" },
+  { icon: Camera, label: "Visual Intelligence", view: "visual" },
   { icon: ShieldAlert, label: "Anomaly Detection", view: "anomaly" },
   { icon: Globe, label: "Geo Intelligence", view: "map" },
   { icon: FileText, label: "Triage Report", view: "triage" },
@@ -186,6 +188,10 @@ const TimelineAnalysisView = dynamic(
   () => import("@/components/dashboard/TimelineAnalysisView"),
   { ssr: false }
 );
+const VisualIntelligenceView = dynamic(
+  () => import("@/app/visual-intelligence/page"),
+  { ssr: false }
+);
 const AnomalyDetectionView = dynamic(
   () => import("@/components/dashboard/AnomalyDetectionView"),
   { ssr: false }
@@ -199,7 +205,7 @@ const AITriageReportView = dynamic(
   { ssr: false }
 );
 
-type DashboardView = "intake" | "autopsy" | "correlation" | "timeline" | "anomaly" | "map" | "triage";
+type DashboardView = "intake" | "autopsy" | "correlation" | "timeline" | "visual" | "anomaly" | "map" | "triage";
 type IntakeFile = {
   title: string;
   type: string;
@@ -529,6 +535,8 @@ export default function DashboardPage() {
                     ? "Autopsy Intelligence"
                     : activeView === "correlation"
                       ? "Evidence Correlation Engine"
+                      : activeView === "visual"
+                        ? "Visual Intelligence"
                       : "Case Intake Terminal"}
                 </span>
                 <span className="font-mono text-xs uppercase tracking-[0.16em] text-slate-500">
@@ -536,6 +544,8 @@ export default function DashboardPage() {
                     ? `// Postmortem Analysis Engine`
                     : activeView === "correlation"
                       ? `// Relationship Intelligence Analysis`
+                      : activeView === "visual"
+                        ? `// YOLOv8 CCTV Behavioral Analysis`
                       : `// Digital Forensic Evidence Ingestion`}
                 </span>
                 <div className="h-px flex-1 bg-gradient-to-r from-transparent via-teal-data/25 to-transparent" />
@@ -577,6 +587,10 @@ export default function DashboardPage() {
             ) : activeView === "timeline" ? (
               <div className="min-h-0 flex-1 overflow-hidden">
                 <TimelineAnalysisView />
+              </div>
+            ) : activeView === "visual" ? (
+              <div className="min-h-0 flex-1 overflow-auto bg-[#030407]">
+                <VisualIntelligenceView />
               </div>
             ) : activeView === "anomaly" ? (
               <div className="min-h-0 flex-1 overflow-hidden">

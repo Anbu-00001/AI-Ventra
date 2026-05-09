@@ -545,3 +545,22 @@ body {
   0% { background-position: 0 0, 0 0, center, center; }
   100% { background-position: 38px 38px, -38px 38px, center, center; }
 }
+
+/* ===== VISUAL INTELLIGENCE CCTV GRID ===== */
+.visual-grid {
+  background-image:
+    linear-gradient(rgba(255, 26, 60, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 26, 60, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(20, 184, 166, 0.025), rgba(20, 184, 166, 0.025));
+  background-size: 72px 72px, 72px 72px, 100% 100%;
+}
+
+.visual-camera-feed {
+  background:
+    radial-gradient(circle at 50% 48%, rgba(20, 184, 166, 0.16), transparent 28%),
+    radial-gradient(circle at 50% 48%, rgba(255, 26, 60, 0.12), transparent 46%),
+    linear-gradient(rgba(20, 184, 166, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 184, 166, 0.08) 1px, transparent 1px),
+    #05080d;
+  background-size: 100% 100%, 100% 100%, 24px 24px, 24px 24px, 100% 100%;
+}

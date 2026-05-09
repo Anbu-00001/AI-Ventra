@@ -12,3 +12,7 @@ __pycache__/
 *.pyc
 .agents/
 .codex/
+backend/processed/
+backend/reports/
+backend/uploads/
+*.pt

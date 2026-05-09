@@ -73,6 +73,9 @@ export const buildCorrelation = (entitiesData: Record<string, unknown>) =>
 export const getDemoAnomalies = () =>
   apiFetch<ApiResponse<AnomalyReport>>("/anomaly/demo");
 
+export const getAnomalyFromEvidence = () =>
+  apiFetch<ApiResponse<AnomalyReport>>("/anomaly/from-evidence");
+
 export const detectAnomalies = (evidenceData: Record<string, unknown>) =>
   apiFetch<ApiResponse<AnomalyReport>>("/anomaly/detect", {
     method: "POST",
@@ -180,6 +183,27 @@ export const getDeviceTrace = (deviceId: string) =>
 
 export const getGPSSummary = () =>
   apiFetch<ApiResponse<GPSSummary>>("/gps/summary");
+
+// ─── Video Analysis ───────────────────────────────────────────────────────────
+export async function uploadVideoForAnalysis(
+  file: File,
+  caseId = "AIV-2041-77"
+): Promise<ApiResponse<VideoAnalysisReport>> {
+  const form = new FormData();
+  form.append("file", file);
+  form.append("case_id", caseId);
+  const res = await fetch(`${BASE_URL}/upload-video`, { method: "POST", body: form });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: `HTTP ${res.status}` }));
+    throw new Error(err.detail ?? `Upload failed: ${res.status}`);
+  }
+  return res.json();
+}
+
+export function createVideoAnalysisWS(): WebSocket {
+  const wsUrl = process.env.NEXT_PUBLIC_WS_URL ?? `ws://localhost:8000`;
+  return new WebSocket(`${wsUrl}/api/live-analysis`);
+}
 
 // ─── WebSocket ────────────────────────────────────────────────────────────────
 export function createAnalysisWebSocket(caseId: string): WebSocket {
@@ -382,4 +406,73 @@ export interface RAGStats {
 export interface UploadStatusResponse {
   status: string;
   data: { file_id: string; status: string };
+}
+
+// ─── Video Analysis Types ─────────────────────────────────────────────────────
+export interface BoundingBox { x1: number; y1: number; x2: number; y2: number; }
+
+export interface VideoDetection {
+  frame_index: number;
+  timestamp: string;
+  label: string;
+  confidence: number;
+  bbox: BoundingBox;
+  track_id: string | null;
+  centroid: [number, number] | null;
+}
+
+export interface ForensicEvent {
+  id: string;
+  timestamp: string;
+  event: string;
+  confidence: number;
+  severity: string;
+  category: string;
+  evidence: string[];
+  frame_index: number | null;
+}
+
+export interface MovementAnomaly {
+  timestamp: string;
+  type: string;
+  confidence: number;
+  severity: string;
+  description: string;
+  metrics: Record<string, number>;
+}
+
+export interface EntitySummary {
+  label: string;
+  count: number;
+  max_confidence: number;
+  first_seen: string;
+  last_seen: string;
+}
+
+export interface ReasoningOutput {
+  threat_level: string;
+  reasoning: string[];
+  narration: string[];
+  rag_context: Record<string, unknown>[];
+  ollama_used: boolean;
+}
+
+export interface VideoAnalysisReport {
+  analysis_id: string;
+  case_id: string;
+  source_video: string;
+  processed_video_url: string | null;
+  duration_seconds: number;
+  fps: number;
+  frame_count: number;
+  processed_frames: number;
+  threat_score: number;
+  threat_level: string;
+  detected_entities: EntitySummary[];
+  event_timeline: ForensicEvent[];
+  movement_anomalies: MovementAnomaly[];
+  reasoning_engine: ReasoningOutput;
+  confidence_waveform: number[];
+  snapshots: string[];
+  meta: Record<string, unknown>;
 }

@@ -3,7 +3,7 @@ import random
 from fastapi import APIRouter, Body
 from app.services.ai.anomaly_detector import anomaly_detector
 from app.services.ingestion.storage_service import load_all_synthetic
-from app.utils.mock_generators import build_anomaly_fallback
+from app.utils.mock_generators import build_anomaly_fallback, build_anomaly_from_uploads
 from app.models.findings import AnomalyReport
 from app.utils.response_utils import success
 
@@ -33,6 +33,13 @@ async def demo_anomalies():
         escalation_probability=87.0,
     )
     return success(report.model_dump(), message="Demo anomaly report")
+
+
+@router.get("/from-evidence")
+async def anomaly_from_evidence():
+    """Build real anomaly report from uploaded forensic evidence files."""
+    report = build_anomaly_from_uploads()
+    return success(report.model_dump(), message="Anomaly report from uploaded evidence")
 
 
 @router.post("/from-case/{case_id}")
