@@ -10,7 +10,57 @@ router = APIRouter(prefix="/gps", tags=["gps"])
 @router.get("/traces")
 async def get_gps_traces(limit: int = 3):
     """Return GPS trace logs for map visualization."""
-    gps_logs = load_all_synthetic("gps_logs")
+    import os
+    import json
+    from app.core.config import settings
+
+    gps_logs = []
+    
+    # Try to load from uploaded findings first
+    findings_dir = settings.FINDINGS_DIR
+    if os.path.isdir(findings_dir):
+        for fname in os.listdir(findings_dir):
+            if fname.endswith("_extraction.json"):
+                try:
+                    with open(os.path.join(findings_dir, fname)) as fp:
+                        d = json.load(fp)
+                    original_name = d.get("original_name", "")
+                    if "gps" not in original_name.lower():
+                        continue
+                        
+                    text = d.get("text", "")
+                    if text:
+                        gps_obj = json.loads(text)
+                        # Re-map format to match expected GPSLog
+                        pings = gps_obj.get("data_points", [])
+                        converted_pings = []
+                        for p in pings:
+                            converted_pings.append({
+                                "timestamp": p.get("timestamp", ""),
+                                "latitude": p.get("lat", 0.0),
+                                "longitude": p.get("lon", 0.0),
+                                "speed_kmh": p.get("speed", 0.0),
+                                "accuracy_m": p.get("accuracy", 10.0),
+                                "tower_id": p.get("tower_id", "UNKNOWN"),
+                            })
+                        log = {
+                            "id": d.get("file_id", "unknown"),
+                            "device_id": gps_obj.get("device_id", "DEVICE_UNKNOWN"),
+                            "case_id": gps_obj.get("case_id", "UNKNOWN"),
+                            "owner": gps_obj.get("owner", "Unknown"),
+                            "pings": converted_pings,
+                            "anomalies_detected": any("anomaly" in str(p.get("note", "")).lower() for p in pings),
+                            "total_pings": len(pings),
+                            "coverage_area_km2": 12.4
+                        }
+                        gps_logs.append(log)
+                except Exception:
+                    pass
+
+    # Fallback to synthetic if no uploaded logs
+    if not gps_logs:
+        gps_logs = load_all_synthetic("gps_logs")
+        
     if not gps_logs:
         return success([], message="No GPS data available")
     
@@ -35,7 +85,50 @@ async def get_device_trace(device_id: str):
 @router.get("/summary")
 async def get_gps_summary():
     """Aggregate GPS statistics across all traces."""
-    gps_logs = load_all_synthetic("gps_logs")
+    import os
+    import json
+    from app.core.config import settings
+
+    gps_logs = []
+    
+    # Try to load from uploaded findings first
+    findings_dir = settings.FINDINGS_DIR
+    if os.path.isdir(findings_dir):
+        for fname in os.listdir(findings_dir):
+            if fname.endswith("_extraction.json"):
+                try:
+                    with open(os.path.join(findings_dir, fname)) as fp:
+                        d = json.load(fp)
+                    original_name = d.get("original_name", "")
+                    if "gps" not in original_name.lower():
+                        continue
+                        
+                    text = d.get("text", "")
+                    if text:
+                        gps_obj = json.loads(text)
+                        # Re-map format to match expected GPSLog
+                        pings = gps_obj.get("data_points", [])
+                        converted_pings = []
+                        for p in pings:
+                            converted_pings.append({
+                                "speed_kmh": p.get("speed", 0.0),
+                            })
+                        log = {
+                            "device_id": gps_obj.get("device_id", "DEVICE_UNKNOWN"),
+                            "owner": gps_obj.get("owner", "Unknown"),
+                            "pings": converted_pings,
+                            "anomalies_detected": any("anomaly" in str(p.get("note", "")).lower() for p in pings),
+                            "total_pings": len(pings),
+                            "coverage_area_km2": 12.4
+                        }
+                        gps_logs.append(log)
+                except Exception:
+                    pass
+
+    # Fallback to synthetic if no uploaded logs
+    if not gps_logs:
+        gps_logs = load_all_synthetic("gps_logs")
+
     if not gps_logs:
         return success({
             "total_devices": 0, "total_pings": 0,

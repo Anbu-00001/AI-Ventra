@@ -78,6 +78,11 @@ class VectorStore:
             logger.warning(f"Could not load FAISS index: {e} — starting fresh")
             self._init_index()
             return False
+    def clear(self) -> None:
+        """Reset the vector store and its metadata."""
+        self.metadata = []
+        self._init_index()
+        logger.info("VectorStore reset: cache cleared")
 
     @property
     def total_vectors(self) -> int:

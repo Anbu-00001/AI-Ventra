@@ -2,8 +2,13 @@ node_modules/
 .next/
 .venv/
 *.env
-*.env.*
+*.env.local
 *.log
 .DS_Store
 dist/
 build/
+backend/app/data/
+__pycache__/
+*.pyc
+.agents/
+.codex/

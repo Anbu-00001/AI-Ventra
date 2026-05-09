@@ -139,3 +139,57 @@ async def get_processing_status(file_id: str):
     if data:
         return success({"file_id": file_id, "status": "processed", "data": data})
     return success({"file_id": file_id, "status": "pending"})
+
+
+@router.get("/list")
+async def list_uploaded_files():
+    """Return metadata for all previously uploaded and processed evidence files."""
+    import glob
+    import json as json_mod
+    extracted_dir = settings.EXTRACTED_DIR
+    files_out = []
+    if os.path.isdir(extracted_dir):
+        for fpath in sorted(glob.glob(os.path.join(extracted_dir, "*.json"))):
+            try:
+                with open(fpath, "r") as f:
+                    data = json_mod.load(f)
+                files_out.append({
+                    "file_id": data.get("file_id", ""),
+                    "filename": data.get("original_name", ""),
+                    "file_type": data.get("file_type", "unknown"),
+                    "chunk_count": data.get("chunk_count", 0),
+                    "text_preview": data.get("text_preview", "")[:100],
+                    "status": "processed",
+                })
+            except Exception:
+                continue
+    return success(files_out, message=f"{len(files_out)} evidence files found")
+
+@router.post("/wipe")
+async def wipe_all_data():
+    """Wipe all uploaded evidence, extracted findings, and reset the FAISS index."""
+    import shutil
+    from app.services.rag.vector_store import vector_store
+    
+    # 1. Clear directories
+    dirs_to_clear = [
+        settings.UPLOADS_DIR,
+        settings.EXTRACTED_DIR,
+        settings.FINDINGS_DIR,
+        settings.TIMELINES_DIR,
+        settings.REPORTS_DIR,
+        settings.CORRELATIONS_DIR,
+    ]
+    
+    for d in dirs_to_clear:
+        if os.path.exists(d):
+            # Delete and recreate to ensure it's empty
+            shutil.rmtree(d)
+            os.makedirs(d, exist_ok=True)
+            
+    # 2. Reset Vector Store
+    vector_store.clear()
+    vector_store.save()
+    
+    logger.info("System-wide data wipe complete")
+    return success(None, message="All forensic data has been successfully wiped. System is ready for fresh ingestion.")
