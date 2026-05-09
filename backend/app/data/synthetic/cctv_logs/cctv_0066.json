@@ -1,0 +1,48 @@
+{
+  "id": "CCTV-0066",
+  "camera_id": "CAM_019",
+  "location": "Service Road, Whitefield",
+  "case_id": "AIV-2038-60",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.77,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 47
+    },
+    {
+      "timestamp": "2025-05-22T01:48:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.93,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 101
+    },
+    {
+      "timestamp": "2025-05-22T01:59:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.77,
+      "face_match": false,
+      "matched_id": "Meena Pillai",
+      "duration_seconds": 54
+    },
+    {
+      "timestamp": "2025-05-22T02:01:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.78,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 96
+    }
+  ],
+  "total_events": 4,
+  "has_face_match": true,
+  "has_vehicle": false
+}

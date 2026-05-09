@@ -1,0 +1,100 @@
+{
+  "id": "GPS-0078",
+  "device_id": "DEVICE_29",
+  "case_id": "AIV-2069-66",
+  "owner": "Ananya Das",
+  "date": "2025-05-22",
+  "pings": [
+    {
+      "timestamp": "2025-05-22T01:30:00",
+      "latitude": 13.083032,
+      "longitude": 77.53596,
+      "speed_kmh": 56.4,
+      "accuracy_m": 50,
+      "tower_id": "BLR_4309"
+    },
+    {
+      "timestamp": "2025-05-22T01:38:00",
+      "latitude": 13.06514,
+      "longitude": 77.544817,
+      "speed_kmh": 46.6,
+      "accuracy_m": 33,
+      "tower_id": "BLR_6790"
+    },
+    {
+      "timestamp": "2025-05-22T01:44:00",
+      "latitude": 13.065519,
+      "longitude": 77.516485,
+      "speed_kmh": 74.9,
+      "accuracy_m": 6,
+      "tower_id": "BLR_8522"
+    },
+    {
+      "timestamp": "2025-05-22T01:47:00",
+      "latitude": 13.057428,
+      "longitude": 77.513835,
+      "speed_kmh": 60.4,
+      "accuracy_m": 27,
+      "tower_id": "BLR_2518"
+    },
+    {
+      "timestamp": "2025-05-22T01:54:00",
+      "latitude": 13.070525,
+      "longitude": 77.525658,
+      "speed_kmh": 5.2,
+      "accuracy_m": 31,
+      "tower_id": "BLR_6639"
+    },
+    {
+      "timestamp": "2025-05-22T01:56:00",
+      "latitude": 13.066878,
+      "longitude": 77.518052,
+      "speed_kmh": 10.7,
+      "accuracy_m": 26,
+      "tower_id": "BLR_9350"
+    },
+    {
+      "timestamp": "2025-05-22T02:01:00",
+      "latitude": 13.197929,
+      "longitude": 77.545536,
+      "speed_kmh": 60.9,
+      "accuracy_m": 6,
+      "tower_id": "BLR_8522"
+    },
+    {
+      "timestamp": "2025-05-22T02:05:00",
+      "latitude": 13.203012,
+      "longitude": 77.536278,
+      "speed_kmh": 87.0,
+      "accuracy_m": 34,
+      "tower_id": "BLR_9350"
+    },
+    {
+      "timestamp": "2025-05-22T02:07:00",
+      "latitude": 13.073789,
+      "longitude": 77.517781,
+      "speed_kmh": 77.3,
+      "accuracy_m": 33,
+      "tower_id": "BLR_5883"
+    },
+    {
+      "timestamp": "2025-05-22T02:14:00",
+      "latitude": 13.147272,
+      "longitude": 77.536007,
+      "speed_kmh": 71.6,
+      "accuracy_m": 28,
+      "tower_id": "BLR_5883"
+    },
+    {
+      "timestamp": "2025-05-22T02:16:00",
+      "latitude": 13.061324,
+      "longitude": 77.526762,
+      "speed_kmh": 28.9,
+      "accuracy_m": 45,
+      "tower_id": "BLR_6790"
+    }
+  ],
+  "anomalies_detected": false,
+  "total_pings": 11,
+  "coverage_area_km2": 12.87
+}

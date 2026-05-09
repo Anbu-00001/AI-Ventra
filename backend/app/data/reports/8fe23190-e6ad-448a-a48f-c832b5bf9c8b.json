@@ -1,0 +1,44 @@
+{
+  "report_id": "8fe23190-e6ad-448a-a48f-c832b5bf9c8b",
+  "case_id": "AIV-2041-77",
+  "risk_score": 85.0,
+  "threat_level": "HIGH",
+  "verdict": "RAG-powered forensic analysis of 20 evidence chunks establishes that the death of Unknown Subject constitutes a suspected homicide. Multiple traumatic injuries. Analysis confidence: 85%.",
+  "reasoning": "Multi-stream evidence analysis using 20 RAG-indexed chunks. Autopsy findings: Multiple traumatic injuries. Evidence streams converge to establish a coherent forensic narrative.",
+  "supporting_evidence": [
+    {
+      "evidence_type": "Autopsy Report",
+      "description": "Victim: Unknown Subject \u2014 Multiple traumatic injuries",
+      "weight": 96
+    }
+  ],
+  "key_findings": [
+    "Cause of death: Multiple traumatic injuries",
+    "Injury: LIVOR MORTIS: Fixed posterior \u2014 no repositioning detected. FORENSIC NOTES:",
+    "Injury: The pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the",
+    "Injury: LIVOR MORTIS: Fixed pattern suggesting body repositioned post-mortem. FORENSIC NOTES:",
+    "Environmental/behavioral anomalies corroborated by sensor data"
+  ],
+  "recommended_actions": [
+    "Submit all correlated devices for forensic imaging",
+    "Commission comprehensive toxicology quantification report",
+    "Cross-reference all CCTV within 500m radius of identified locations"
+  ],
+  "confidence_score": 88.0,
+  "autopsy_summary": {
+    "cause_of_death": "Blunt Force Trauma to cranial region",
+    "manner_of_death": "homicide",
+    "tod_estimate": "02:00 AM \u2013 04:00 AM",
+    "confidence": 94.0
+  },
+  "timeline_summary": {
+    "total_events": 8,
+    "anomaly_count": 5
+  },
+  "anomaly_summary": {
+    "overall_threat_score": 82.0,
+    "overall_threat_level": "HIGH"
+  },
+  "generated_at": "2026-05-09T12:19:15.090803",
+  "analyst_id": "AIVENTRA-OMEGA-7"
+}

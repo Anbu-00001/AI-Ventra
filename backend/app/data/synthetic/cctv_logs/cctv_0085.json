@@ -1,0 +1,84 @@
+{
+  "id": "CCTV-0085",
+  "camera_id": "CAM_018",
+  "location": "Sarjapur Road, Bangalore",
+  "case_id": "AIV-2032-76",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.93,
+      "face_match": false,
+      "matched_id": "Pooja Verma",
+      "duration_seconds": 70
+    },
+    {
+      "timestamp": "2025-05-22T01:51:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.77,
+      "face_match": false,
+      "matched_id": "Arjun Mehta",
+      "duration_seconds": 101
+    },
+    {
+      "timestamp": "2025-05-22T01:58:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Vehicle: White SUV, partial plate visible",
+      "confidence": 0.78,
+      "face_match": false,
+      "matched_id": "Rahul Sharma",
+      "duration_seconds": 39
+    },
+    {
+      "timestamp": "2025-05-22T02:09:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.95,
+      "face_match": false,
+      "matched_id": "Suresh Kumar",
+      "duration_seconds": 69
+    },
+    {
+      "timestamp": "2025-05-22T02:11:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.81,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 77
+    },
+    {
+      "timestamp": "2025-05-22T02:21:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.88,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 47
+    },
+    {
+      "timestamp": "2025-05-22T02:41:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.79,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 59
+    },
+    {
+      "timestamp": "2025-05-22T02:46:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Vehicle: White SUV, partial plate visible",
+      "confidence": 0.95,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 71
+    }
+  ],
+  "total_events": 8,
+  "has_face_match": true,
+  "has_vehicle": true
+}

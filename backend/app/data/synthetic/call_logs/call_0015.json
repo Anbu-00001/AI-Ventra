@@ -1,0 +1,138 @@
+{
+  "id": "CALL-0015",
+  "device_owner": "Rahul Sharma",
+  "phone_number": "+91-9910675583",
+  "case_id": "AIV-2055-15",
+  "date": "2025-05-22",
+  "calls": [
+    {
+      "timestamp": "2025-05-22T00:30:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8134374794",
+      "duration_seconds": 541,
+      "tower_id": "BLR_9500",
+      "signal_strength_dbm": -74
+    },
+    {
+      "timestamp": "2025-05-22T00:50:00",
+      "call_type": "MISSED",
+      "callee": "+91-7665253027",
+      "duration_seconds": 527,
+      "tower_id": "BLR_7589",
+      "signal_strength_dbm": -51
+    },
+    {
+      "timestamp": "2025-05-22T01:30:00",
+      "call_type": "MISSED",
+      "callee": "+91-9911437910",
+      "duration_seconds": 75,
+      "tower_id": "BLR_5653",
+      "signal_strength_dbm": -84
+    },
+    {
+      "timestamp": "2025-05-22T02:08:00",
+      "call_type": "MISSED",
+      "callee": "+91-7529924756",
+      "duration_seconds": 247,
+      "tower_id": "BLR_2518",
+      "signal_strength_dbm": -66
+    },
+    {
+      "timestamp": "2025-05-22T02:28:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7726089822",
+      "duration_seconds": 77,
+      "tower_id": "BLR_4337",
+      "signal_strength_dbm": -51
+    },
+    {
+      "timestamp": "2025-05-22T02:58:00",
+      "call_type": "MISSED",
+      "callee": "+91-9959439909",
+      "duration_seconds": 208,
+      "tower_id": "BLR_8522",
+      "signal_strength_dbm": -94
+    },
+    {
+      "timestamp": "2025-05-22T03:24:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7724174768",
+      "duration_seconds": 481,
+      "tower_id": "BLR_7371",
+      "signal_strength_dbm": -86
+    },
+    {
+      "timestamp": "2025-05-22T03:38:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-9398084738",
+      "duration_seconds": 570,
+      "tower_id": "BLR_2518",
+      "signal_strength_dbm": -65
+    },
+    {
+      "timestamp": "2025-05-22T04:21:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7037389816",
+      "duration_seconds": 44,
+      "tower_id": "BLR_9350",
+      "signal_strength_dbm": -86
+    },
+    {
+      "timestamp": "2025-05-22T04:35:00",
+      "call_type": "MISSED",
+      "callee": "+91-9043198670",
+      "duration_seconds": 186,
+      "tower_id": "BLR_6915",
+      "signal_strength_dbm": -74
+    },
+    {
+      "timestamp": "2025-05-22T05:04:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-7887295436",
+      "duration_seconds": 317,
+      "tower_id": "BLR_1678",
+      "signal_strength_dbm": -55
+    },
+    {
+      "timestamp": "2025-05-22T05:33:00",
+      "call_type": "INCOMING",
+      "callee": "+91-8368652481",
+      "duration_seconds": 276,
+      "tower_id": "BLR_8522",
+      "signal_strength_dbm": -62
+    },
+    {
+      "timestamp": "2025-05-22T06:17:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-9349139211",
+      "duration_seconds": 139,
+      "tower_id": "BLR_9500",
+      "signal_strength_dbm": -79
+    },
+    {
+      "timestamp": "2025-05-22T06:58:00",
+      "call_type": "MISSED",
+      "callee": "+91-8501348469",
+      "duration_seconds": 38,
+      "tower_id": "BLR_9500",
+      "signal_strength_dbm": -90
+    },
+    {
+      "timestamp": "2025-05-22T07:05:00",
+      "call_type": "MISSED",
+      "callee": "+91-7622659323",
+      "duration_seconds": 147,
+      "tower_id": "BLR_6639",
+      "signal_strength_dbm": -99
+    }
+  ],
+  "total_calls": 15,
+  "silence_gaps": [
+    {
+      "gap_start": "2025-05-22T05:04:00",
+      "gap_duration_minutes": 50,
+      "anomaly": "suspicious_silence"
+    }
+  ],
+  "suspicious_activity": true
+}

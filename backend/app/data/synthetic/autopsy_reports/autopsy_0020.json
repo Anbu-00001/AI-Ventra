@@ -1,0 +1,47 @@
+{
+  "id": "AR-0020",
+  "case_id": "AIV-2005-79",
+  "examiner": "Dr. Rajesh Choudhary",
+  "examination_date": "01 July 2025",
+  "subject_name": "Pooja Verma",
+  "subject_age": 49,
+  "subject_gender": "Male",
+  "body_temperature_celsius": 26.8,
+  "ambient_temperature_celsius": 25.2,
+  "rigor_mortis": "Partial rigor \u2014 onset",
+  "livor_mortis": "Fixed posterior \u2014 no repositioning",
+  "postmortem_interval_hours": 13.9,
+  "injuries": [
+    {
+      "region": "Neck",
+      "description": "Compression marks consistent with ligature strangulation",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Dorsal",
+      "description": "Pattern bruising consistent with impact",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Thoracic",
+      "description": "Multiple rib fractures with internal hemorrhage",
+      "severity": "SEVERE"
+    }
+  ],
+  "toxicology": [
+    {
+      "substance": "Benzodiazepines",
+      "detected": true,
+      "level": "trace"
+    },
+    {
+      "substance": "Ketamine",
+      "detected": true,
+      "level": "above therapeutic"
+    }
+  ],
+  "cause_of_death": "Exsanguination from stab wounds",
+  "manner_of_death": "accident",
+  "tod_estimate": "01:15 AM \u00b1 1.7h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Pooja Verma | Age: 49\nBody Temperature at Scene: 26.8\u00b0C | Ambient Temperature: 25.2\u00b0C\nPostmortem Interval (estimated): 13.9 hours\n\nINJURIES IDENTIFIED:\n  1. Neck: Compression marks consistent with ligature strangulation [SEVERE]\n  2. Dorsal: Pattern bruising consistent with impact [MODERATE]\n  3. Thoracic: Multiple rib fractures with internal hemorrhage [SEVERE]\n\nTOXICOLOGY (Preliminary): Benzodiazepines, Ketamine\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed posterior \u2014 no repositioning detected.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the victim. Toxicological findings suggest victim was sedated prior to the fatal assault.\n"
+}

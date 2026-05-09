@@ -1,0 +1,41 @@
+{
+  "id": "SUS-0022",
+  "name": "Rahul Sharma",
+  "age": 41,
+  "relationship_to_victim": "neighbor",
+  "known_locations": [
+    "Sarjapur Road, Bangalore",
+    "Phoenix Mall Area",
+    "Service Road, Whitefield"
+  ],
+  "registered_devices": [
+    "DEVICE_17"
+  ],
+  "vehicle": {
+    "type": "Blue motorcycle",
+    "partial_plate": "KA-02-MN"
+  },
+  "behavioral_baseline": {
+    "night_activity_level": "low",
+    "normal_call_frequency_per_hour": 2.1,
+    "usual_radius_km": 8.6
+  },
+  "anomaly_flags": [
+    "vehicle observed near secondary deposition route",
+    "financial stressor detected in recent records"
+  ],
+  "risk_score": 70.5,
+  "risk_level": "HIGH",
+  "explainable_conflicts": [
+    {
+      "conflict": "claimed location conflicts with tower registration",
+      "supporting_source": "call_logs",
+      "confidence": 77.7
+    },
+    {
+      "conflict": "communication silence overlaps reconstructed TOD window",
+      "supporting_source": "call_logs",
+      "confidence": 79.5
+    }
+  ]
+}

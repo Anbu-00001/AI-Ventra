@@ -1,0 +1,74 @@
+{
+  "id": "ENV-0009",
+  "location": "Bellandur Lake Road",
+  "case_id": "AIV-2097-80",
+  "date": "2025-05-22",
+  "readings": [
+    {
+      "timestamp": "2025-05-22T00:00:00",
+      "temperature_celsius": 21.2,
+      "humidity_percent": 70.6,
+      "wind_speed_kmh": 3.0,
+      "precipitation_mm": 0.1,
+      "visibility_m": 1589
+    },
+    {
+      "timestamp": "2025-05-22T01:00:00",
+      "temperature_celsius": 25.7,
+      "humidity_percent": 70.0,
+      "wind_speed_kmh": 7.9,
+      "precipitation_mm": 1.8,
+      "visibility_m": 748
+    },
+    {
+      "timestamp": "2025-05-22T02:00:00",
+      "temperature_celsius": 24.9,
+      "humidity_percent": 64.5,
+      "wind_speed_kmh": 10.9,
+      "precipitation_mm": 0.1,
+      "visibility_m": 1827
+    },
+    {
+      "timestamp": "2025-05-22T03:00:00",
+      "temperature_celsius": 25.1,
+      "humidity_percent": 82.4,
+      "wind_speed_kmh": 8.0,
+      "precipitation_mm": 1.8,
+      "visibility_m": 1747
+    },
+    {
+      "timestamp": "2025-05-22T04:00:00",
+      "temperature_celsius": 30.5,
+      "humidity_percent": 59.8,
+      "wind_speed_kmh": 11.2,
+      "precipitation_mm": 1.2,
+      "visibility_m": 1403
+    },
+    {
+      "timestamp": "2025-05-22T05:00:00",
+      "temperature_celsius": 20.1,
+      "humidity_percent": 89.9,
+      "wind_speed_kmh": 0.9,
+      "precipitation_mm": 1.0,
+      "visibility_m": 2881
+    },
+    {
+      "timestamp": "2025-05-22T06:00:00",
+      "temperature_celsius": 29.1,
+      "humidity_percent": 73.4,
+      "wind_speed_kmh": 1.8,
+      "precipitation_mm": 0.8,
+      "visibility_m": 2319
+    },
+    {
+      "timestamp": "2025-05-22T07:00:00",
+      "temperature_celsius": 26.6,
+      "humidity_percent": 63.2,
+      "wind_speed_kmh": 8.3,
+      "precipitation_mm": 1.6,
+      "visibility_m": 4305
+    }
+  ],
+  "avg_temperature": 25.4,
+  "report_text": "Environmental conditions at Bellandur Lake Road on 22 May 2025. Temperature ranged 20.1\u00b0C to 30.5\u00b0C. Humidity: 70.6% at midnight."
+}

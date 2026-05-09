@@ -1,0 +1,74 @@
+{
+  "id": "CALL-0046",
+  "device_owner": "Swathi Menon",
+  "phone_number": "+91-9816983175",
+  "case_id": "AIV-2014-84",
+  "date": "2025-05-22",
+  "calls": [
+    {
+      "timestamp": "2025-05-22T00:30:00",
+      "call_type": "MISSED",
+      "callee": "+91-9624395446",
+      "duration_seconds": 246,
+      "tower_id": "BLR_9500",
+      "signal_strength_dbm": -79
+    },
+    {
+      "timestamp": "2025-05-22T00:39:00",
+      "call_type": "MISSED",
+      "callee": "+91-7939120111",
+      "duration_seconds": 100,
+      "tower_id": "BLR_1373",
+      "signal_strength_dbm": -97
+    },
+    {
+      "timestamp": "2025-05-22T01:14:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8271356788",
+      "duration_seconds": 420,
+      "tower_id": "BLR_7589",
+      "signal_strength_dbm": -54
+    },
+    {
+      "timestamp": "2025-05-22T01:44:00",
+      "call_type": "MISSED",
+      "callee": "+91-8609230467",
+      "duration_seconds": 24,
+      "tower_id": "BLR_9350",
+      "signal_strength_dbm": -94
+    },
+    {
+      "timestamp": "2025-05-22T02:10:00",
+      "call_type": "MISSED",
+      "callee": "+91-8277669156",
+      "duration_seconds": 406,
+      "tower_id": "BLR_5653",
+      "signal_strength_dbm": -93
+    },
+    {
+      "timestamp": "2025-05-22T02:22:00",
+      "call_type": "MISSED",
+      "callee": "+91-8429323637",
+      "duration_seconds": 203,
+      "tower_id": "BLR_9500",
+      "signal_strength_dbm": -98
+    },
+    {
+      "timestamp": "2025-05-22T02:45:00",
+      "call_type": "MISSED",
+      "callee": "+91-7691921136",
+      "duration_seconds": 538,
+      "tower_id": "BLR_4278",
+      "signal_strength_dbm": -68
+    }
+  ],
+  "total_calls": 7,
+  "silence_gaps": [
+    {
+      "gap_start": "2025-05-22T01:44:00",
+      "gap_duration_minutes": 21,
+      "anomaly": "suspicious_silence"
+    }
+  ],
+  "suspicious_activity": true
+}

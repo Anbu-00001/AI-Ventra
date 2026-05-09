@@ -1,0 +1,42 @@
+{
+  "id": "SUS-0014",
+  "name": "Suresh Kumar",
+  "age": 25,
+  "relationship_to_victim": "business associate",
+  "known_locations": [
+    "Koramangala 5th Block",
+    "Service Road, Whitefield",
+    "Outer Ring Road, Marathahalli"
+  ],
+  "registered_devices": [
+    "DEVICE_93"
+  ],
+  "vehicle": {
+    "type": "Grey sedan",
+    "partial_plate": "KA-02-AB"
+  },
+  "behavioral_baseline": {
+    "night_activity_level": "high",
+    "normal_call_frequency_per_hour": 3.5,
+    "usual_radius_km": 9.8
+  },
+  "anomaly_flags": [
+    "unverified alibi during postmortem interval",
+    "device powered down inside critical window",
+    "financial stressor detected in recent records"
+  ],
+  "risk_score": 51.7,
+  "risk_level": "ELEVATED",
+  "explainable_conflicts": [
+    {
+      "conflict": "claimed location conflicts with tower registration",
+      "supporting_source": "gps_logs",
+      "confidence": 91.9
+    },
+    {
+      "conflict": "communication silence overlaps reconstructed TOD window",
+      "supporting_source": "call_logs",
+      "confidence": 95.5
+    }
+  ]
+}

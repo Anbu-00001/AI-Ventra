@@ -1,0 +1,48 @@
+{
+  "id": "CCTV-0100",
+  "camera_id": "CAM_016",
+  "location": "Doddanekundi Industrial Area",
+  "case_id": "AIV-2004-15",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.89,
+      "face_match": false,
+      "matched_id": "Kavya Reddy",
+      "duration_seconds": 45
+    },
+    {
+      "timestamp": "2025-05-22T02:02:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.77,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 115
+    },
+    {
+      "timestamp": "2025-05-22T02:10:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.75,
+      "face_match": true,
+      "matched_id": "Deepa Iyer",
+      "duration_seconds": 119
+    },
+    {
+      "timestamp": "2025-05-22T02:29:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.77,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 10
+    }
+  ],
+  "total_events": 4,
+  "has_face_match": true,
+  "has_vehicle": true
+}

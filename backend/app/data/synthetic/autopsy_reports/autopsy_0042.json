@@ -1,0 +1,41 @@
+{
+  "id": "AR-0042",
+  "case_id": "AIV-2065-38",
+  "examiner": "Dr. Divya Krishnan",
+  "examination_date": "10 August 2025",
+  "subject_name": "Kavya Reddy",
+  "subject_age": 19,
+  "subject_gender": "Male",
+  "body_temperature_celsius": 22.2,
+  "ambient_temperature_celsius": 30.4,
+  "rigor_mortis": "Full rigor",
+  "livor_mortis": "Fixed posterior \u2014 no repositioning",
+  "postmortem_interval_hours": 12.8,
+  "injuries": [
+    {
+      "region": "Cranial",
+      "description": "Blunt force trauma with {severity} fracture",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Upper Limb",
+      "description": "Defensive bruising on forearms",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Thoracic",
+      "description": "Multiple rib fractures with internal hemorrhage",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Facial",
+      "description": "Periorbital ecchymosis bilateral",
+      "severity": "MODERATE"
+    }
+  ],
+  "toxicology": [],
+  "cause_of_death": "Drug-induced cardiorespiratory failure",
+  "manner_of_death": "suicide",
+  "tod_estimate": "04:45 AM \u00b1 1.4h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Kavya Reddy | Age: 19\nBody Temperature at Scene: 22.2\u00b0C | Ambient Temperature: 30.4\u00b0C\nPostmortem Interval (estimated): 12.8 hours\n\nINJURIES IDENTIFIED:\n  1. Cranial: Blunt force trauma with {severity} fracture [SEVERE]\n  2. Upper Limb: Defensive bruising on forearms [MODERATE]\n  3. Thoracic: Multiple rib fractures with internal hemorrhage [SEVERE]\n  4. Facial: Periorbital ecchymosis bilateral [MODERATE]\n\nTOXICOLOGY (Preliminary): None detected\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed pattern suggesting body repositioned post-mortem.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the victim. Toxicological findings show no intoxicating substances.\n"
+}

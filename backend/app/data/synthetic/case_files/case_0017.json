@@ -1,0 +1,39 @@
+{
+  "id": "CASE-0017",
+  "case_id": "AIV-2008-42",
+  "case_date": "2025-08-09",
+  "victim": {
+    "name": "Kavya Reddy",
+    "age": 26,
+    "occupation": "Doctor",
+    "last_seen": "2025-08-07T03:00:00"
+  },
+  "suspects": [
+    {
+      "id": "SUSPECT_01",
+      "name": "Kiran Patel",
+      "age": 54,
+      "relationship_to_victim": "neighbor",
+      "alibi": "No alibi provided",
+      "risk_score": 53.8
+    }
+  ],
+  "evidence_count": 3,
+  "status": "SUSPENDED",
+  "risk_level": "HIGH",
+  "summary": "Case involving Kavya Reddy. Investigation ongoing. Key evidence collected from Phoenix Mall Area. Primary suspect: Rahul Sharma.",
+  "entities": {
+    "suspects": [
+      "Rahul Sharma"
+    ],
+    "locations": [
+      "Phoenix Mall Area",
+      "Electronic City Phase 2",
+      "Outer Ring Road, Marathahalli"
+    ],
+    "devices": [
+      "DEVICE_82",
+      "DEVICE_27"
+    ]
+  }
+}

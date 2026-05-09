@@ -1,0 +1,57 @@
+{
+  "id": "CCTV-0073",
+  "camera_id": "CAM_011",
+  "location": "Doddanekundi Industrial Area",
+  "case_id": "AIV-2099-28",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.73,
+      "face_match": false,
+      "matched_id": "Pooja Verma",
+      "duration_seconds": 19
+    },
+    {
+      "timestamp": "2025-05-22T02:03:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.97,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 40
+    },
+    {
+      "timestamp": "2025-05-22T02:18:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.79,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 10
+    },
+    {
+      "timestamp": "2025-05-22T02:32:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.8,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 48
+    },
+    {
+      "timestamp": "2025-05-22T02:48:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.94,
+      "face_match": false,
+      "matched_id": "Vikram Singh",
+      "duration_seconds": 72
+    }
+  ],
+  "total_events": 5,
+  "has_face_match": false,
+  "has_vehicle": true
+}

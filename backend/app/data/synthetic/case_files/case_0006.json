@@ -1,0 +1,46 @@
+{
+  "id": "CASE-0006",
+  "case_id": "AIV-2008-17",
+  "case_date": "2025-05-27",
+  "victim": {
+    "name": "Rohan Joshi",
+    "age": 29,
+    "occupation": "Software Engineer",
+    "last_seen": "2025-05-25T16:00:00"
+  },
+  "suspects": [
+    {
+      "id": "SUSPECT_01",
+      "name": "Rajesh Choudhary",
+      "age": 24,
+      "relationship_to_victim": "acquaintance",
+      "alibi": "No alibi provided",
+      "risk_score": 74.9
+    },
+    {
+      "id": "SUSPECT_02",
+      "name": "Nikhil Bose",
+      "age": 43,
+      "relationship_to_victim": "neighbor",
+      "alibi": "Working late \u2014 colleagues confirm",
+      "risk_score": 62.1
+    }
+  ],
+  "evidence_count": 11,
+  "status": "CLOSED",
+  "risk_level": "MODERATE",
+  "summary": "Case involving Rohan Joshi. Investigation ongoing. Key evidence collected from Hebbal Lake, Bangalore. Primary suspect: Deepa Iyer.",
+  "entities": {
+    "suspects": [
+      "Deepa Iyer"
+    ],
+    "locations": [
+      "Bellandur Lake Road",
+      "Sarjapur Road, Bangalore",
+      "Service Road, Whitefield"
+    ],
+    "devices": [
+      "DEVICE_50"
+    ]
+  }
+}

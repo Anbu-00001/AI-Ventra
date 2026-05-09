@@ -1,0 +1,50 @@
+{
+  "report_id": "546d7f2d-4f60-4960-9886-91cca965359a",
+  "case_id": "AIV-2041-77",
+  "risk_score": 88.0,
+  "threat_level": "HIGH",
+  "verdict": "Evidence strongly indicates premeditated homicide with deliberate concealment of physical evidence.",
+  "reasoning": "Multi-source forensic analysis reveals coordinated criminal activity.",
+  "supporting_evidence": [
+    {
+      "evidence_type": "Autopsy Report",
+      "description": "Blunt force trauma with sedative toxicology",
+      "weight": 94
+    },
+    {
+      "evidence_type": "CCTV Footage",
+      "description": "Suspect identified at scene within TOD window",
+      "weight": 91
+    },
+    {
+      "evidence_type": "GPS Correlation",
+      "description": "Device trace confirms presence at location",
+      "weight": 88
+    },
+    {
+      "evidence_type": "Behavioral Anomaly",
+      "description": "27-minute communication blackout during TOD window",
+      "weight": 96
+    }
+  ],
+  "key_findings": [
+    "Cause of death confirmed as blunt force trauma \u2014 homicidal assault pattern",
+    "Victim was sedated prior to fatal assault \u2014 premeditation indicator",
+    "Body repositioned post-mortem \u2014 deliberate evidence concealment",
+    "27-minute digital blackout precisely aligns with estimated time of death",
+    "Two suspects identified with high-confidence geospatial correlation"
+  ],
+  "recommended_actions": [
+    "Issue arrest warrants for SUSPECT_01 (RAGHAV M.) and SUSPECT_02 (KARAN S.)",
+    "Obtain tower dump from BLR_2231 for complete registration log",
+    "Submit device forensic image for deleted data recovery",
+    "Conduct secondary autopsy with focus on sedative quantification",
+    "Review all CCTV within 500m radius of service road, Whitefield"
+  ],
+  "confidence_score": 91.0,
+  "autopsy_summary": null,
+  "timeline_summary": null,
+  "anomaly_summary": null,
+  "generated_at": "2026-05-09T11:46:17.924118",
+  "analyst_id": "AIVENTRA-OMEGA-7"
+}

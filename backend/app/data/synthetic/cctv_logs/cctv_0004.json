@@ -1,0 +1,39 @@
+{
+  "id": "CCTV-0004",
+  "camera_id": "CAM_028",
+  "location": "Hebbal Lake, Bangalore",
+  "case_id": "AIV-2002-89",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.88,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 113
+    },
+    {
+      "timestamp": "2025-05-22T02:01:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.73,
+      "face_match": false,
+      "matched_id": "Rahul Sharma",
+      "duration_seconds": 77
+    },
+    {
+      "timestamp": "2025-05-22T02:17:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.76,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 14
+    }
+  ],
+  "total_events": 3,
+  "has_face_match": true,
+  "has_vehicle": true
+}

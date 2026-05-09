@@ -1,0 +1,47 @@
+{
+  "id": "AR-0033",
+  "case_id": "AIV-2055-11",
+  "examiner": "Dr. Rohan Joshi",
+  "examination_date": "19 June 2025",
+  "subject_name": "Swathi Menon",
+  "subject_age": 53,
+  "subject_gender": "Female",
+  "body_temperature_celsius": 21.8,
+  "ambient_temperature_celsius": 20.7,
+  "rigor_mortis": "Partial rigor \u2014 onset",
+  "livor_mortis": "Unfixed \u2014 TOD within 4 hours",
+  "postmortem_interval_hours": 8.0,
+  "injuries": [
+    {
+      "region": "Cranial",
+      "description": "Blunt force trauma with {severity} fracture",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Upper Limb",
+      "description": "Defensive bruising on forearms",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Lower Limb",
+      "description": "Multiple contusions consistent with assault",
+      "severity": "MILD"
+    }
+  ],
+  "toxicology": [
+    {
+      "substance": "Ketamine",
+      "detected": true,
+      "level": "trace"
+    },
+    {
+      "substance": "Chloroform",
+      "detected": true,
+      "level": "therapeutic"
+    }
+  ],
+  "cause_of_death": "Blunt force trauma to cranial region",
+  "manner_of_death": "homicide",
+  "tod_estimate": "00:45 AM \u00b1 1.8h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Swathi Menon | Age: 53\nBody Temperature at Scene: 21.8\u00b0C | Ambient Temperature: 20.7\u00b0C\nPostmortem Interval (estimated): 8.0 hours\n\nINJURIES IDENTIFIED:\n  1. Cranial: Blunt force trauma with {severity} fracture [SEVERE]\n  2. Upper Limb: Defensive bruising on forearms [MODERATE]\n  3. Lower Limb: Multiple contusions consistent with assault [MILD]\n\nTOXICOLOGY (Preliminary): Ketamine, Chloroform\n\nRIGOR MORTIS: Partial rigor \u2014 early stage.\nLIVOR MORTIS: Fixed pattern suggesting body repositioned post-mortem.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the victim. Toxicological findings suggest victim was sedated prior to the fatal assault.\n"
+}

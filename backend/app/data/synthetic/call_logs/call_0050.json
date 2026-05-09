@@ -1,0 +1,98 @@
+{
+  "id": "CALL-0050",
+  "device_owner": "Priya Nair",
+  "phone_number": "+91-7294045780",
+  "case_id": "AIV-2011-29",
+  "date": "2025-05-22",
+  "calls": [
+    {
+      "timestamp": "2025-05-22T00:30:00",
+      "call_type": "MISSED",
+      "callee": "+91-7555245605",
+      "duration_seconds": 572,
+      "tower_id": "BLR_1075",
+      "signal_strength_dbm": -82
+    },
+    {
+      "timestamp": "2025-05-22T01:02:00",
+      "call_type": "INCOMING",
+      "callee": "+91-8771011575",
+      "duration_seconds": 538,
+      "tower_id": "BLR_8037",
+      "signal_strength_dbm": -81
+    },
+    {
+      "timestamp": "2025-05-22T01:19:00",
+      "call_type": "MISSED",
+      "callee": "+91-7960962205",
+      "duration_seconds": 235,
+      "tower_id": "BLR_6790",
+      "signal_strength_dbm": -90
+    },
+    {
+      "timestamp": "2025-05-22T01:38:00",
+      "call_type": "MISSED",
+      "callee": "+91-8209314835",
+      "duration_seconds": 142,
+      "tower_id": "BLR_4278",
+      "signal_strength_dbm": -85
+    },
+    {
+      "timestamp": "2025-05-22T02:18:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8460362446",
+      "duration_seconds": 128,
+      "tower_id": "BLR_8522",
+      "signal_strength_dbm": -70
+    },
+    {
+      "timestamp": "2025-05-22T03:02:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7142367403",
+      "duration_seconds": 126,
+      "tower_id": "BLR_7371",
+      "signal_strength_dbm": -98
+    },
+    {
+      "timestamp": "2025-05-22T03:29:00",
+      "call_type": "INCOMING",
+      "callee": "+91-8658036675",
+      "duration_seconds": 332,
+      "tower_id": "BLR_1373",
+      "signal_strength_dbm": -95
+    },
+    {
+      "timestamp": "2025-05-22T03:48:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8967034619",
+      "duration_seconds": 66,
+      "tower_id": "BLR_4337",
+      "signal_strength_dbm": -86
+    },
+    {
+      "timestamp": "2025-05-22T04:26:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8714750846",
+      "duration_seconds": 46,
+      "tower_id": "BLR_1075",
+      "signal_strength_dbm": -77
+    },
+    {
+      "timestamp": "2025-05-22T05:03:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-9738182249",
+      "duration_seconds": 542,
+      "tower_id": "BLR_6790",
+      "signal_strength_dbm": -60
+    }
+  ],
+  "total_calls": 10,
+  "silence_gaps": [
+    {
+      "gap_start": "2025-05-22T03:02:00",
+      "gap_duration_minutes": 30,
+      "anomaly": "suspicious_silence"
+    }
+  ],
+  "suspicious_activity": true
+}

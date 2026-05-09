@@ -1,0 +1,111 @@
+{
+  "id": "CCTV-0087",
+  "camera_id": "CAM_013",
+  "location": "Sarjapur Road, Bangalore",
+  "case_id": "AIV-2062-26",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.76,
+      "face_match": false,
+      "matched_id": "Nikhil Bose",
+      "duration_seconds": 7
+    },
+    {
+      "timestamp": "2025-05-22T02:02:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.88,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 66
+    },
+    {
+      "timestamp": "2025-05-22T02:10:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.74,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 16
+    },
+    {
+      "timestamp": "2025-05-22T02:14:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.98,
+      "face_match": false,
+      "matched_id": "Rohan Joshi",
+      "duration_seconds": 89
+    },
+    {
+      "timestamp": "2025-05-22T02:24:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.92,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 11
+    },
+    {
+      "timestamp": "2025-05-22T02:38:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.81,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 44
+    },
+    {
+      "timestamp": "2025-05-22T02:51:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.98,
+      "face_match": false,
+      "matched_id": "Meena Pillai",
+      "duration_seconds": 92
+    },
+    {
+      "timestamp": "2025-05-22T02:57:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.9,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 21
+    },
+    {
+      "timestamp": "2025-05-22T03:09:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.72,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 106
+    },
+    {
+      "timestamp": "2025-05-22T03:15:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.77,
+      "face_match": false,
+      "matched_id": "Vikram Singh",
+      "duration_seconds": 95
+    },
+    {
+      "timestamp": "2025-05-22T03:23:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.8,
+      "face_match": true,
+      "matched_id": "Swathi Menon",
+      "duration_seconds": 19
+    }
+  ],
+  "total_events": 11,
+  "has_face_match": true,
+  "has_vehicle": true
+}

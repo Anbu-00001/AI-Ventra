@@ -1,0 +1,33 @@
+{
+  "file_id": "2f2cf8c3-6be9-4eae-bd5a-3d8c3c8001cc",
+  "original_name": "anbuaadhar.pdf",
+  "file_type": "pdf",
+  "text": "",
+  "text_preview": "",
+  "metadata": {
+    "filename": "2f2cf8c3-6be9-4eae-bd5a-3d8c3c8001cc_anbuaadhar.pdf",
+    "extension": ".pdf",
+    "size_bytes": 281265,
+    "created_at": "2026-05-09T10:34:24.378607",
+    "modified_at": "2026-05-09T10:34:24.378607",
+    "sha256": "7a92f95d5a51010437b14fee50e8303e230559f83dd08027c7d6013f2dadd785",
+    "is_binary": true
+  },
+  "classification": {
+    "file_id": "2f2cf8c3-6be9-4eae-bd5a-3d8c3c8001cc",
+    "category": "autopsy_report",
+    "sub_category": null,
+    "confidence": 94.0,
+    "tags": [],
+    "classified_at": "2026-05-09T10:34:45.818695"
+  },
+  "entities": {
+    "persons": [],
+    "locations": [],
+    "devices": [],
+    "timestamps": [],
+    "organizations": [],
+    "physical_evidence": []
+  },
+  "chunk_count": 0
+}

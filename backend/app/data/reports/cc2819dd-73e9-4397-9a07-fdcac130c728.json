@@ -1,0 +1,29 @@
+{
+  "report_id": "cc2819dd-73e9-4397-9a07-fdcac130c728",
+  "case_id": "AIV-2041-77",
+  "risk_score": 77.0,
+  "threat_level": "HIGH",
+  "verdict": "RAG-powered forensic analysis of 0 evidence chunks establishes that the death of Unknown Subject constitutes a suspected homicide. Multiple traumatic injuries. Analysis confidence: 77%.",
+  "reasoning": "Multi-stream evidence analysis using 0 RAG-indexed chunks. Autopsy findings: Multiple traumatic injuries. Evidence streams converge to establish a coherent forensic narrative.",
+  "supporting_evidence": [
+    {
+      "evidence_type": "Autopsy Report",
+      "description": "Victim: Unknown Subject \u2014 Multiple traumatic injuries",
+      "weight": 96
+    }
+  ],
+  "key_findings": [
+    "Cause of death: Multiple traumatic injuries"
+  ],
+  "recommended_actions": [
+    "Submit all correlated devices for forensic imaging",
+    "Commission comprehensive toxicology quantification report",
+    "Cross-reference all CCTV within 500m radius of identified locations"
+  ],
+  "confidence_score": 80.0,
+  "autopsy_summary": null,
+  "timeline_summary": null,
+  "anomaly_summary": null,
+  "generated_at": "2026-05-09T12:58:15.862506",
+  "analyst_id": "AIVENTRA-OMEGA-7"
+}

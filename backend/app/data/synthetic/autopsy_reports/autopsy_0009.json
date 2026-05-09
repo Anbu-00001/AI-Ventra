@@ -1,0 +1,52 @@
+{
+  "id": "AR-0009",
+  "case_id": "AIV-2069-37",
+  "examiner": "Dr. Amit Shah",
+  "examination_date": "10 May 2025",
+  "subject_name": "Divya Krishnan",
+  "subject_age": 51,
+  "subject_gender": "Female",
+  "body_temperature_celsius": 25.2,
+  "ambient_temperature_celsius": 21.0,
+  "rigor_mortis": "Partial rigor \u2014 onset",
+  "livor_mortis": "Fixed anterior \u2014 body repositioned post-mortem",
+  "postmortem_interval_hours": 8.1,
+  "injuries": [
+    {
+      "region": "Dorsal",
+      "description": "Pattern bruising consistent with impact",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Abdominal",
+      "description": "Blunt force trauma with splenic laceration",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Facial",
+      "description": "Periorbital ecchymosis bilateral",
+      "severity": "MODERATE"
+    }
+  ],
+  "toxicology": [
+    {
+      "substance": "Chloroform",
+      "detected": true,
+      "level": "trace"
+    },
+    {
+      "substance": "Opiates",
+      "detected": true,
+      "level": "above therapeutic"
+    },
+    {
+      "substance": "GHB",
+      "detected": true,
+      "level": "lethal"
+    }
+  ],
+  "cause_of_death": "Blunt force trauma to cranial region",
+  "manner_of_death": "accident",
+  "tod_estimate": "05:15 AM \u00b1 1.3h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Divya Krishnan | Age: 51\nBody Temperature at Scene: 25.2\u00b0C | Ambient Temperature: 21.0\u00b0C\nPostmortem Interval (estimated): 8.1 hours\n\nINJURIES IDENTIFIED:\n  1. Dorsal: Pattern bruising consistent with impact [MODERATE]\n  2. Abdominal: Blunt force trauma with splenic laceration [MODERATE]\n  3. Facial: Periorbital ecchymosis bilateral [MODERATE]\n\nTOXICOLOGY (Preliminary): Chloroform, Opiates, GHB\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed posterior \u2014 no repositioning detected.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a spontaneous violent altercation. Toxicological findings suggest victim was sedated prior to the fatal assault.\n"
+}

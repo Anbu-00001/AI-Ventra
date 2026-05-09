@@ -1,0 +1,41 @@
+{
+  "id": "AR-0024",
+  "case_id": "AIV-2075-37",
+  "examiner": "Dr. Vikram Singh",
+  "examination_date": "18 August 2025",
+  "subject_name": "Rahul Sharma",
+  "subject_age": 65,
+  "subject_gender": "Female",
+  "body_temperature_celsius": 24.0,
+  "ambient_temperature_celsius": 30.0,
+  "rigor_mortis": "Post-rigor \u2014 decomposition stage 1",
+  "livor_mortis": "Unfixed \u2014 TOD within 4 hours",
+  "postmortem_interval_hours": 9.2,
+  "injuries": [
+    {
+      "region": "Lower Limb",
+      "description": "Multiple contusions consistent with assault",
+      "severity": "MILD"
+    },
+    {
+      "region": "Abdominal",
+      "description": "Blunt force trauma with splenic laceration",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Facial",
+      "description": "Periorbital ecchymosis bilateral",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Neck",
+      "description": "Compression marks consistent with ligature strangulation",
+      "severity": "SEVERE"
+    }
+  ],
+  "toxicology": [],
+  "cause_of_death": "Blunt force trauma to cranial region",
+  "manner_of_death": "accident",
+  "tod_estimate": "03:15 AM \u00b1 2.0h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Rahul Sharma | Age: 65\nBody Temperature at Scene: 24.0\u00b0C | Ambient Temperature: 30.0\u00b0C\nPostmortem Interval (estimated): 9.2 hours\n\nINJURIES IDENTIFIED:\n  1. Lower Limb: Multiple contusions consistent with assault [MILD]\n  2. Abdominal: Blunt force trauma with splenic laceration [MODERATE]\n  3. Facial: Periorbital ecchymosis bilateral [MODERATE]\n  4. Neck: Compression marks consistent with ligature strangulation [SEVERE]\n\nTOXICOLOGY (Preliminary): None detected\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed posterior \u2014 no repositioning detected.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the victim. Toxicological findings show no intoxicating substances.\n"
+}

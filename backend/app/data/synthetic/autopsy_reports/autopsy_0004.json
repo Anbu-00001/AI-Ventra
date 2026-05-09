@@ -1,0 +1,57 @@
+{
+  "id": "AR-0004",
+  "case_id": "AIV-2096-22",
+  "examiner": "Dr. Kavya Reddy",
+  "examination_date": "19 May 2025",
+  "subject_name": "Aditya Gupta",
+  "subject_age": 29,
+  "subject_gender": "Female",
+  "body_temperature_celsius": 24.0,
+  "ambient_temperature_celsius": 22.1,
+  "rigor_mortis": "Post-rigor \u2014 decomposition stage 1",
+  "livor_mortis": "Fixed anterior \u2014 body repositioned post-mortem",
+  "postmortem_interval_hours": 5.7,
+  "injuries": [
+    {
+      "region": "Cranial",
+      "description": "Blunt force trauma with {severity} fracture",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Abdominal",
+      "description": "Blunt force trauma with splenic laceration",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Lower Limb",
+      "description": "Multiple contusions consistent with assault",
+      "severity": "MILD"
+    },
+    {
+      "region": "Upper Limb",
+      "description": "Defensive bruising on forearms",
+      "severity": "MODERATE"
+    }
+  ],
+  "toxicology": [
+    {
+      "substance": "Carbon Monoxide",
+      "detected": true,
+      "level": "trace"
+    },
+    {
+      "substance": "Chloroform",
+      "detected": true,
+      "level": "lethal"
+    },
+    {
+      "substance": "Ketamine",
+      "detected": true,
+      "level": "above therapeutic"
+    }
+  ],
+  "cause_of_death": "Drug-induced cardiorespiratory failure",
+  "manner_of_death": "homicide",
+  "tod_estimate": "04:00 AM \u00b1 0.9h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Aditya Gupta | Age: 29\nBody Temperature at Scene: 24.0\u00b0C | Ambient Temperature: 22.1\u00b0C\nPostmortem Interval (estimated): 5.7 hours\n\nINJURIES IDENTIFIED:\n  1. Cranial: Blunt force trauma with {severity} fracture [SEVERE]\n  2. Abdominal: Blunt force trauma with splenic laceration [MODERATE]\n  3. Lower Limb: Multiple contusions consistent with assault [MILD]\n  4. Upper Limb: Defensive bruising on forearms [MODERATE]\n\nTOXICOLOGY (Preliminary): Carbon Monoxide, Chloroform, Ketamine\n\nRIGOR MORTIS: Partial rigor \u2014 early stage.\nLIVOR MORTIS: Fixed posterior \u2014 no repositioning detected.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the victim. Toxicological findings suggest victim was sedated prior to the fatal assault.\n"
+}

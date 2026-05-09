@@ -1,0 +1,84 @@
+{
+  "id": "GPS-0050",
+  "device_id": "DEVICE_71",
+  "case_id": "AIV-2055-83",
+  "owner": "Suresh Kumar",
+  "date": "2025-05-22",
+  "pings": [
+    {
+      "timestamp": "2025-05-22T01:30:00",
+      "latitude": 13.029611,
+      "longitude": 77.674619,
+      "speed_kmh": 1.9,
+      "accuracy_m": 26,
+      "tower_id": "BLR_8522"
+    },
+    {
+      "timestamp": "2025-05-22T01:37:00",
+      "latitude": 13.027003,
+      "longitude": 77.651608,
+      "speed_kmh": 45.0,
+      "accuracy_m": 21,
+      "tower_id": "BLR_5653"
+    },
+    {
+      "timestamp": "2025-05-22T01:44:00",
+      "latitude": 13.022517,
+      "longitude": 77.641237,
+      "speed_kmh": 31.2,
+      "accuracy_m": 41,
+      "tower_id": "BLR_9350"
+    },
+    {
+      "timestamp": "2025-05-22T01:46:00",
+      "latitude": 13.120483,
+      "longitude": 77.658235,
+      "speed_kmh": 96.6,
+      "accuracy_m": 16,
+      "tower_id": "BLR_4309"
+    },
+    {
+      "timestamp": "2025-05-22T01:48:00",
+      "latitude": 13.038735,
+      "longitude": 77.665487,
+      "speed_kmh": 9.7,
+      "accuracy_m": 31,
+      "tower_id": "BLR_7371"
+    },
+    {
+      "timestamp": "2025-05-22T01:54:00",
+      "latitude": 13.045982,
+      "longitude": 77.650816,
+      "speed_kmh": 24.6,
+      "accuracy_m": 42,
+      "tower_id": "BLR_9698"
+    },
+    {
+      "timestamp": "2025-05-22T01:56:00",
+      "latitude": 13.039255,
+      "longitude": 77.669697,
+      "speed_kmh": 61.5,
+      "accuracy_m": 11,
+      "tower_id": "BLR_1075"
+    },
+    {
+      "timestamp": "2025-05-22T01:58:00",
+      "latitude": 13.008302,
+      "longitude": 77.642819,
+      "speed_kmh": 45.0,
+      "accuracy_m": 42,
+      "tower_id": "BLR_4278"
+    },
+    {
+      "timestamp": "2025-05-22T02:00:00",
+      "latitude": 13.02121,
+      "longitude": 77.662122,
+      "speed_kmh": 36.0,
+      "accuracy_m": 36,
+      "tower_id": "BLR_5653"
+    }
+  ],
+  "anomalies_detected": true,
+  "total_pings": 9,
+  "coverage_area_km2": 8.55
+}

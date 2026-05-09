@@ -1,0 +1,170 @@
+{
+  "id": "CALL-0027",
+  "device_owner": "Priya Nair",
+  "phone_number": "+91-7254502768",
+  "case_id": "AIV-2098-15",
+  "date": "2025-05-22",
+  "calls": [
+    {
+      "timestamp": "2025-05-22T00:30:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7792640720",
+      "duration_seconds": 403,
+      "tower_id": "BLR_8522",
+      "signal_strength_dbm": -95
+    },
+    {
+      "timestamp": "2025-05-22T00:54:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8947399697",
+      "duration_seconds": 235,
+      "tower_id": "BLR_6639",
+      "signal_strength_dbm": -99
+    },
+    {
+      "timestamp": "2025-05-22T01:33:00",
+      "call_type": "MISSED",
+      "callee": "+91-9223573122",
+      "duration_seconds": 176,
+      "tower_id": "BLR_9698",
+      "signal_strength_dbm": -89
+    },
+    {
+      "timestamp": "2025-05-22T02:03:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-7566580268",
+      "duration_seconds": 288,
+      "tower_id": "BLR_2518",
+      "signal_strength_dbm": -83
+    },
+    {
+      "timestamp": "2025-05-22T02:44:00",
+      "call_type": "INCOMING",
+      "callee": "+91-9364462217",
+      "duration_seconds": 19,
+      "tower_id": "BLR_2518",
+      "signal_strength_dbm": -72
+    },
+    {
+      "timestamp": "2025-05-22T03:23:00",
+      "call_type": "INCOMING",
+      "callee": "+91-9287171696",
+      "duration_seconds": 300,
+      "tower_id": "BLR_1373",
+      "signal_strength_dbm": -92
+    },
+    {
+      "timestamp": "2025-05-22T03:43:00",
+      "call_type": "MISSED",
+      "callee": "+91-7283553403",
+      "duration_seconds": 182,
+      "tower_id": "BLR_7589",
+      "signal_strength_dbm": -87
+    },
+    {
+      "timestamp": "2025-05-22T03:55:00",
+      "call_type": "MISSED",
+      "callee": "+91-7924524192",
+      "duration_seconds": 173,
+      "tower_id": "BLR_4337",
+      "signal_strength_dbm": -61
+    },
+    {
+      "timestamp": "2025-05-22T04:18:00",
+      "call_type": "MISSED",
+      "callee": "+91-9568153286",
+      "duration_seconds": 338,
+      "tower_id": "BLR_6812",
+      "signal_strength_dbm": -92
+    },
+    {
+      "timestamp": "2025-05-22T04:49:00",
+      "call_type": "INCOMING",
+      "callee": "+91-9159934545",
+      "duration_seconds": 13,
+      "tower_id": "BLR_4337",
+      "signal_strength_dbm": -67
+    },
+    {
+      "timestamp": "2025-05-22T05:11:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8285776462",
+      "duration_seconds": 454,
+      "tower_id": "BLR_4309",
+      "signal_strength_dbm": -56
+    },
+    {
+      "timestamp": "2025-05-22T05:23:00",
+      "call_type": "MISSED",
+      "callee": "+91-7451181907",
+      "duration_seconds": 23,
+      "tower_id": "BLR_1678",
+      "signal_strength_dbm": -64
+    },
+    {
+      "timestamp": "2025-05-22T05:37:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-9455346527",
+      "duration_seconds": 98,
+      "tower_id": "BLR_4337",
+      "signal_strength_dbm": -96
+    },
+    {
+      "timestamp": "2025-05-22T05:56:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7984117945",
+      "duration_seconds": 399,
+      "tower_id": "BLR_4309",
+      "signal_strength_dbm": -75
+    },
+    {
+      "timestamp": "2025-05-22T06:17:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-7972545826",
+      "duration_seconds": 32,
+      "tower_id": "BLR_9500",
+      "signal_strength_dbm": -52
+    },
+    {
+      "timestamp": "2025-05-22T06:48:00",
+      "call_type": "INCOMING",
+      "callee": "+91-9594242216",
+      "duration_seconds": 429,
+      "tower_id": "BLR_5883",
+      "signal_strength_dbm": -92
+    },
+    {
+      "timestamp": "2025-05-22T07:22:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-7967547901",
+      "duration_seconds": 571,
+      "tower_id": "BLR_4337",
+      "signal_strength_dbm": -57
+    },
+    {
+      "timestamp": "2025-05-22T07:47:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8361408221",
+      "duration_seconds": 378,
+      "tower_id": "BLR_4337",
+      "signal_strength_dbm": -84
+    },
+    {
+      "timestamp": "2025-05-22T08:10:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8141818997",
+      "duration_seconds": 95,
+      "tower_id": "BLR_8522",
+      "signal_strength_dbm": -92
+    }
+  ],
+  "total_calls": 19,
+  "silence_gaps": [
+    {
+      "gap_start": "2025-05-22T07:22:00",
+      "gap_duration_minutes": 41,
+      "anomaly": "suspicious_silence"
+    }
+  ],
+  "suspicious_activity": true
+}

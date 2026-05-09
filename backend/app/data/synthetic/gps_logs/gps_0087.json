@@ -1,0 +1,196 @@
+{
+  "id": "GPS-0087",
+  "device_id": "DEVICE_90",
+  "case_id": "AIV-2073-12",
+  "owner": "Sneha Rao",
+  "date": "2025-05-22",
+  "pings": [
+    {
+      "timestamp": "2025-05-22T01:30:00",
+      "latitude": 12.998129,
+      "longitude": 77.592,
+      "speed_kmh": 15.1,
+      "accuracy_m": 46,
+      "tower_id": "BLR_6915"
+    },
+    {
+      "timestamp": "2025-05-22T01:32:00",
+      "latitude": 13.017921,
+      "longitude": 77.620435,
+      "speed_kmh": 67.8,
+      "accuracy_m": 47,
+      "tower_id": "BLR_9350"
+    },
+    {
+      "timestamp": "2025-05-22T01:40:00",
+      "latitude": 13.019462,
+      "longitude": 77.589818,
+      "speed_kmh": 72.3,
+      "accuracy_m": 10,
+      "tower_id": "BLR_5883"
+    },
+    {
+      "timestamp": "2025-05-22T01:44:00",
+      "latitude": 13.090165,
+      "longitude": 77.607771,
+      "speed_kmh": 86.1,
+      "accuracy_m": 35,
+      "tower_id": "BLR_5883"
+    },
+    {
+      "timestamp": "2025-05-22T01:48:00",
+      "latitude": 13.01768,
+      "longitude": 77.593152,
+      "speed_kmh": 79.5,
+      "accuracy_m": 10,
+      "tower_id": "BLR_7371"
+    },
+    {
+      "timestamp": "2025-05-22T01:51:00",
+      "latitude": 13.007837,
+      "longitude": 77.61166,
+      "speed_kmh": 62.1,
+      "accuracy_m": 7,
+      "tower_id": "BLR_5653"
+    },
+    {
+      "timestamp": "2025-05-22T01:58:00",
+      "latitude": 13.102958,
+      "longitude": 77.610146,
+      "speed_kmh": 73.6,
+      "accuracy_m": 7,
+      "tower_id": "BLR_1075"
+    },
+    {
+      "timestamp": "2025-05-22T02:04:00",
+      "latitude": 12.998407,
+      "longitude": 77.595853,
+      "speed_kmh": 30.9,
+      "accuracy_m": 40,
+      "tower_id": "BLR_6639"
+    },
+    {
+      "timestamp": "2025-05-22T02:08:00",
+      "latitude": 13.00235,
+      "longitude": 77.612469,
+      "speed_kmh": 14.4,
+      "accuracy_m": 19,
+      "tower_id": "BLR_1075"
+    },
+    {
+      "timestamp": "2025-05-22T02:09:00",
+      "latitude": 13.007915,
+      "longitude": 77.588751,
+      "speed_kmh": 60.1,
+      "accuracy_m": 28,
+      "tower_id": "BLR_4309"
+    },
+    {
+      "timestamp": "2025-05-22T02:16:00",
+      "latitude": 13.024554,
+      "longitude": 77.61959,
+      "speed_kmh": 48.8,
+      "accuracy_m": 13,
+      "tower_id": "BLR_7371"
+    },
+    {
+      "timestamp": "2025-05-22T02:22:00",
+      "latitude": 13.015925,
+      "longitude": 77.603103,
+      "speed_kmh": 9.1,
+      "accuracy_m": 11,
+      "tower_id": "BLR_5653"
+    },
+    {
+      "timestamp": "2025-05-22T02:29:00",
+      "latitude": 13.015378,
+      "longitude": 77.588119,
+      "speed_kmh": 30.5,
+      "accuracy_m": 39,
+      "tower_id": "BLR_9698"
+    },
+    {
+      "timestamp": "2025-05-22T02:37:00",
+      "latitude": 12.99664,
+      "longitude": 77.624257,
+      "speed_kmh": 32.7,
+      "accuracy_m": 18,
+      "tower_id": "BLR_4337"
+    },
+    {
+      "timestamp": "2025-05-22T02:42:00",
+      "latitude": 13.055245,
+      "longitude": 77.596714,
+      "speed_kmh": 100.2,
+      "accuracy_m": 9,
+      "tower_id": "BLR_7589"
+    },
+    {
+      "timestamp": "2025-05-22T02:50:00",
+      "latitude": 13.021397,
+      "longitude": 77.619963,
+      "speed_kmh": 76.6,
+      "accuracy_m": 22,
+      "tower_id": "BLR_7589"
+    },
+    {
+      "timestamp": "2025-05-22T02:58:00",
+      "latitude": 13.01995,
+      "longitude": 77.588172,
+      "speed_kmh": 48.4,
+      "accuracy_m": 50,
+      "tower_id": "BLR_8522"
+    },
+    {
+      "timestamp": "2025-05-22T02:59:00",
+      "latitude": 13.005489,
+      "longitude": 77.618398,
+      "speed_kmh": 61.3,
+      "accuracy_m": 23,
+      "tower_id": "BLR_6790"
+    },
+    {
+      "timestamp": "2025-05-22T03:05:00",
+      "latitude": 13.019367,
+      "longitude": 77.625293,
+      "speed_kmh": 76.2,
+      "accuracy_m": 38,
+      "tower_id": "BLR_5653"
+    },
+    {
+      "timestamp": "2025-05-22T03:09:00",
+      "latitude": 13.000275,
+      "longitude": 77.596999,
+      "speed_kmh": 22.1,
+      "accuracy_m": 35,
+      "tower_id": "BLR_7371"
+    },
+    {
+      "timestamp": "2025-05-22T03:15:00",
+      "latitude": 13.075812,
+      "longitude": 77.590797,
+      "speed_kmh": 93.8,
+      "accuracy_m": 24,
+      "tower_id": "BLR_7589"
+    },
+    {
+      "timestamp": "2025-05-22T03:18:00",
+      "latitude": 13.02187,
+      "longitude": 77.623063,
+      "speed_kmh": 58.0,
+      "accuracy_m": 28,
+      "tower_id": "BLR_7589"
+    },
+    {
+      "timestamp": "2025-05-22T03:19:00",
+      "latitude": 13.0719,
+      "longitude": 77.607493,
+      "speed_kmh": 86.6,
+      "accuracy_m": 39,
+      "tower_id": "BLR_1075"
+    }
+  ],
+  "anomalies_detected": true,
+  "total_pings": 23,
+  "coverage_area_km2": 6.07
+}

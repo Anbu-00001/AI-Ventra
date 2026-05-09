@@ -1,0 +1,44 @@
+{
+  "id": "SUS-0010",
+  "name": "Suresh Kumar",
+  "age": 55,
+  "relationship_to_victim": "unknown",
+  "known_locations": [
+    "Bellandur Lake Road",
+    "Doddanekundi Industrial Area",
+    "Electronic City Phase 2"
+  ],
+  "registered_devices": [
+    "DEVICE_64",
+    "DEVICE_78",
+    "DEVICE_91"
+  ],
+  "vehicle": {
+    "type": "Grey sedan",
+    "partial_plate": "KA-04-AB"
+  },
+  "behavioral_baseline": {
+    "night_activity_level": "high",
+    "normal_call_frequency_per_hour": 4.2,
+    "usual_radius_km": 14.6
+  },
+  "anomaly_flags": [
+    "financial stressor detected in recent records",
+    "device powered down inside critical window",
+    "unverified alibi during postmortem interval"
+  ],
+  "risk_score": 85.9,
+  "risk_level": "HIGH",
+  "explainable_conflicts": [
+    {
+      "conflict": "claimed location conflicts with tower registration",
+      "supporting_source": "cctv_logs",
+      "confidence": 94.5
+    },
+    {
+      "conflict": "communication silence overlaps reconstructed TOD window",
+      "supporting_source": "call_logs",
+      "confidence": 83.3
+    }
+  ]
+}

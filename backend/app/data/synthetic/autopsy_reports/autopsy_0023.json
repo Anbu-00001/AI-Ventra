@@ -1,0 +1,31 @@
+{
+  "id": "AR-0023",
+  "case_id": "AIV-2003-27",
+  "examiner": "Dr. Arjun Mehta",
+  "examination_date": "08 May 2025",
+  "subject_name": "Priya Nair",
+  "subject_age": 40,
+  "subject_gender": "Female",
+  "body_temperature_celsius": 19.2,
+  "ambient_temperature_celsius": 31.8,
+  "rigor_mortis": "Post-rigor \u2014 decomposition stage 1",
+  "livor_mortis": "Fixed anterior \u2014 body repositioned post-mortem",
+  "postmortem_interval_hours": 10.4,
+  "injuries": [
+    {
+      "region": "Upper Limb",
+      "description": "Defensive bruising on forearms",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Cranial",
+      "description": "Blunt force trauma with {severity} fracture",
+      "severity": "SEVERE"
+    }
+  ],
+  "toxicology": [],
+  "cause_of_death": "Blunt force trauma to cranial region",
+  "manner_of_death": "homicide",
+  "tod_estimate": "02:30 AM \u00b1 1.7h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Priya Nair | Age: 40\nBody Temperature at Scene: 19.2\u00b0C | Ambient Temperature: 31.8\u00b0C\nPostmortem Interval (estimated): 10.4 hours\n\nINJURIES IDENTIFIED:\n  1. Upper Limb: Defensive bruising on forearms [MODERATE]\n  2. Cranial: Blunt force trauma with {severity} fracture [SEVERE]\n\nTOXICOLOGY (Preliminary): None detected\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed pattern suggesting body repositioned post-mortem.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the victim. Toxicological findings show no intoxicating substances.\n"
+}

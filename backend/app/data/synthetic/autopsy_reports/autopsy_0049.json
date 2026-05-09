@@ -1,0 +1,41 @@
+{
+  "id": "AR-0049",
+  "case_id": "AIV-2084-88",
+  "examiner": "Dr. Kiran Patel",
+  "examination_date": "28 May 2025",
+  "subject_name": "Priya Nair",
+  "subject_age": 26,
+  "subject_gender": "Male",
+  "body_temperature_celsius": 23.9,
+  "ambient_temperature_celsius": 31.5,
+  "rigor_mortis": "Partial rigor \u2014 onset",
+  "livor_mortis": "Unfixed \u2014 TOD within 4 hours",
+  "postmortem_interval_hours": 6.1,
+  "injuries": [
+    {
+      "region": "Lower Limb",
+      "description": "Multiple contusions consistent with assault",
+      "severity": "MILD"
+    },
+    {
+      "region": "Thoracic",
+      "description": "Multiple rib fractures with internal hemorrhage",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Neck",
+      "description": "Compression marks consistent with ligature strangulation",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Upper Limb",
+      "description": "Defensive bruising on forearms",
+      "severity": "MODERATE"
+    }
+  ],
+  "toxicology": [],
+  "cause_of_death": "Exsanguination from stab wounds",
+  "manner_of_death": "homicide",
+  "tod_estimate": "05:15 AM \u00b1 1.7h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Priya Nair | Age: 26\nBody Temperature at Scene: 23.9\u00b0C | Ambient Temperature: 31.5\u00b0C\nPostmortem Interval (estimated): 6.1 hours\n\nINJURIES IDENTIFIED:\n  1. Lower Limb: Multiple contusions consistent with assault [MILD]\n  2. Thoracic: Multiple rib fractures with internal hemorrhage [SEVERE]\n  3. Neck: Compression marks consistent with ligature strangulation [SEVERE]\n  4. Upper Limb: Defensive bruising on forearms [MODERATE]\n\nTOXICOLOGY (Preliminary): None detected\n\nRIGOR MORTIS: Partial rigor \u2014 early stage.\nLIVOR MORTIS: Fixed pattern suggesting body repositioned post-mortem.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a spontaneous violent altercation. Toxicological findings show no intoxicating substances.\n"
+}

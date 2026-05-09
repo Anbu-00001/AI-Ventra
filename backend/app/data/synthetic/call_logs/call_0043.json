@@ -1,0 +1,74 @@
+{
+  "id": "CALL-0043",
+  "device_owner": "Sanjay Chopra",
+  "phone_number": "+91-7089290612",
+  "case_id": "AIV-2099-16",
+  "date": "2025-05-22",
+  "calls": [
+    {
+      "timestamp": "2025-05-22T00:30:00",
+      "call_type": "MISSED",
+      "callee": "+91-9780316608",
+      "duration_seconds": 274,
+      "tower_id": "BLR_6915",
+      "signal_strength_dbm": -52
+    },
+    {
+      "timestamp": "2025-05-22T00:48:00",
+      "call_type": "INCOMING",
+      "callee": "+91-9799074599",
+      "duration_seconds": 318,
+      "tower_id": "BLR_1678",
+      "signal_strength_dbm": -96
+    },
+    {
+      "timestamp": "2025-05-22T01:13:00",
+      "call_type": "MISSED",
+      "callee": "+91-9851652972",
+      "duration_seconds": 55,
+      "tower_id": "BLR_8522",
+      "signal_strength_dbm": -71
+    },
+    {
+      "timestamp": "2025-05-22T01:30:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7443241123",
+      "duration_seconds": 108,
+      "tower_id": "BLR_7371",
+      "signal_strength_dbm": -64
+    },
+    {
+      "timestamp": "2025-05-22T02:08:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7616768827",
+      "duration_seconds": 15,
+      "tower_id": "BLR_8037",
+      "signal_strength_dbm": -98
+    },
+    {
+      "timestamp": "2025-05-22T02:41:00",
+      "call_type": "MISSED",
+      "callee": "+91-7924204822",
+      "duration_seconds": 330,
+      "tower_id": "BLR_4278",
+      "signal_strength_dbm": -91
+    },
+    {
+      "timestamp": "2025-05-22T03:09:00",
+      "call_type": "MISSED",
+      "callee": "+91-9342528425",
+      "duration_seconds": 133,
+      "tower_id": "BLR_4337",
+      "signal_strength_dbm": -54
+    }
+  ],
+  "total_calls": 7,
+  "silence_gaps": [
+    {
+      "gap_start": "2025-05-22T02:08:00",
+      "gap_duration_minutes": 47,
+      "anomaly": "suspicious_silence"
+    }
+  ],
+  "suspicious_activity": true
+}

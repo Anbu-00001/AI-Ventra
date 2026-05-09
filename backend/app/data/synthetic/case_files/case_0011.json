@@ -1,0 +1,57 @@
+{
+  "id": "CASE-0011",
+  "case_id": "AIV-2097-16",
+  "case_date": "2025-05-01",
+  "victim": {
+    "name": "Nikhil Bose",
+    "age": 40,
+    "occupation": "Software Engineer",
+    "last_seen": "2025-04-29T03:00:00"
+  },
+  "suspects": [
+    {
+      "id": "SUSPECT_01",
+      "name": "Pooja Verma",
+      "age": 49,
+      "relationship_to_victim": "unknown",
+      "alibi": "Working late \u2014 colleagues confirm",
+      "risk_score": 81.6
+    },
+    {
+      "id": "SUSPECT_02",
+      "name": "Deepa Iyer",
+      "age": 51,
+      "relationship_to_victim": "colleague",
+      "alibi": "At home \u2014 unverified",
+      "risk_score": 86.5
+    },
+    {
+      "id": "SUSPECT_03",
+      "name": "Kavya Reddy",
+      "age": 48,
+      "relationship_to_victim": "neighbor",
+      "alibi": "At home \u2014 unverified",
+      "risk_score": 85.2
+    }
+  ],
+  "evidence_count": 8,
+  "status": "SUSPENDED",
+  "risk_level": "ELEVATED",
+  "summary": "Case involving Nikhil Bose. Investigation ongoing. Key evidence collected from Phoenix Mall Area. Primary suspect: Arjun Mehta.",
+  "entities": {
+    "suspects": [
+      "Arjun Mehta"
+    ],
+    "locations": [
+      "MG Road, Bangalore",
+      "Outer Ring Road, Marathahalli",
+      "Service Road, Whitefield"
+    ],
+    "devices": [
+      "DEVICE_48",
+      "DEVICE_81",
+      "DEVICE_94",
+      "DEVICE_54"
+    ]
+  }
+}

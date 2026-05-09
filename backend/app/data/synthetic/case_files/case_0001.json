@@ -1,0 +1,40 @@
+{
+  "id": "CASE-0001",
+  "case_id": "AIV-2002-25",
+  "case_date": "2025-08-09",
+  "victim": {
+    "name": "Rohan Joshi",
+    "age": 61,
+    "occupation": "Business Owner",
+    "last_seen": "2025-08-07T01:00:00"
+  },
+  "suspects": [
+    {
+      "id": "SUSPECT_01",
+      "name": "Aditya Gupta",
+      "age": 23,
+      "relationship_to_victim": "neighbor",
+      "alibi": "At home \u2014 unverified",
+      "risk_score": 73.2
+    }
+  ],
+  "evidence_count": 10,
+  "status": "SUSPENDED",
+  "risk_level": "HIGH",
+  "summary": "Case involving Rohan Joshi. Investigation ongoing. Key evidence collected from Hebbal Lake, Bangalore. Primary suspect: Suresh Kumar.",
+  "entities": {
+    "suspects": [
+      "Suresh Kumar"
+    ],
+    "locations": [
+      "Service Road, Whitefield",
+      "Bellandur Lake Road",
+      "MG Road, Bangalore"
+    ],
+    "devices": [
+      "DEVICE_40",
+      "DEVICE_74",
+      "DEVICE_34"
+    ]
+  }
+}

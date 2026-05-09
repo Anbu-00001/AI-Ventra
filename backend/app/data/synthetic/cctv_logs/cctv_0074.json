@@ -1,0 +1,57 @@
+{
+  "id": "CCTV-0074",
+  "camera_id": "CAM_027",
+  "location": "Koramangala 5th Block",
+  "case_id": "AIV-2047-30",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.75,
+      "face_match": false,
+      "matched_id": "Divya Krishnan",
+      "duration_seconds": 117
+    },
+    {
+      "timestamp": "2025-05-22T01:47:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.86,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 39
+    },
+    {
+      "timestamp": "2025-05-22T02:05:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.83,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 14
+    },
+    {
+      "timestamp": "2025-05-22T02:12:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.98,
+      "face_match": false,
+      "matched_id": "Amit Shah",
+      "duration_seconds": 85
+    },
+    {
+      "timestamp": "2025-05-22T02:21:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.77,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 56
+    }
+  ],
+  "total_events": 5,
+  "has_face_match": true,
+  "has_vehicle": true
+}

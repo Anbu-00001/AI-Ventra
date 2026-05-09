@@ -1,0 +1,33 @@
+{
+  "file_id": "caa69c83-15a5-49d4-99f7-f91327dbd2e2",
+  "original_name": "cctv_events_AIV_2041.json",
+  "file_type": "json",
+  "text": "{\"camera_id\": \"CAM_04_MARATHAHALLI\", \"timestamp\": \"2025-05-22T02:14:00Z\", \"case_id\": \"AIV-2041-77\", \"events\": [{\"time\": \"02:14:12\", \"object\": \"Vehicle (SUV)\", \"license_plate\": \"KA-03-MG-1122\", \"action\": \"Enters frame from North\", \"confidence\": 0.98}, {\"time\": \"02:16:45\", \"object\": \"Person (Male)\", \"description\": \"Height approx 6ft, wearing dark hoodie\", \"action\": \"Exits vehicle, approaches building B\", \"confidence\": 0.89}, {\"time\": \"02:22:10\", \"object\": \"Vehicle (SUV)\", \"action\": \"Speeds away South-East\", \"confidence\": 0.95}], \"anomaly_detected\": true, \"anomaly_description\": \"High-velocity departure and masked license plate detected\"}",
+  "text_preview": "{\"camera_id\": \"CAM_04_MARATHAHALLI\", \"timestamp\": \"2025-05-22T02:14:00Z\", \"case_id\": \"AIV-2041-77\", \"events\": [{\"time\": \"02:14:12\", \"object\": \"Vehicle (SUV)\", \"license_plate\": \"KA-03-MG-1122\", \"action\": \"Enters frame from North\", \"confidence\": 0.98}, {\"time\": \"02:16:45\", \"object\": \"Person (Male)\", \"description\": \"Height approx 6ft, wearing dark hoodie\", \"action\": \"Exits vehicle, approaches building B\", \"confidence\": 0.89}, {\"time\": \"02:22:10\", \"object\": \"Vehicle (SUV)\", \"action\": \"Speeds away So",
+  "metadata": {
+    "filename": "caa69c83-15a5-49d4-99f7-f91327dbd2e2_cctv_events_AIV_2041.json",
+    "extension": ".json",
+    "size_bytes": 775,
+    "created_at": "2026-05-09T11:51:51.252349",
+    "modified_at": "2026-05-09T11:51:51.252349",
+    "sha256": "2c5a9de35d6d3201fe01e02f43fe1f0982ec39a7bbdd26c109ab4a6c47bdbf6c",
+    "is_binary": false
+  },
+  "classification": {
+    "file_id": "caa69c83-15a5-49d4-99f7-f91327dbd2e2",
+    "category": "cctv_log",
+    "sub_category": null,
+    "confidence": 85.0,
+    "tags": [],
+    "classified_at": "2026-05-09T11:52:08.015579"
+  },
+  "entities": {
+    "persons": [],
+    "locations": [],
+    "devices": [],
+    "timestamps": [],
+    "organizations": [],
+    "physical_evidence": []
+  },
+  "chunk_count": 1
+}

@@ -1,0 +1,76 @@
+{
+  "id": "GPS-0036",
+  "device_id": "DEVICE_44",
+  "case_id": "AIV-2047-62",
+  "owner": "Deepa Iyer",
+  "date": "2025-05-22",
+  "pings": [
+    {
+      "timestamp": "2025-05-22T01:30:00",
+      "latitude": 13.051982,
+      "longitude": 77.536011,
+      "speed_kmh": 49.2,
+      "accuracy_m": 43,
+      "tower_id": "BLR_6812"
+    },
+    {
+      "timestamp": "2025-05-22T01:38:00",
+      "latitude": 13.049031,
+      "longitude": 77.553828,
+      "speed_kmh": 71.2,
+      "accuracy_m": 48,
+      "tower_id": "BLR_7371"
+    },
+    {
+      "timestamp": "2025-05-22T01:41:00",
+      "latitude": 13.04143,
+      "longitude": 77.54342,
+      "speed_kmh": 70.5,
+      "accuracy_m": 23,
+      "tower_id": "BLR_8522"
+    },
+    {
+      "timestamp": "2025-05-22T01:42:00",
+      "latitude": 13.068238,
+      "longitude": 77.55318,
+      "speed_kmh": 33.0,
+      "accuracy_m": 21,
+      "tower_id": "BLR_9350"
+    },
+    {
+      "timestamp": "2025-05-22T01:44:00",
+      "latitude": 13.046958,
+      "longitude": 77.53709,
+      "speed_kmh": 1.8,
+      "accuracy_m": 47,
+      "tower_id": "BLR_2518"
+    },
+    {
+      "timestamp": "2025-05-22T01:48:00",
+      "latitude": 13.065108,
+      "longitude": 77.553087,
+      "speed_kmh": 26.8,
+      "accuracy_m": 28,
+      "tower_id": "BLR_1075"
+    },
+    {
+      "timestamp": "2025-05-22T01:52:00",
+      "latitude": 13.062826,
+      "longitude": 77.534449,
+      "speed_kmh": 75.3,
+      "accuracy_m": 42,
+      "tower_id": "BLR_4337"
+    },
+    {
+      "timestamp": "2025-05-22T01:58:00",
+      "latitude": 13.049923,
+      "longitude": 77.542622,
+      "speed_kmh": 49.7,
+      "accuracy_m": 16,
+      "tower_id": "BLR_4309"
+    }
+  ],
+  "anomalies_detected": false,
+  "total_pings": 8,
+  "coverage_area_km2": 2.28
+}

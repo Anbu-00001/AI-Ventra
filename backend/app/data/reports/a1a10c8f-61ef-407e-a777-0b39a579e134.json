@@ -1,0 +1,31 @@
+{
+  "report_id": "a1a10c8f-61ef-407e-a777-0b39a579e134",
+  "case_id": "AIV-2041-77",
+  "risk_score": 77.0,
+  "threat_level": "HIGH",
+  "verdict": "Forensic analysis of 20 indexed evidence streams establishes that the death of Unknown Subject constitutes a premeditated homicide. Primary cause: Multiple traumatic injuries with homicidal intent. Post-mortem body repositioning confirms deliberate evidence concealment by the perpetrator(s). Multi-stream evidence confidence: 77%.",
+  "reasoning": "Multi-source forensic analysis spanning 20 RAG-indexed evidence vectors. Autopsy findings: Multiple traumatic injuries with homicidal intent. Lividity pattern analysis confirms body was repositioned post-mortem, indicating scene manipulation. Convergence of physical, digital, and behavioral evidence streams establishes a coherent forensic narrative indicating premeditated criminal conduct.",
+  "supporting_evidence": [
+    {
+      "evidence_type": "Autopsy Report",
+      "description": "Multiple traumatic injuries with homicidal intent",
+      "weight": 96
+    }
+  ],
+  "key_findings": [
+    "Cause of death: Multiple traumatic injuries with homicidal intent",
+    "Body repositioned post-mortem \u2014 deliberate evidence concealment confirmed"
+  ],
+  "recommended_actions": [
+    "Obtain complete tower dump for all registered devices within 1km of incident site",
+    "Submit all suspect devices for forensic image recovery and deleted-data analysis",
+    "Review all CCTV within 500m radius of incident location during TOD window",
+    "Obtain warrant for access to encrypted call and message logs"
+  ],
+  "confidence_score": 79.0,
+  "autopsy_summary": null,
+  "timeline_summary": null,
+  "anomaly_summary": null,
+  "generated_at": "2026-05-09T14:54:56.242104",
+  "analyst_id": "AIVENTRA-OMEGA-7"
+}

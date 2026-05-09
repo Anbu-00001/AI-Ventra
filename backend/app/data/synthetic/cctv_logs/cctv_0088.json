@@ -1,0 +1,57 @@
+{
+  "id": "CCTV-0088",
+  "camera_id": "CAM_002",
+  "location": "Service Road, Whitefield",
+  "case_id": "AIV-2025-38",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.77,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 93
+    },
+    {
+      "timestamp": "2025-05-22T01:56:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.95,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 70
+    },
+    {
+      "timestamp": "2025-05-22T02:15:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.78,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 95
+    },
+    {
+      "timestamp": "2025-05-22T02:17:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.89,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 26
+    },
+    {
+      "timestamp": "2025-05-22T02:33:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.88,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 18
+    }
+  ],
+  "total_events": 5,
+  "has_face_match": true,
+  "has_vehicle": true
+}

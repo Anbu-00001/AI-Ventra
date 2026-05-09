@@ -1,0 +1,84 @@
+{
+  "id": "CCTV-0055",
+  "camera_id": "CAM_027",
+  "location": "Bellandur Lake Road",
+  "case_id": "AIV-2095-33",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.8,
+      "face_match": false,
+      "matched_id": "Kiran Patel",
+      "duration_seconds": 8
+    },
+    {
+      "timestamp": "2025-05-22T01:49:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Vehicle: White SUV, partial plate visible",
+      "confidence": 0.94,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 110
+    },
+    {
+      "timestamp": "2025-05-22T01:58:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.81,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 114
+    },
+    {
+      "timestamp": "2025-05-22T02:10:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.83,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 85
+    },
+    {
+      "timestamp": "2025-05-22T02:17:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.86,
+      "face_match": false,
+      "matched_id": "Rohan Joshi",
+      "duration_seconds": 90
+    },
+    {
+      "timestamp": "2025-05-22T02:20:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.82,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 67
+    },
+    {
+      "timestamp": "2025-05-22T02:39:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.98,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 64
+    },
+    {
+      "timestamp": "2025-05-22T02:43:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.91,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 98
+    }
+  ],
+  "total_events": 8,
+  "has_face_match": true,
+  "has_vehicle": true
+}

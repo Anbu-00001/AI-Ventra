@@ -1,0 +1,58 @@
+{
+  "id": "CALL-0049",
+  "device_owner": "Sanjay Chopra",
+  "phone_number": "+91-8312489379",
+  "case_id": "AIV-2016-26",
+  "date": "2025-05-22",
+  "calls": [
+    {
+      "timestamp": "2025-05-22T00:30:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7134366568",
+      "duration_seconds": 406,
+      "tower_id": "BLR_4337",
+      "signal_strength_dbm": -51
+    },
+    {
+      "timestamp": "2025-05-22T00:47:00",
+      "call_type": "INCOMING",
+      "callee": "+91-8251811897",
+      "duration_seconds": 534,
+      "tower_id": "BLR_1373",
+      "signal_strength_dbm": -65
+    },
+    {
+      "timestamp": "2025-05-22T01:02:00",
+      "call_type": "MISSED",
+      "callee": "+91-7600977204",
+      "duration_seconds": 232,
+      "tower_id": "BLR_8037",
+      "signal_strength_dbm": -76
+    },
+    {
+      "timestamp": "2025-05-22T01:13:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-9962467771",
+      "duration_seconds": 592,
+      "tower_id": "BLR_6639",
+      "signal_strength_dbm": -56
+    },
+    {
+      "timestamp": "2025-05-22T01:55:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-7437502555",
+      "duration_seconds": 68,
+      "tower_id": "BLR_1075",
+      "signal_strength_dbm": -68
+    }
+  ],
+  "total_calls": 5,
+  "silence_gaps": [
+    {
+      "gap_start": "2025-05-22T01:02:00",
+      "gap_duration_minutes": 24,
+      "anomaly": "suspicious_silence"
+    }
+  ],
+  "suspicious_activity": true
+}

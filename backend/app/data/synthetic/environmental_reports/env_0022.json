@@ -1,0 +1,74 @@
+{
+  "id": "ENV-0022",
+  "location": "Electronic City Phase 2",
+  "case_id": "AIV-2008-18",
+  "date": "2025-05-22",
+  "readings": [
+    {
+      "timestamp": "2025-05-22T00:00:00",
+      "temperature_celsius": 22.7,
+      "humidity_percent": 89.7,
+      "wind_speed_kmh": 7.9,
+      "precipitation_mm": 0.9,
+      "visibility_m": 2696
+    },
+    {
+      "timestamp": "2025-05-22T01:00:00",
+      "temperature_celsius": 30.0,
+      "humidity_percent": 67.4,
+      "wind_speed_kmh": 15.0,
+      "precipitation_mm": 0.8,
+      "visibility_m": 1077
+    },
+    {
+      "timestamp": "2025-05-22T02:00:00",
+      "temperature_celsius": 22.8,
+      "humidity_percent": 79.0,
+      "wind_speed_kmh": 1.6,
+      "precipitation_mm": 0.9,
+      "visibility_m": 920
+    },
+    {
+      "timestamp": "2025-05-22T03:00:00",
+      "temperature_celsius": 29.2,
+      "humidity_percent": 67.1,
+      "wind_speed_kmh": 9.4,
+      "precipitation_mm": 0.5,
+      "visibility_m": 3061
+    },
+    {
+      "timestamp": "2025-05-22T04:00:00",
+      "temperature_celsius": 28.6,
+      "humidity_percent": 57.9,
+      "wind_speed_kmh": 7.7,
+      "precipitation_mm": 1.8,
+      "visibility_m": 671
+    },
+    {
+      "timestamp": "2025-05-22T05:00:00",
+      "temperature_celsius": 24.4,
+      "humidity_percent": 67.5,
+      "wind_speed_kmh": 13.5,
+      "precipitation_mm": 1.1,
+      "visibility_m": 690
+    },
+    {
+      "timestamp": "2025-05-22T06:00:00",
+      "temperature_celsius": 25.8,
+      "humidity_percent": 84.3,
+      "wind_speed_kmh": 3.1,
+      "precipitation_mm": 1.1,
+      "visibility_m": 1516
+    },
+    {
+      "timestamp": "2025-05-22T07:00:00",
+      "temperature_celsius": 29.8,
+      "humidity_percent": 59.5,
+      "wind_speed_kmh": 4.4,
+      "precipitation_mm": 0.5,
+      "visibility_m": 4870
+    }
+  ],
+  "avg_temperature": 26.7,
+  "report_text": "Environmental conditions at Electronic City Phase 2 on 22 May 2025. Temperature ranged 22.7\u00b0C to 30.0\u00b0C. Humidity: 89.7% at midnight."
+}

@@ -1,0 +1,41 @@
+{
+  "id": "AR-0003",
+  "case_id": "AIV-2091-88",
+  "examiner": "Dr. Suresh Kumar",
+  "examination_date": "01 August 2025",
+  "subject_name": "Pooja Verma",
+  "subject_age": 36,
+  "subject_gender": "Male",
+  "body_temperature_celsius": 26.9,
+  "ambient_temperature_celsius": 28.7,
+  "rigor_mortis": "Full rigor",
+  "livor_mortis": "Fixed posterior \u2014 no repositioning",
+  "postmortem_interval_hours": 14.9,
+  "injuries": [
+    {
+      "region": "Thoracic",
+      "description": "Multiple rib fractures with internal hemorrhage",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Abdominal",
+      "description": "Blunt force trauma with splenic laceration",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Cranial",
+      "description": "Blunt force trauma with {severity} fracture",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Neck",
+      "description": "Compression marks consistent with ligature strangulation",
+      "severity": "SEVERE"
+    }
+  ],
+  "toxicology": [],
+  "cause_of_death": "Exsanguination from stab wounds",
+  "manner_of_death": "accident",
+  "tod_estimate": "02:15 AM \u00b1 1.1h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Pooja Verma | Age: 36\nBody Temperature at Scene: 26.9\u00b0C | Ambient Temperature: 28.7\u00b0C\nPostmortem Interval (estimated): 14.9 hours\n\nINJURIES IDENTIFIED:\n  1. Thoracic: Multiple rib fractures with internal hemorrhage [SEVERE]\n  2. Abdominal: Blunt force trauma with splenic laceration [MODERATE]\n  3. Cranial: Blunt force trauma with {severity} fracture [SEVERE]\n  4. Neck: Compression marks consistent with ligature strangulation [SEVERE]\n\nTOXICOLOGY (Preliminary): None detected\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed pattern suggesting body repositioned post-mortem.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a spontaneous violent altercation. Toxicological findings show no intoxicating substances.\n"
+}

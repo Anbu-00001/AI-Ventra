@@ -1,0 +1,41 @@
+{
+  "id": "CASE-0015",
+  "case_id": "AIV-2085-42",
+  "case_date": "2025-05-31",
+  "victim": {
+    "name": "Rahul Sharma",
+    "age": 59,
+    "occupation": "Software Engineer",
+    "last_seen": "2025-05-30T14:00:00"
+  },
+  "suspects": [
+    {
+      "id": "SUSPECT_01",
+      "name": "Amit Shah",
+      "age": 35,
+      "relationship_to_victim": "colleague",
+      "alibi": "Working late \u2014 colleagues confirm",
+      "risk_score": 48.3
+    }
+  ],
+  "evidence_count": 9,
+  "status": "SUSPENDED",
+  "risk_level": "MODERATE",
+  "summary": "Case involving Rahul Sharma. Investigation ongoing. Key evidence collected from Doddanekundi Industrial Area. Primary suspect: Rohan Joshi.",
+  "entities": {
+    "suspects": [
+      "Rohan Joshi"
+    ],
+    "locations": [
+      "MG Road, Bangalore",
+      "Hebbal Lake, Bangalore",
+      "Koramangala 5th Block"
+    ],
+    "devices": [
+      "DEVICE_50",
+      "DEVICE_50",
+      "DEVICE_62",
+      "DEVICE_87"
+    ]
+  }
+}

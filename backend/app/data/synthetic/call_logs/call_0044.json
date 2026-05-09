@@ -1,0 +1,138 @@
+{
+  "id": "CALL-0044",
+  "device_owner": "Meena Pillai",
+  "phone_number": "+91-9931679273",
+  "case_id": "AIV-2074-75",
+  "date": "2025-05-22",
+  "calls": [
+    {
+      "timestamp": "2025-05-22T00:30:00",
+      "call_type": "MISSED",
+      "callee": "+91-7072311963",
+      "duration_seconds": 109,
+      "tower_id": "BLR_9500",
+      "signal_strength_dbm": -78
+    },
+    {
+      "timestamp": "2025-05-22T01:06:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-9628129107",
+      "duration_seconds": 161,
+      "tower_id": "BLR_2518",
+      "signal_strength_dbm": -83
+    },
+    {
+      "timestamp": "2025-05-22T01:50:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-7936143246",
+      "duration_seconds": 501,
+      "tower_id": "BLR_9500",
+      "signal_strength_dbm": -92
+    },
+    {
+      "timestamp": "2025-05-22T02:22:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8673019740",
+      "duration_seconds": 53,
+      "tower_id": "BLR_9500",
+      "signal_strength_dbm": -69
+    },
+    {
+      "timestamp": "2025-05-22T02:36:00",
+      "call_type": "INCOMING",
+      "callee": "+91-8412834074",
+      "duration_seconds": 82,
+      "tower_id": "BLR_6790",
+      "signal_strength_dbm": -50
+    },
+    {
+      "timestamp": "2025-05-22T03:03:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-9212230923",
+      "duration_seconds": 544,
+      "tower_id": "BLR_6790",
+      "signal_strength_dbm": -54
+    },
+    {
+      "timestamp": "2025-05-22T03:35:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-9694115924",
+      "duration_seconds": 196,
+      "tower_id": "BLR_6790",
+      "signal_strength_dbm": -87
+    },
+    {
+      "timestamp": "2025-05-22T04:16:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-7523506208",
+      "duration_seconds": 38,
+      "tower_id": "BLR_5883",
+      "signal_strength_dbm": -57
+    },
+    {
+      "timestamp": "2025-05-22T04:26:00",
+      "call_type": "MISSED",
+      "callee": "+91-7503590730",
+      "duration_seconds": 357,
+      "tower_id": "BLR_4278",
+      "signal_strength_dbm": -96
+    },
+    {
+      "timestamp": "2025-05-22T04:41:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-7058714381",
+      "duration_seconds": 506,
+      "tower_id": "BLR_8522",
+      "signal_strength_dbm": -60
+    },
+    {
+      "timestamp": "2025-05-22T04:55:00",
+      "call_type": "INCOMING",
+      "callee": "+91-9956928568",
+      "duration_seconds": 194,
+      "tower_id": "BLR_6915",
+      "signal_strength_dbm": -99
+    },
+    {
+      "timestamp": "2025-05-22T05:24:00",
+      "call_type": "INCOMING",
+      "callee": "+91-9934714143",
+      "duration_seconds": 503,
+      "tower_id": "BLR_1373",
+      "signal_strength_dbm": -88
+    },
+    {
+      "timestamp": "2025-05-22T06:01:00",
+      "call_type": "MISSED",
+      "callee": "+91-7776815128",
+      "duration_seconds": 182,
+      "tower_id": "BLR_1373",
+      "signal_strength_dbm": -88
+    },
+    {
+      "timestamp": "2025-05-22T06:21:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7195387586",
+      "duration_seconds": 308,
+      "tower_id": "BLR_1373",
+      "signal_strength_dbm": -88
+    },
+    {
+      "timestamp": "2025-05-22T06:34:00",
+      "call_type": "INCOMING",
+      "callee": "+91-9592849757",
+      "duration_seconds": 283,
+      "tower_id": "BLR_1678",
+      "signal_strength_dbm": -99
+    }
+  ],
+  "total_calls": 15,
+  "silence_gaps": [
+    {
+      "gap_start": "2025-05-22T04:16:00",
+      "gap_duration_minutes": 30,
+      "anomaly": "suspicious_silence"
+    }
+  ],
+  "suspicious_activity": true
+}

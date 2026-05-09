@@ -1,0 +1,66 @@
+{
+  "id": "CALL-0016",
+  "device_owner": "Meena Pillai",
+  "phone_number": "+91-7854456913",
+  "case_id": "AIV-2015-12",
+  "date": "2025-05-22",
+  "calls": [
+    {
+      "timestamp": "2025-05-22T00:30:00",
+      "call_type": "MISSED",
+      "callee": "+91-8292922285",
+      "duration_seconds": 369,
+      "tower_id": "BLR_8522",
+      "signal_strength_dbm": -53
+    },
+    {
+      "timestamp": "2025-05-22T00:39:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-7374592983",
+      "duration_seconds": 555,
+      "tower_id": "BLR_5653",
+      "signal_strength_dbm": -82
+    },
+    {
+      "timestamp": "2025-05-22T01:17:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8278554077",
+      "duration_seconds": 170,
+      "tower_id": "BLR_5883",
+      "signal_strength_dbm": -86
+    },
+    {
+      "timestamp": "2025-05-22T01:47:00",
+      "call_type": "MISSED",
+      "callee": "+91-8733288146",
+      "duration_seconds": 484,
+      "tower_id": "BLR_4309",
+      "signal_strength_dbm": -95
+    },
+    {
+      "timestamp": "2025-05-22T02:29:00",
+      "call_type": "MISSED",
+      "callee": "+91-7888234660",
+      "duration_seconds": 243,
+      "tower_id": "BLR_4309",
+      "signal_strength_dbm": -53
+    },
+    {
+      "timestamp": "2025-05-22T02:36:00",
+      "call_type": "MISSED",
+      "callee": "+91-9206533521",
+      "duration_seconds": 503,
+      "tower_id": "BLR_2518",
+      "signal_strength_dbm": -71
+    }
+  ],
+  "total_calls": 6,
+  "silence_gaps": [
+    {
+      "gap_start": "2025-05-22T01:47:00",
+      "gap_duration_minutes": 57,
+      "anomaly": "suspicious_silence"
+    }
+  ],
+  "suspicious_activity": true
+}

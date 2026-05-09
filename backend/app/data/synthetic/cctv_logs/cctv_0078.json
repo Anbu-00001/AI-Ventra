@@ -1,0 +1,84 @@
+{
+  "id": "CCTV-0078",
+  "camera_id": "CAM_004",
+  "location": "Bellandur Lake Road",
+  "case_id": "AIV-2035-76",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.84,
+      "face_match": true,
+      "matched_id": "Sanjay Chopra",
+      "duration_seconds": 100
+    },
+    {
+      "timestamp": "2025-05-22T01:54:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.82,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 26
+    },
+    {
+      "timestamp": "2025-05-22T02:01:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.9,
+      "face_match": true,
+      "matched_id": "Priya Nair",
+      "duration_seconds": 41
+    },
+    {
+      "timestamp": "2025-05-22T02:09:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.85,
+      "face_match": false,
+      "matched_id": "Deepa Iyer",
+      "duration_seconds": 26
+    },
+    {
+      "timestamp": "2025-05-22T02:12:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.73,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 85
+    },
+    {
+      "timestamp": "2025-05-22T02:26:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.75,
+      "face_match": true,
+      "matched_id": "Amit Shah",
+      "duration_seconds": 86
+    },
+    {
+      "timestamp": "2025-05-22T02:45:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.84,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 11
+    },
+    {
+      "timestamp": "2025-05-22T03:04:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.72,
+      "face_match": false,
+      "matched_id": "Nikhil Bose",
+      "duration_seconds": 6
+    }
+  ],
+  "total_events": 8,
+  "has_face_match": true,
+  "has_vehicle": true
+}

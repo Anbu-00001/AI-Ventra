@@ -1,0 +1,169 @@
+{
+  "graph_id": "6540fab7-d7ab-4c80-9f58-44e5a9a4809a",
+  "case_id": "AIV-2041-77",
+  "nodes": [
+    {
+      "id": "suspect-1",
+      "label": "SUSPECT_01",
+      "meta": "RAGHAV M.",
+      "node_type": "suspect",
+      "confidence": 94.0,
+      "evidence_sources": [],
+      "attributes": {}
+    },
+    {
+      "id": "suspect-2",
+      "label": "SUSPECT_02",
+      "meta": "KARAN S.",
+      "node_type": "suspect",
+      "confidence": 87.0,
+      "evidence_sources": [],
+      "attributes": {}
+    },
+    {
+      "id": "device-45",
+      "label": "DEVICE_45",
+      "meta": "MOBILE PHONE",
+      "node_type": "device",
+      "confidence": 96.0,
+      "evidence_sources": [],
+      "attributes": {}
+    },
+    {
+      "id": "tower",
+      "label": "MOBILE TOWER",
+      "meta": "BLR_2231",
+      "node_type": "device",
+      "confidence": 99.0,
+      "evidence_sources": [],
+      "attributes": {}
+    },
+    {
+      "id": "device-32",
+      "label": "DEVICE_32",
+      "meta": "LAPTOP",
+      "node_type": "device",
+      "confidence": 82.0,
+      "evidence_sources": [],
+      "attributes": {}
+    },
+    {
+      "id": "cctv",
+      "label": "CCTV_09",
+      "meta": "CAMERA_091",
+      "node_type": "device",
+      "confidence": 91.0,
+      "evidence_sources": [],
+      "attributes": {}
+    },
+    {
+      "id": "loc-12",
+      "label": "LOCATION_12",
+      "meta": "SERVICE ROAD",
+      "node_type": "location",
+      "confidence": 85.0,
+      "evidence_sources": [],
+      "attributes": {}
+    },
+    {
+      "id": "loc-17",
+      "label": "LOCATION_17",
+      "meta": "MG ROAD",
+      "node_type": "location",
+      "confidence": 88.0,
+      "evidence_sources": [],
+      "attributes": {}
+    },
+    {
+      "id": "time-1",
+      "label": "22 MAY 2025",
+      "meta": "22:14:03",
+      "node_type": "timestamp",
+      "confidence": 99.0,
+      "evidence_sources": [],
+      "attributes": {}
+    },
+    {
+      "id": "doc-14",
+      "label": "DOC_14",
+      "meta": "CCTV REPORT",
+      "node_type": "document",
+      "confidence": 94.0,
+      "evidence_sources": [],
+      "attributes": {}
+    }
+  ],
+  "edges": [
+    {
+      "source": "suspect-1",
+      "target": "tower",
+      "relationship": "CONNECTED_TO",
+      "strength": "very-high",
+      "confidence": 92.0,
+      "timestamp": null,
+      "explanation": "Registered on BLR_2231 at 22:14:03 \u2014 same timestamp as victim's signal loss"
+    },
+    {
+      "source": "tower",
+      "target": "suspect-2",
+      "relationship": "CONNECTED_TO",
+      "strength": "high",
+      "confidence": 87.0,
+      "timestamp": null,
+      "explanation": "SUSPECT_02 device also registered on BLR_2231 within 3 minutes"
+    },
+    {
+      "source": "suspect-1",
+      "target": "cctv",
+      "relationship": "PRESENT_AT",
+      "strength": "very-high",
+      "confidence": 94.0,
+      "timestamp": null,
+      "explanation": "Facial recognition match \u2014 97% confidence"
+    },
+    {
+      "source": "cctv",
+      "target": "device-45",
+      "relationship": "CORRELATES_WITH",
+      "strength": "high",
+      "confidence": 88.0,
+      "timestamp": null,
+      "explanation": "CCTV timestamp matches device ping within 45 seconds"
+    },
+    {
+      "source": "suspect-2",
+      "target": "device-32",
+      "relationship": "OWNS_DEVICE",
+      "strength": "medium",
+      "confidence": 79.0,
+      "timestamp": null,
+      "explanation": "Device registered in suspect's name \u2014 cellular provider records"
+    },
+    {
+      "source": "loc-12",
+      "target": "suspect-1",
+      "relationship": "PRESENT_AT",
+      "strength": "high",
+      "confidence": 85.0,
+      "timestamp": null,
+      "explanation": "GPS ping places SUSPECT_01 at service road during critical window"
+    }
+  ],
+  "total_nodes": 10,
+  "total_edges": 6,
+  "high_confidence_paths": [
+    [
+      "suspect-1",
+      "tower",
+      "suspect-2"
+    ],
+    [
+      "suspect-1",
+      "cctv",
+      "device-45"
+    ]
+  ],
+  "ai_insight": "Strong convergent evidence network detected: SUSPECT_01 and SUSPECT_02 show coordinated device activity clustering around tower BLR_2231 during the exact TOD window. Combined facial recognition, GPS correlation, and tower registration create a 94% confidence linkage to the incident location.",
+  "insight_confidence": 94.0,
+  "generated_at": "2026-05-09T15:49:27.007082"
+}

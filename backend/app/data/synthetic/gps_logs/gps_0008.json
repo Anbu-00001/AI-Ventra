@@ -1,0 +1,84 @@
+{
+  "id": "GPS-0008",
+  "device_id": "DEVICE_82",
+  "case_id": "AIV-2017-62",
+  "owner": "Rahul Sharma",
+  "date": "2025-05-22",
+  "pings": [
+    {
+      "timestamp": "2025-05-22T01:30:00",
+      "latitude": 13.134747,
+      "longitude": 77.536668,
+      "speed_kmh": 95.9,
+      "accuracy_m": 41,
+      "tower_id": "BLR_9500"
+    },
+    {
+      "timestamp": "2025-05-22T01:34:00",
+      "latitude": 13.027774,
+      "longitude": 77.531359,
+      "speed_kmh": 11.6,
+      "accuracy_m": 50,
+      "tower_id": "BLR_4278"
+    },
+    {
+      "timestamp": "2025-05-22T01:35:00",
+      "latitude": 13.036443,
+      "longitude": 77.538717,
+      "speed_kmh": 22.8,
+      "accuracy_m": 45,
+      "tower_id": "BLR_5653"
+    },
+    {
+      "timestamp": "2025-05-22T01:41:00",
+      "latitude": 13.024211,
+      "longitude": 77.550371,
+      "speed_kmh": 30.2,
+      "accuracy_m": 20,
+      "tower_id": "BLR_1373"
+    },
+    {
+      "timestamp": "2025-05-22T01:46:00",
+      "latitude": 13.036368,
+      "longitude": 77.544897,
+      "speed_kmh": 26.6,
+      "accuracy_m": 32,
+      "tower_id": "BLR_5653"
+    },
+    {
+      "timestamp": "2025-05-22T01:48:00",
+      "latitude": 13.011572,
+      "longitude": 77.533117,
+      "speed_kmh": 14.3,
+      "accuracy_m": 10,
+      "tower_id": "BLR_6790"
+    },
+    {
+      "timestamp": "2025-05-22T01:52:00",
+      "latitude": 13.019862,
+      "longitude": 77.528307,
+      "speed_kmh": 22.5,
+      "accuracy_m": 46,
+      "tower_id": "BLR_6790"
+    },
+    {
+      "timestamp": "2025-05-22T01:59:00",
+      "latitude": 13.030129,
+      "longitude": 77.553226,
+      "speed_kmh": 18.7,
+      "accuracy_m": 31,
+      "tower_id": "BLR_8037"
+    },
+    {
+      "timestamp": "2025-05-22T02:05:00",
+      "latitude": 13.037037,
+      "longitude": 77.545929,
+      "speed_kmh": 43.4,
+      "accuracy_m": 13,
+      "tower_id": "BLR_8522"
+    }
+  ],
+  "anomalies_detected": true,
+  "total_pings": 9,
+  "coverage_area_km2": 13.43
+}

@@ -1,0 +1,41 @@
+{
+  "id": "SUS-0024",
+  "name": "Amit Shah",
+  "age": 29,
+  "relationship_to_victim": "ex-partner",
+  "known_locations": [
+    "Sarjapur Road, Bangalore",
+    "Doddanekundi Industrial Area",
+    "Phoenix Mall Area"
+  ],
+  "registered_devices": [
+    "DEVICE_65"
+  ],
+  "vehicle": {
+    "type": "White SUV",
+    "partial_plate": "KA-09-CD"
+  },
+  "behavioral_baseline": {
+    "night_activity_level": "high",
+    "normal_call_frequency_per_hour": 3.8,
+    "usual_radius_km": 7.9
+  },
+  "anomaly_flags": [
+    "prior communication spike with victim",
+    "device powered down inside critical window"
+  ],
+  "risk_score": 74.6,
+  "risk_level": "HIGH",
+  "explainable_conflicts": [
+    {
+      "conflict": "claimed location conflicts with tower registration",
+      "supporting_source": "gps_logs",
+      "confidence": 86.0
+    },
+    {
+      "conflict": "communication silence overlaps reconstructed TOD window",
+      "supporting_source": "call_logs",
+      "confidence": 95.5
+    }
+  ]
+}

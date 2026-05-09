@@ -1,0 +1,52 @@
+{
+  "id": "AR-0046",
+  "case_id": "AIV-2056-46",
+  "examiner": "Dr. Kiran Patel",
+  "examination_date": "24 May 2025",
+  "subject_name": "Arjun Mehta",
+  "subject_age": 20,
+  "subject_gender": "Female",
+  "body_temperature_celsius": 27.7,
+  "ambient_temperature_celsius": 30.5,
+  "rigor_mortis": "Partial rigor \u2014 onset",
+  "livor_mortis": "Fixed posterior \u2014 no repositioning",
+  "postmortem_interval_hours": 14.9,
+  "injuries": [
+    {
+      "region": "Lower Limb",
+      "description": "Multiple contusions consistent with assault",
+      "severity": "MILD"
+    },
+    {
+      "region": "Cranial",
+      "description": "Blunt force trauma with {severity} fracture",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Upper Limb",
+      "description": "Defensive bruising on forearms",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Dorsal",
+      "description": "Pattern bruising consistent with impact",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Facial",
+      "description": "Periorbital ecchymosis bilateral",
+      "severity": "MODERATE"
+    }
+  ],
+  "toxicology": [
+    {
+      "substance": "Opiates",
+      "detected": true,
+      "level": "therapeutic"
+    }
+  ],
+  "cause_of_death": "Exsanguination from stab wounds",
+  "manner_of_death": "homicide",
+  "tod_estimate": "00:45 AM \u00b1 1.4h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Arjun Mehta | Age: 20\nBody Temperature at Scene: 27.7\u00b0C | Ambient Temperature: 30.5\u00b0C\nPostmortem Interval (estimated): 14.9 hours\n\nINJURIES IDENTIFIED:\n  1. Lower Limb: Multiple contusions consistent with assault [MILD]\n  2. Cranial: Blunt force trauma with {severity} fracture [SEVERE]\n  3. Upper Limb: Defensive bruising on forearms [MODERATE]\n  4. Dorsal: Pattern bruising consistent with impact [MODERATE]\n  5. Facial: Periorbital ecchymosis bilateral [MODERATE]\n\nTOXICOLOGY (Preliminary): Opiates\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed posterior \u2014 no repositioning detected.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the victim. Toxicological findings suggest victim was sedated prior to the fatal assault.\n"
+}

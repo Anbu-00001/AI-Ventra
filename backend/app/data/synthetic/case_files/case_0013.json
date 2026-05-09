@@ -1,0 +1,39 @@
+{
+  "id": "CASE-0013",
+  "case_id": "AIV-2079-64",
+  "case_date": "2025-06-23",
+  "victim": {
+    "name": "Priya Nair",
+    "age": 54,
+    "occupation": "Business Owner",
+    "last_seen": "2025-06-22T08:00:00"
+  },
+  "suspects": [
+    {
+      "id": "SUSPECT_01",
+      "name": "Swathi Menon",
+      "age": 33,
+      "relationship_to_victim": "neighbor",
+      "alibi": "At home \u2014 unverified",
+      "risk_score": 56.7
+    }
+  ],
+  "evidence_count": 11,
+  "status": "SUSPENDED",
+  "risk_level": "MODERATE",
+  "summary": "Case involving Priya Nair. Investigation ongoing. Key evidence collected from Bellandur Lake Road. Primary suspect: Kavya Reddy.",
+  "entities": {
+    "suspects": [
+      "Kavya Reddy"
+    ],
+    "locations": [
+      "Hebbal Lake, Bangalore",
+      "MG Road, Bangalore",
+      "Bellandur Lake Road"
+    ],
+    "devices": [
+      "DEVICE_85",
+      "DEVICE_14"
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "id": "CALL-0045",
+  "device_owner": "Deepa Iyer",
+  "phone_number": "+91-9461429560",
+  "case_id": "AIV-2035-20",
+  "date": "2025-05-22",
+  "calls": [
+    {
+      "timestamp": "2025-05-22T00:30:00",
+      "call_type": "INCOMING",
+      "callee": "+91-8271243691",
+      "duration_seconds": 77,
+      "tower_id": "BLR_4337",
+      "signal_strength_dbm": -83
+    },
+    {
+      "timestamp": "2025-05-22T00:41:00",
+      "call_type": "INCOMING",
+      "callee": "+91-8067546661",
+      "duration_seconds": 64,
+      "tower_id": "BLR_7589",
+      "signal_strength_dbm": -50
+    },
+    {
+      "timestamp": "2025-05-22T00:49:00",
+      "call_type": "MISSED",
+      "callee": "+91-7371162896",
+      "duration_seconds": 137,
+      "tower_id": "BLR_9500",
+      "signal_strength_dbm": -59
+    },
+    {
+      "timestamp": "2025-05-22T01:05:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-9277750188",
+      "duration_seconds": 347,
+      "tower_id": "BLR_1373",
+      "signal_strength_dbm": -65
+    },
+    {
+      "timestamp": "2025-05-22T01:24:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7550553033",
+      "duration_seconds": 300,
+      "tower_id": "BLR_7589",
+      "signal_strength_dbm": -88
+    },
+    {
+      "timestamp": "2025-05-22T01:36:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7482985617",
+      "duration_seconds": 506,
+      "tower_id": "BLR_6812",
+      "signal_strength_dbm": -99
+    },
+    {
+      "timestamp": "2025-05-22T02:17:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-7061904213",
+      "duration_seconds": 539,
+      "tower_id": "BLR_7371",
+      "signal_strength_dbm": -79
+    },
+    {
+      "timestamp": "2025-05-22T02:38:00",
+      "call_type": "MISSED",
+      "callee": "+91-7601660705",
+      "duration_seconds": 56,
+      "tower_id": "BLR_4278",
+      "signal_strength_dbm": -87
+    },
+    {
+      "timestamp": "2025-05-22T02:46:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7666412266",
+      "duration_seconds": 589,
+      "tower_id": "BLR_5653",
+      "signal_strength_dbm": -79
+    },
+    {
+      "timestamp": "2025-05-22T02:54:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8385737151",
+      "duration_seconds": 120,
+      "tower_id": "BLR_5653",
+      "signal_strength_dbm": -58
+    },
+    {
+      "timestamp": "2025-05-22T03:09:00",
+      "call_type": "INCOMING",
+      "callee": "+91-9433578701",
+      "duration_seconds": 93,
+      "tower_id": "BLR_4337",
+      "signal_strength_dbm": -51
+    }
+  ],
+  "total_calls": 11,
+  "silence_gaps": [
+    {
+      "gap_start": "2025-05-22T01:36:00",
+      "gap_duration_minutes": 35,
+      "anomaly": "suspicious_silence"
+    }
+  ],
+  "suspicious_activity": true
+}

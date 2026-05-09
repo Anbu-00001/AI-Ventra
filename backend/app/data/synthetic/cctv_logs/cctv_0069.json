@@ -1,0 +1,75 @@
+{
+  "id": "CCTV-0069",
+  "camera_id": "CAM_028",
+  "location": "Doddanekundi Industrial Area",
+  "case_id": "AIV-2042-89",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.94,
+      "face_match": true,
+      "matched_id": "Kiran Patel",
+      "duration_seconds": 49
+    },
+    {
+      "timestamp": "2025-05-22T01:57:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Vehicle: White SUV, partial plate visible",
+      "confidence": 0.8,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 46
+    },
+    {
+      "timestamp": "2025-05-22T02:05:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Vehicle: White SUV, partial plate visible",
+      "confidence": 0.98,
+      "face_match": false,
+      "matched_id": "Ananya Das",
+      "duration_seconds": 16
+    },
+    {
+      "timestamp": "2025-05-22T02:14:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.77,
+      "face_match": false,
+      "matched_id": "Sanjay Chopra",
+      "duration_seconds": 5
+    },
+    {
+      "timestamp": "2025-05-22T02:30:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.77,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 80
+    },
+    {
+      "timestamp": "2025-05-22T02:33:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Vehicle: White SUV, partial plate visible",
+      "confidence": 0.87,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 31
+    },
+    {
+      "timestamp": "2025-05-22T02:51:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.75,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 39
+    }
+  ],
+  "total_events": 7,
+  "has_face_match": true,
+  "has_vehicle": true
+}

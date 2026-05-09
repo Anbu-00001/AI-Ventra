@@ -1,0 +1,45 @@
+{
+  "id": "SUS-0016",
+  "name": "Nikhil Bose",
+  "age": 30,
+  "relationship_to_victim": "unknown",
+  "known_locations": [
+    "Service Road, Whitefield",
+    "Phoenix Mall Area",
+    "Outer Ring Road, Marathahalli"
+  ],
+  "registered_devices": [
+    "DEVICE_25",
+    "DEVICE_17",
+    "DEVICE_88"
+  ],
+  "vehicle": {
+    "type": "Black hatchback",
+    "partial_plate": "KA-09-MN"
+  },
+  "behavioral_baseline": {
+    "night_activity_level": "moderate",
+    "normal_call_frequency_per_hour": 5.4,
+    "usual_radius_km": 12.7
+  },
+  "anomaly_flags": [
+    "unverified alibi during postmortem interval",
+    "financial stressor detected in recent records",
+    "device powered down inside critical window",
+    "prior communication spike with victim"
+  ],
+  "risk_score": 65.8,
+  "risk_level": "ELEVATED",
+  "explainable_conflicts": [
+    {
+      "conflict": "claimed location conflicts with tower registration",
+      "supporting_source": "gps_logs",
+      "confidence": 96.0
+    },
+    {
+      "conflict": "communication silence overlaps reconstructed TOD window",
+      "supporting_source": "call_logs",
+      "confidence": 78.3
+    }
+  ]
+}

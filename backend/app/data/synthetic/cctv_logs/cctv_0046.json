@@ -1,0 +1,39 @@
+{
+  "id": "CCTV-0046",
+  "camera_id": "CAM_020",
+  "location": "Koramangala 5th Block",
+  "case_id": "AIV-2009-88",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.92,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 65
+    },
+    {
+      "timestamp": "2025-05-22T02:00:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Vehicle: White SUV, partial plate visible",
+      "confidence": 0.77,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 29
+    },
+    {
+      "timestamp": "2025-05-22T02:20:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.87,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 11
+    }
+  ],
+  "total_events": 3,
+  "has_face_match": false,
+  "has_vehicle": true
+}

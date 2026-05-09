@@ -1,0 +1,84 @@
+{
+  "id": "CCTV-0058",
+  "camera_id": "CAM_006",
+  "location": "Sarjapur Road, Bangalore",
+  "case_id": "AIV-2040-74",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Vehicle: White SUV, partial plate visible",
+      "confidence": 0.74,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 115
+    },
+    {
+      "timestamp": "2025-05-22T01:47:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.96,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 83
+    },
+    {
+      "timestamp": "2025-05-22T01:50:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.92,
+      "face_match": false,
+      "matched_id": "Suresh Kumar",
+      "duration_seconds": 46
+    },
+    {
+      "timestamp": "2025-05-22T02:03:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.96,
+      "face_match": false,
+      "matched_id": "Swathi Menon",
+      "duration_seconds": 8
+    },
+    {
+      "timestamp": "2025-05-22T02:21:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.92,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 17
+    },
+    {
+      "timestamp": "2025-05-22T02:34:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.95,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 67
+    },
+    {
+      "timestamp": "2025-05-22T02:50:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.72,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 14
+    },
+    {
+      "timestamp": "2025-05-22T03:00:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.98,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 103
+    }
+  ],
+  "total_events": 8,
+  "has_face_match": true,
+  "has_vehicle": true
+}

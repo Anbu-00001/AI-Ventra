@@ -1,0 +1,52 @@
+{
+  "id": "AR-0048",
+  "case_id": "AIV-2041-44",
+  "examiner": "Dr. Swathi Menon",
+  "examination_date": "10 May 2025",
+  "subject_name": "Arjun Mehta",
+  "subject_age": 64,
+  "subject_gender": "Female",
+  "body_temperature_celsius": 27.2,
+  "ambient_temperature_celsius": 26.1,
+  "rigor_mortis": "Post-rigor \u2014 decomposition stage 1",
+  "livor_mortis": "Unfixed \u2014 TOD within 4 hours",
+  "postmortem_interval_hours": 15.5,
+  "injuries": [
+    {
+      "region": "Cranial",
+      "description": "Blunt force trauma with {severity} fracture",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Neck",
+      "description": "Compression marks consistent with ligature strangulation",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Abdominal",
+      "description": "Blunt force trauma with splenic laceration",
+      "severity": "MODERATE"
+    }
+  ],
+  "toxicology": [
+    {
+      "substance": "Carbon Monoxide",
+      "detected": true,
+      "level": "trace"
+    },
+    {
+      "substance": "GHB",
+      "detected": true,
+      "level": "above therapeutic"
+    },
+    {
+      "substance": "Ketamine",
+      "detected": true,
+      "level": "trace"
+    }
+  ],
+  "cause_of_death": "Blunt force trauma to cranial region",
+  "manner_of_death": "homicide",
+  "tod_estimate": "01:00 AM \u00b1 1.7h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Arjun Mehta | Age: 64\nBody Temperature at Scene: 27.2\u00b0C | Ambient Temperature: 26.1\u00b0C\nPostmortem Interval (estimated): 15.5 hours\n\nINJURIES IDENTIFIED:\n  1. Cranial: Blunt force trauma with {severity} fracture [SEVERE]\n  2. Neck: Compression marks consistent with ligature strangulation [SEVERE]\n  3. Abdominal: Blunt force trauma with splenic laceration [MODERATE]\n\nTOXICOLOGY (Preliminary): Carbon Monoxide, GHB, Ketamine\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed pattern suggesting body repositioned post-mortem.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the victim. Toxicological findings suggest victim was sedated prior to the fatal assault.\n"
+}

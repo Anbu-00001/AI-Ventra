@@ -1,0 +1,48 @@
+{
+  "id": "CCTV-0001",
+  "camera_id": "CAM_020",
+  "location": "Bellandur Lake Road",
+  "case_id": "AIV-2085-89",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.91,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 10
+    },
+    {
+      "timestamp": "2025-05-22T01:47:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.86,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 25
+    },
+    {
+      "timestamp": "2025-05-22T02:01:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.98,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 65
+    },
+    {
+      "timestamp": "2025-05-22T02:14:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.89,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 52
+    }
+  ],
+  "total_events": 4,
+  "has_face_match": true,
+  "has_vehicle": false
+}

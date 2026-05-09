@@ -1,0 +1,74 @@
+{
+  "id": "ENV-0029",
+  "location": "MG Road, Bangalore",
+  "case_id": "AIV-2019-65",
+  "date": "2025-05-22",
+  "readings": [
+    {
+      "timestamp": "2025-05-22T00:00:00",
+      "temperature_celsius": 21.9,
+      "humidity_percent": 61.0,
+      "wind_speed_kmh": 4.6,
+      "precipitation_mm": 0.4,
+      "visibility_m": 2075
+    },
+    {
+      "timestamp": "2025-05-22T01:00:00",
+      "temperature_celsius": 23.4,
+      "humidity_percent": 89.5,
+      "wind_speed_kmh": 13.1,
+      "precipitation_mm": 0.3,
+      "visibility_m": 2797
+    },
+    {
+      "timestamp": "2025-05-22T02:00:00",
+      "temperature_celsius": 25.2,
+      "humidity_percent": 80.0,
+      "wind_speed_kmh": 9.6,
+      "precipitation_mm": 0.8,
+      "visibility_m": 888
+    },
+    {
+      "timestamp": "2025-05-22T03:00:00",
+      "temperature_celsius": 25.5,
+      "humidity_percent": 62.0,
+      "wind_speed_kmh": 3.3,
+      "precipitation_mm": 0.6,
+      "visibility_m": 4901
+    },
+    {
+      "timestamp": "2025-05-22T04:00:00",
+      "temperature_celsius": 20.4,
+      "humidity_percent": 57.5,
+      "wind_speed_kmh": 7.7,
+      "precipitation_mm": 1.7,
+      "visibility_m": 1996
+    },
+    {
+      "timestamp": "2025-05-22T05:00:00",
+      "temperature_celsius": 26.6,
+      "humidity_percent": 77.3,
+      "wind_speed_kmh": 0.0,
+      "precipitation_mm": 1.1,
+      "visibility_m": 2067
+    },
+    {
+      "timestamp": "2025-05-22T06:00:00",
+      "temperature_celsius": 30.8,
+      "humidity_percent": 82.7,
+      "wind_speed_kmh": 7.1,
+      "precipitation_mm": 0.6,
+      "visibility_m": 3416
+    },
+    {
+      "timestamp": "2025-05-22T07:00:00",
+      "temperature_celsius": 20.4,
+      "humidity_percent": 61.8,
+      "wind_speed_kmh": 12.0,
+      "precipitation_mm": 0.6,
+      "visibility_m": 4587
+    }
+  ],
+  "avg_temperature": 24.3,
+  "report_text": "Environmental conditions at MG Road, Bangalore on 22 May 2025. Temperature ranged 20.4\u00b0C to 30.8\u00b0C. Humidity: 61.0% at midnight."
+}

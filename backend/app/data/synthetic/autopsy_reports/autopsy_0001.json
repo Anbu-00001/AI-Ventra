@@ -1,0 +1,47 @@
+{
+  "id": "AR-0001",
+  "case_id": "AIV-2045-80",
+  "examiner": "Dr. Divya Krishnan",
+  "examination_date": "20 May 2025",
+  "subject_name": "Aditya Gupta",
+  "subject_age": 19,
+  "subject_gender": "Male",
+  "body_temperature_celsius": 27.2,
+  "ambient_temperature_celsius": 27.7,
+  "rigor_mortis": "Post-rigor \u2014 decomposition stage 1",
+  "livor_mortis": "Fixed anterior \u2014 body repositioned post-mortem",
+  "postmortem_interval_hours": 6.9,
+  "injuries": [
+    {
+      "region": "Lower Limb",
+      "description": "Multiple contusions consistent with assault",
+      "severity": "MILD"
+    },
+    {
+      "region": "Thoracic",
+      "description": "Multiple rib fractures with internal hemorrhage",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Upper Limb",
+      "description": "Defensive bruising on forearms",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Dorsal",
+      "description": "Pattern bruising consistent with impact",
+      "severity": "MODERATE"
+    }
+  ],
+  "toxicology": [
+    {
+      "substance": "Ketamine",
+      "detected": true,
+      "level": "trace"
+    }
+  ],
+  "cause_of_death": "Drug-induced cardiorespiratory failure",
+  "manner_of_death": "accident",
+  "tod_estimate": "00:15 AM \u00b1 2.0h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Aditya Gupta | Age: 19\nBody Temperature at Scene: 27.2\u00b0C | Ambient Temperature: 27.7\u00b0C\nPostmortem Interval (estimated): 6.9 hours\n\nINJURIES IDENTIFIED:\n  1. Lower Limb: Multiple contusions consistent with assault [MILD]\n  2. Thoracic: Multiple rib fractures with internal hemorrhage [SEVERE]\n  3. Upper Limb: Defensive bruising on forearms [MODERATE]\n  4. Dorsal: Pattern bruising consistent with impact [MODERATE]\n\nTOXICOLOGY (Preliminary): Ketamine\n\nRIGOR MORTIS: Partial rigor \u2014 early stage.\nLIVOR MORTIS: Fixed pattern suggesting body repositioned post-mortem.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the victim. Toxicological findings suggest victim was sedated prior to the fatal assault.\n"
+}

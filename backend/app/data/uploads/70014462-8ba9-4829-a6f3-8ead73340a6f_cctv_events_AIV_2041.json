@@ -1,0 +1,29 @@
+{
+  "camera_id": "CAM_04_MARATHAHALLI",
+  "timestamp": "2025-05-22T02:14:00Z",
+  "case_id": "AIV-2041-77",
+  "events": [
+    {
+      "time": "02:14:12",
+      "object": "Vehicle (SUV)",
+      "license_plate": "KA-03-MG-1122",
+      "action": "Enters frame from North",
+      "confidence": 0.98
+    },
+    {
+      "time": "02:16:45",
+      "object": "Person (Male)",
+      "description": "Height approx 6ft, wearing dark hoodie",
+      "action": "Exits vehicle, approaches building B",
+      "confidence": 0.89
+    },
+    {
+      "time": "02:22:10",
+      "object": "Vehicle (SUV)",
+      "action": "Speeds away South-East",
+      "confidence": 0.95
+    }
+  ],
+  "anomaly_detected": true,
+  "anomaly_description": "High-velocity departure and masked license plate detected"
+}

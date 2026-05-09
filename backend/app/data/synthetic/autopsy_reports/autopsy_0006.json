@@ -1,0 +1,52 @@
+{
+  "id": "AR-0006",
+  "case_id": "AIV-2018-87",
+  "examiner": "Dr. Meena Pillai",
+  "examination_date": "26 August 2025",
+  "subject_name": "Sanjay Chopra",
+  "subject_age": 32,
+  "subject_gender": "Male",
+  "body_temperature_celsius": 27.8,
+  "ambient_temperature_celsius": 31.7,
+  "rigor_mortis": "Full rigor",
+  "livor_mortis": "Unfixed \u2014 TOD within 4 hours",
+  "postmortem_interval_hours": 11.8,
+  "injuries": [
+    {
+      "region": "Abdominal",
+      "description": "Blunt force trauma with splenic laceration",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Neck",
+      "description": "Compression marks consistent with ligature strangulation",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Dorsal",
+      "description": "Pattern bruising consistent with impact",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Cranial",
+      "description": "Blunt force trauma with {severity} fracture",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Facial",
+      "description": "Periorbital ecchymosis bilateral",
+      "severity": "MODERATE"
+    }
+  ],
+  "toxicology": [
+    {
+      "substance": "GHB",
+      "detected": true,
+      "level": "lethal"
+    }
+  ],
+  "cause_of_death": "Blunt force trauma to cranial region",
+  "manner_of_death": "suicide",
+  "tod_estimate": "02:30 AM \u00b1 1.8h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Sanjay Chopra | Age: 32\nBody Temperature at Scene: 27.8\u00b0C | Ambient Temperature: 31.7\u00b0C\nPostmortem Interval (estimated): 11.8 hours\n\nINJURIES IDENTIFIED:\n  1. Abdominal: Blunt force trauma with splenic laceration [MODERATE]\n  2. Neck: Compression marks consistent with ligature strangulation [SEVERE]\n  3. Dorsal: Pattern bruising consistent with impact [MODERATE]\n  4. Cranial: Blunt force trauma with {severity} fracture [SEVERE]\n  5. Facial: Periorbital ecchymosis bilateral [MODERATE]\n\nTOXICOLOGY (Preliminary): GHB\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed pattern suggesting body repositioned post-mortem.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a spontaneous violent altercation. Toxicological findings suggest victim was sedated prior to the fatal assault.\n"
+}

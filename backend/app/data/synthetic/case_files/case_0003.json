@@ -1,0 +1,49 @@
+{
+  "id": "CASE-0003",
+  "case_id": "AIV-2083-46",
+  "case_date": "2025-08-07",
+  "victim": {
+    "name": "Kiran Patel",
+    "age": 58,
+    "occupation": "Doctor",
+    "last_seen": "2025-08-06T09:00:00"
+  },
+  "suspects": [
+    {
+      "id": "SUSPECT_01",
+      "name": "Rahul Sharma",
+      "age": 30,
+      "relationship_to_victim": "acquaintance",
+      "alibi": "No alibi provided",
+      "risk_score": 58.8
+    },
+    {
+      "id": "SUSPECT_02",
+      "name": "Sanjay Chopra",
+      "age": 39,
+      "relationship_to_victim": "neighbor",
+      "alibi": "No alibi provided",
+      "risk_score": 47.2
+    }
+  ],
+  "evidence_count": 5,
+  "status": "CLOSED",
+  "risk_level": "ELEVATED",
+  "summary": "Case involving Kiran Patel. Investigation ongoing. Key evidence collected from MG Road, Bangalore. Primary suspect: Sanjay Chopra.",
+  "entities": {
+    "suspects": [
+      "Sanjay Chopra"
+    ],
+    "locations": [
+      "Koramangala 5th Block",
+      "Doddanekundi Industrial Area",
+      "Bellandur Lake Road"
+    ],
+    "devices": [
+      "DEVICE_70",
+      "DEVICE_31",
+      "DEVICE_95",
+      "DEVICE_47"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "AR-0002",
+  "case_id": "AIV-2033-94",
+  "examiner": "Dr. Rohan Joshi",
+  "examination_date": "16 June 2025",
+  "subject_name": "Kiran Patel",
+  "subject_age": 48,
+  "subject_gender": "Male",
+  "body_temperature_celsius": 23.5,
+  "ambient_temperature_celsius": 27.4,
+  "rigor_mortis": "Post-rigor \u2014 decomposition stage 1",
+  "livor_mortis": "Fixed anterior \u2014 body repositioned post-mortem",
+  "postmortem_interval_hours": 7.0,
+  "injuries": [
+    {
+      "region": "Upper Limb",
+      "description": "Defensive bruising on forearms",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Cranial",
+      "description": "Blunt force trauma with {severity} fracture",
+      "severity": "SEVERE"
+    }
+  ],
+  "toxicology": [],
+  "cause_of_death": "Drug-induced cardiorespiratory failure",
+  "manner_of_death": "homicide",
+  "tod_estimate": "03:30 AM \u00b1 1.7h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Kiran Patel | Age: 48\nBody Temperature at Scene: 23.5\u00b0C | Ambient Temperature: 27.4\u00b0C\nPostmortem Interval (estimated): 7.0 hours\n\nINJURIES IDENTIFIED:\n  1. Upper Limb: Defensive bruising on forearms [MODERATE]\n  2. Cranial: Blunt force trauma with {severity} fracture [SEVERE]\n\nTOXICOLOGY (Preliminary): None detected\n\nRIGOR MORTIS: Partial rigor \u2014 early stage.\nLIVOR MORTIS: Fixed posterior \u2014 no repositioning detected.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a spontaneous violent altercation. Toxicological findings show no intoxicating substances.\n"
+}

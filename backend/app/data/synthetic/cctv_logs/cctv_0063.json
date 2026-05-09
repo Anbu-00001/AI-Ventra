@@ -1,0 +1,93 @@
+{
+  "id": "CCTV-0063",
+  "camera_id": "CAM_023",
+  "location": "MG Road, Bangalore",
+  "case_id": "AIV-2086-42",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.78,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 56
+    },
+    {
+      "timestamp": "2025-05-22T01:58:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.8,
+      "face_match": true,
+      "matched_id": "Divya Krishnan",
+      "duration_seconds": 18
+    },
+    {
+      "timestamp": "2025-05-22T02:00:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.81,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 30
+    },
+    {
+      "timestamp": "2025-05-22T02:08:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.9,
+      "face_match": true,
+      "matched_id": "Swathi Menon",
+      "duration_seconds": 17
+    },
+    {
+      "timestamp": "2025-05-22T02:15:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.72,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 119
+    },
+    {
+      "timestamp": "2025-05-22T02:28:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.8,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 5
+    },
+    {
+      "timestamp": "2025-05-22T02:30:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Vehicle: White SUV, partial plate visible",
+      "confidence": 0.79,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 65
+    },
+    {
+      "timestamp": "2025-05-22T02:34:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.91,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 98
+    },
+    {
+      "timestamp": "2025-05-22T02:49:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.83,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 78
+    }
+  ],
+  "total_events": 9,
+  "has_face_match": true,
+  "has_vehicle": true
+}

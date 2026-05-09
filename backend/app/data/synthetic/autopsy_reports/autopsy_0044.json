@@ -1,0 +1,36 @@
+{
+  "id": "AR-0044",
+  "case_id": "AIV-2055-13",
+  "examiner": "Dr. Nikhil Bose",
+  "examination_date": "26 June 2025",
+  "subject_name": "Kavya Reddy",
+  "subject_age": 57,
+  "subject_gender": "Female",
+  "body_temperature_celsius": 25.5,
+  "ambient_temperature_celsius": 31.1,
+  "rigor_mortis": "Post-rigor \u2014 decomposition stage 1",
+  "livor_mortis": "Fixed anterior \u2014 body repositioned post-mortem",
+  "postmortem_interval_hours": 11.4,
+  "injuries": [
+    {
+      "region": "Upper Limb",
+      "description": "Defensive bruising on forearms",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Abdominal",
+      "description": "Blunt force trauma with splenic laceration",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Neck",
+      "description": "Compression marks consistent with ligature strangulation",
+      "severity": "SEVERE"
+    }
+  ],
+  "toxicology": [],
+  "cause_of_death": "Blunt force trauma with internal hemorrhage",
+  "manner_of_death": "accident",
+  "tod_estimate": "03:00 AM \u00b1 1.4h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Kavya Reddy | Age: 57\nBody Temperature at Scene: 25.5\u00b0C | Ambient Temperature: 31.1\u00b0C\nPostmortem Interval (estimated): 11.4 hours\n\nINJURIES IDENTIFIED:\n  1. Upper Limb: Defensive bruising on forearms [MODERATE]\n  2. Abdominal: Blunt force trauma with splenic laceration [MODERATE]\n  3. Neck: Compression marks consistent with ligature strangulation [SEVERE]\n\nTOXICOLOGY (Preliminary): None detected\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed posterior \u2014 no repositioning detected.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a spontaneous violent altercation. Toxicological findings show no intoxicating substances.\n"
+}

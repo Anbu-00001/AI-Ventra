@@ -1,0 +1,66 @@
+{
+  "id": "CALL-0002",
+  "device_owner": "Vikram Singh",
+  "phone_number": "+91-7465222643",
+  "case_id": "AIV-2032-33",
+  "date": "2025-05-22",
+  "calls": [
+    {
+      "timestamp": "2025-05-22T00:30:00",
+      "call_type": "INCOMING",
+      "callee": "+91-9358778637",
+      "duration_seconds": 203,
+      "tower_id": "BLR_9500",
+      "signal_strength_dbm": -92
+    },
+    {
+      "timestamp": "2025-05-22T00:53:00",
+      "call_type": "MISSED",
+      "callee": "+91-8750043941",
+      "duration_seconds": 432,
+      "tower_id": "BLR_1373",
+      "signal_strength_dbm": -61
+    },
+    {
+      "timestamp": "2025-05-22T01:26:00",
+      "call_type": "MISSED",
+      "callee": "+91-7357607180",
+      "duration_seconds": 122,
+      "tower_id": "BLR_5883",
+      "signal_strength_dbm": -56
+    },
+    {
+      "timestamp": "2025-05-22T01:35:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-7324540411",
+      "duration_seconds": 524,
+      "tower_id": "BLR_1075",
+      "signal_strength_dbm": -93
+    },
+    {
+      "timestamp": "2025-05-22T02:06:00",
+      "call_type": "INCOMING",
+      "callee": "+91-9830239955",
+      "duration_seconds": 282,
+      "tower_id": "BLR_6639",
+      "signal_strength_dbm": -55
+    },
+    {
+      "timestamp": "2025-05-22T02:33:00",
+      "call_type": "MISSED",
+      "callee": "+91-7841168155",
+      "duration_seconds": 487,
+      "tower_id": "BLR_6790",
+      "signal_strength_dbm": -54
+    }
+  ],
+  "total_calls": 6,
+  "silence_gaps": [
+    {
+      "gap_start": "2025-05-22T01:35:00",
+      "gap_duration_minutes": 38,
+      "anomaly": "suspicious_silence"
+    }
+  ],
+  "suspicious_activity": true
+}

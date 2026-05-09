@@ -1,0 +1,156 @@
+{
+  "timeline_id": "47f51b6d-54fb-4cd0-8f68-9dfe48bfbee9",
+  "case_id": "AIV-2041-77",
+  "events": [
+    {
+      "event_id": "498c52c2-94ae-4a2a-868b-de83861c61b5",
+      "timestamp": "01:52 AM",
+      "event_type": "PHONE_ACTIVITY",
+      "title": "Phone Activity Detected",
+      "description": "Last outgoing call from victim's device \u2014 4m 12s duration to unknown number",
+      "location": null,
+      "actors": [
+        "SUSPECT_01"
+      ],
+      "confidence": 92.0,
+      "source": "call_logs_primary.csv",
+      "is_anomaly": false,
+      "severity": "LOW",
+      "coordinates": null,
+      "metadata": {}
+    },
+    {
+      "event_id": "4bee7e4a-c52b-4eb2-91ed-e069975e4a8c",
+      "timestamp": "02:05 AM",
+      "event_type": "CCTV_DETECTION",
+      "title": "CCTV Sighting",
+      "description": "Victim captured on Phoenix Mall Entrance Camera Cam_07 \u2014 walking alone, no signs of distress",
+      "location": null,
+      "actors": [
+        "SUSPECT_01"
+      ],
+      "confidence": 88.0,
+      "source": "cctv_log_cam07.csv",
+      "is_anomaly": false,
+      "severity": null,
+      "coordinates": null,
+      "metadata": {}
+    },
+    {
+      "event_id": "746b7173-b6af-48c1-85bb-96b4575b9501",
+      "timestamp": "02:14 AM",
+      "event_type": "SIGNAL_LOSS",
+      "title": "Mobile Signal Lost",
+      "description": "Device suddenly disconnected from tower BLR_2231 \u2014 abnormal forced disconnection pattern",
+      "location": null,
+      "actors": [
+        "SUSPECT_01"
+      ],
+      "confidence": 96.0,
+      "source": "call_logs_primary.csv",
+      "is_anomaly": true,
+      "severity": "CRITICAL",
+      "coordinates": null,
+      "metadata": {}
+    },
+    {
+      "event_id": "a67ae75c-7e56-4949-8f5b-da042adda945",
+      "timestamp": "02:17 AM",
+      "event_type": "VEHICLE_MOVEMENT",
+      "title": "Vehicle Movement Detected",
+      "description": "White SUV (partial plate: KA-05) leaving area via ORR at 48 km/h \u2014 dashcam corroboration",
+      "location": null,
+      "actors": [
+        "SUSPECT_01"
+      ],
+      "confidence": 92.0,
+      "source": "cctv_log_dashcam.csv",
+      "is_anomaly": true,
+      "severity": "HIGH",
+      "coordinates": null,
+      "metadata": {}
+    },
+    {
+      "event_id": "7e8389b8-01e9-43dd-943f-adaa35fc91f6",
+      "timestamp": "02:26 AM",
+      "event_type": "GPS_PING",
+      "title": "GPS Ping \u2014 Location",
+      "description": "Device ping detected near service road, Whitefield \u2014 12m accuracy radius",
+      "location": null,
+      "actors": [
+        "SUSPECT_01"
+      ],
+      "confidence": 85.0,
+      "source": "gps_log_device_45.json",
+      "is_anomaly": false,
+      "severity": "MODERATE",
+      "coordinates": null,
+      "metadata": {}
+    },
+    {
+      "event_id": "e202def4-d2a8-48b2-8a44-a10554e4249f",
+      "timestamp": "02:38 AM",
+      "event_type": "ANOMALY_SPIKE",
+      "title": "Behavioral Anomaly Spike",
+      "description": "Abnormal activity across all monitored channels \u2014 threat score 91/100",
+      "location": null,
+      "actors": [
+        "SUSPECT_01"
+      ],
+      "confidence": 89.0,
+      "source": "behavioral_engine",
+      "is_anomaly": true,
+      "severity": "CRITICAL",
+      "coordinates": null,
+      "metadata": {}
+    },
+    {
+      "event_id": "5cb92da7-72a4-4ccf-bb63-5e5f356e75f8",
+      "timestamp": "02:38 AM",
+      "event_type": "CCTV_DETECTION",
+      "title": "Suspect on CCTV",
+      "description": "Suspect captured near abandoned lot on Cam_12 \u2014 face partially obscured",
+      "location": null,
+      "actors": [
+        "SUSPECT_01"
+      ],
+      "confidence": 94.0,
+      "source": "cctv_log_cam12.csv",
+      "is_anomaly": true,
+      "severity": "HIGH",
+      "coordinates": null,
+      "metadata": {}
+    },
+    {
+      "event_id": "7e8b932c-7a57-41ee-be17-25bfbf62a54a",
+      "timestamp": "03:30 AM",
+      "event_type": "DEVICE_INACTIVE",
+      "title": "Device Powered Off",
+      "description": "Target device fully powered off or battery removed \u2014 no further signals",
+      "location": null,
+      "actors": [
+        "SUSPECT_01"
+      ],
+      "confidence": 98.0,
+      "source": "call_logs_primary.csv",
+      "is_anomaly": true,
+      "severity": "HIGH",
+      "coordinates": null,
+      "metadata": {}
+    }
+  ],
+  "total_events": 8,
+  "anomaly_count": 5,
+  "confidence_score": 91.5,
+  "start_time": "01:52 AM",
+  "end_time": "03:30 AM",
+  "duration_minutes": 98.0,
+  "narrative_summary": "At 01:52 AM the victim made a final phone call. Within 30 minutes all digital traces were systematically eliminated. Vehicle movement and CCTV evidence corroborate deliberate concealment of criminal activity.",
+  "key_insights": [
+    "Forced signal disconnection at 02:14 AM is the primary forensic anchor point",
+    "27-minute communication blackout is statistically anomalous at p<0.001",
+    "Post-mortem body repositioning confirmed via lividity analysis",
+    "Vehicle identified within 3 minutes of signal loss \u2014 coordinated movement"
+  ],
+  "generated_at": "2026-05-09T16:22:10.379194"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "AR-0016",
+  "case_id": "AIV-2003-56",
+  "examiner": "Dr. Ananya Das",
+  "examination_date": "16 May 2025",
+  "subject_name": "Arjun Mehta",
+  "subject_age": 63,
+  "subject_gender": "Female",
+  "body_temperature_celsius": 26.5,
+  "ambient_temperature_celsius": 21.1,
+  "rigor_mortis": "Partial rigor \u2014 onset",
+  "livor_mortis": "Unfixed \u2014 TOD within 4 hours",
+  "postmortem_interval_hours": 6.8,
+  "injuries": [
+    {
+      "region": "Dorsal",
+      "description": "Pattern bruising consistent with impact",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Abdominal",
+      "description": "Blunt force trauma with splenic laceration",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Facial",
+      "description": "Periorbital ecchymosis bilateral",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Thoracic",
+      "description": "Multiple rib fractures with internal hemorrhage",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Lower Limb",
+      "description": "Multiple contusions consistent with assault",
+      "severity": "MILD"
+    }
+  ],
+  "toxicology": [],
+  "cause_of_death": "Drug-induced cardiorespiratory failure",
+  "manner_of_death": "accident",
+  "tod_estimate": "01:45 AM \u00b1 1.7h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Arjun Mehta | Age: 63\nBody Temperature at Scene: 26.5\u00b0C | Ambient Temperature: 21.1\u00b0C\nPostmortem Interval (estimated): 6.8 hours\n\nINJURIES IDENTIFIED:\n  1. Dorsal: Pattern bruising consistent with impact [MODERATE]\n  2. Abdominal: Blunt force trauma with splenic laceration [MODERATE]\n  3. Facial: Periorbital ecchymosis bilateral [MODERATE]\n  4. Thoracic: Multiple rib fractures with internal hemorrhage [SEVERE]\n  5. Lower Limb: Multiple contusions consistent with assault [MILD]\n\nTOXICOLOGY (Preliminary): None detected\n\nRIGOR MORTIS: Partial rigor \u2014 early stage.\nLIVOR MORTIS: Fixed pattern suggesting body repositioned post-mortem.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the victim. Toxicological findings show no intoxicating substances.\n"
+}

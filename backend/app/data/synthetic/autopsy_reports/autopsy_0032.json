@@ -1,0 +1,52 @@
+{
+  "id": "AR-0032",
+  "case_id": "AIV-2013-42",
+  "examiner": "Dr. Pooja Verma",
+  "examination_date": "02 June 2025",
+  "subject_name": "Arjun Mehta",
+  "subject_age": 33,
+  "subject_gender": "Female",
+  "body_temperature_celsius": 21.8,
+  "ambient_temperature_celsius": 21.2,
+  "rigor_mortis": "Partial rigor \u2014 onset",
+  "livor_mortis": "Fixed posterior \u2014 no repositioning",
+  "postmortem_interval_hours": 11.7,
+  "injuries": [
+    {
+      "region": "Thoracic",
+      "description": "Multiple rib fractures with internal hemorrhage",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Upper Limb",
+      "description": "Defensive bruising on forearms",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Neck",
+      "description": "Compression marks consistent with ligature strangulation",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Abdominal",
+      "description": "Blunt force trauma with splenic laceration",
+      "severity": "MODERATE"
+    }
+  ],
+  "toxicology": [
+    {
+      "substance": "GHB",
+      "detected": true,
+      "level": "above therapeutic"
+    },
+    {
+      "substance": "Ethanol",
+      "detected": true,
+      "level": "above therapeutic"
+    }
+  ],
+  "cause_of_death": "Asphyxiation due to ligature strangulation",
+  "manner_of_death": "accident",
+  "tod_estimate": "02:45 AM \u00b1 1.0h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Arjun Mehta | Age: 33\nBody Temperature at Scene: 21.8\u00b0C | Ambient Temperature: 21.2\u00b0C\nPostmortem Interval (estimated): 11.7 hours\n\nINJURIES IDENTIFIED:\n  1. Thoracic: Multiple rib fractures with internal hemorrhage [SEVERE]\n  2. Upper Limb: Defensive bruising on forearms [MODERATE]\n  3. Neck: Compression marks consistent with ligature strangulation [SEVERE]\n  4. Abdominal: Blunt force trauma with splenic laceration [MODERATE]\n\nTOXICOLOGY (Preliminary): GHB, Ethanol\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed posterior \u2014 no repositioning detected.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a spontaneous violent altercation. Toxicological findings suggest victim was sedated prior to the fatal assault.\n"
+}

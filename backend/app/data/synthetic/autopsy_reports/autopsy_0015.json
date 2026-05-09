@@ -1,0 +1,41 @@
+{
+  "id": "AR-0015",
+  "case_id": "AIV-2074-44",
+  "examiner": "Dr. Arjun Mehta",
+  "examination_date": "08 May 2025",
+  "subject_name": "Arjun Mehta",
+  "subject_age": 59,
+  "subject_gender": "Male",
+  "body_temperature_celsius": 18.6,
+  "ambient_temperature_celsius": 24.7,
+  "rigor_mortis": "Full rigor",
+  "livor_mortis": "Unfixed \u2014 TOD within 4 hours",
+  "postmortem_interval_hours": 15.3,
+  "injuries": [
+    {
+      "region": "Thoracic",
+      "description": "Multiple rib fractures with internal hemorrhage",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Neck",
+      "description": "Compression marks consistent with ligature strangulation",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Upper Limb",
+      "description": "Defensive bruising on forearms",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Facial",
+      "description": "Periorbital ecchymosis bilateral",
+      "severity": "MODERATE"
+    }
+  ],
+  "toxicology": [],
+  "cause_of_death": "Drug-induced cardiorespiratory failure",
+  "manner_of_death": "homicide",
+  "tod_estimate": "05:30 AM \u00b1 1.7h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Arjun Mehta | Age: 59\nBody Temperature at Scene: 18.6\u00b0C | Ambient Temperature: 24.7\u00b0C\nPostmortem Interval (estimated): 15.3 hours\n\nINJURIES IDENTIFIED:\n  1. Thoracic: Multiple rib fractures with internal hemorrhage [SEVERE]\n  2. Neck: Compression marks consistent with ligature strangulation [SEVERE]\n  3. Upper Limb: Defensive bruising on forearms [MODERATE]\n  4. Facial: Periorbital ecchymosis bilateral [MODERATE]\n\nTOXICOLOGY (Preliminary): None detected\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed posterior \u2014 no repositioning detected.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the victim. Toxicological findings show no intoxicating substances.\n"
+}

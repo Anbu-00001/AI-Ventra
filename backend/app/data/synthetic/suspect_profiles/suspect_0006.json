@@ -1,0 +1,44 @@
+{
+  "id": "SUS-0006",
+  "name": "Arjun Mehta",
+  "age": 31,
+  "relationship_to_victim": "business associate",
+  "known_locations": [
+    "Doddanekundi Industrial Area",
+    "Koramangala 5th Block",
+    "Hebbal Lake, Bangalore"
+  ],
+  "registered_devices": [
+    "DEVICE_40",
+    "DEVICE_26"
+  ],
+  "vehicle": {
+    "type": "Black hatchback",
+    "partial_plate": "KA-03-CD"
+  },
+  "behavioral_baseline": {
+    "night_activity_level": "moderate",
+    "normal_call_frequency_per_hour": 2.7,
+    "usual_radius_km": 4.2
+  },
+  "anomaly_flags": [
+    "unverified alibi during postmortem interval",
+    "device powered down inside critical window",
+    "prior communication spike with victim",
+    "GPS route intersects CCTV blind zone"
+  ],
+  "risk_score": 91.6,
+  "risk_level": "CRITICAL",
+  "explainable_conflicts": [
+    {
+      "conflict": "claimed location conflicts with tower registration",
+      "supporting_source": "call_logs",
+      "confidence": 96.8
+    },
+    {
+      "conflict": "communication silence overlaps reconstructed TOD window",
+      "supporting_source": "call_logs",
+      "confidence": 78.9
+    }
+  ]
+}

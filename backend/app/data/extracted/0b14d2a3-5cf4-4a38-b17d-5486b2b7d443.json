@@ -1,0 +1,33 @@
+{
+  "file_id": "0b14d2a3-5cf4-4a38-b17d-5486b2b7d443",
+  "original_name": "environmental_sensor_AIV_2041.csv",
+  "file_type": "csv",
+  "text": "[\n  {\n    \"SensorID\": \"SN_901\",\n    \"Timestamp\": \"2025-05-22 02:00:00\",\n    \"Temperature(C)\": \"24.2\",\n    \"Humidity(%)\": \"65\",\n    \"LightLevel(Lux)\": \"10\",\n    \"SoundLevel(dB)\": \"42\",\n    \"Motion\": \"False\"\n  },\n  {\n    \"SensorID\": \"SN_901\",\n    \"Timestamp\": \"2025-05-22 02:10:00\",\n    \"Temperature(C)\": \"24.1\",\n    \"Humidity(%)\": \"65\",\n    \"LightLevel(Lux)\": \"12\",\n    \"SoundLevel(dB)\": \"45\",\n    \"Motion\": \"False\"\n  },\n  {\n    \"SensorID\": \"SN_901\",\n    \"Timestamp\": \"2025-05-22 02:14:05\",\n    \"Temperature(C)\": \"23.8\",\n    \"Humidity(%)\": \"66\",\n    \"LightLevel(Lux)\": \"45\",\n    \"SoundLevel(dB)\": \"88\",\n    \"Motion\": \"True\"\n  },\n  {\n    \"SensorID\": \"SN_901\",\n    \"Timestamp\": \"2025-05-22 02:14:10\",\n    \"Temperature(C)\": \"23.8\",\n    \"Humidity(%)\": \"66\",\n    \"LightLevel(Lux)\": \"80\",\n    \"SoundLevel(dB)\": \"95\",\n    \"Motion\": \"True\"\n  },\n  {\n    \"SensorID\": \"SN_901\",\n    \"Timestamp\": \"2025-05-22 02:16:00\",\n    \"Temperature(C)\": \"23.9\",\n    \"Humidity(%)\": \"65\",\n    \"LightLevel(Lux)\": \"15\",\n    \"SoundLevel(dB)\": \"44\",\n    \"Motion\": \"False\"\n  }\n]",
+  "text_preview": "[\n  {\n    \"SensorID\": \"SN_901\",\n    \"Timestamp\": \"2025-05-22 02:00:00\",\n    \"Temperature(C)\": \"24.2\",\n    \"Humidity(%)\": \"65\",\n    \"LightLevel(Lux)\": \"10\",\n    \"SoundLevel(dB)\": \"42\",\n    \"Motion\": \"False\"\n  },\n  {\n    \"SensorID\": \"SN_901\",\n    \"Timestamp\": \"2025-05-22 02:10:00\",\n    \"Temperature(C)\": \"24.1\",\n    \"Humidity(%)\": \"65\",\n    \"LightLevel(Lux)\": \"12\",\n    \"SoundLevel(dB)\": \"45\",\n    \"Motion\": \"False\"\n  },\n  {\n    \"SensorID\": \"SN_901\",\n    \"Timestamp\": \"2025-05-22 02:14:05\",\n    \"Tempe",
+  "metadata": {
+    "filename": "0b14d2a3-5cf4-4a38-b17d-5486b2b7d443_environmental_sensor_AIV_2041.csv",
+    "extension": ".csv",
+    "size_bytes": 317,
+    "created_at": "2026-05-09T11:51:51.327867",
+    "modified_at": "2026-05-09T11:51:51.327867",
+    "sha256": "d5cb0672865358a6992dc0e9dfeac9b38c9c73264246d7c5f3687b3c80283564",
+    "is_binary": false
+  },
+  "classification": {
+    "file_id": "0b14d2a3-5cf4-4a38-b17d-5486b2b7d443",
+    "category": "environmental_data",
+    "sub_category": null,
+    "confidence": 85.0,
+    "tags": [],
+    "classified_at": "2026-05-09T11:52:08.035797"
+  },
+  "entities": {
+    "persons": [],
+    "locations": [],
+    "devices": [],
+    "timestamps": [],
+    "organizations": [],
+    "physical_evidence": []
+  },
+  "chunk_count": 1
+}

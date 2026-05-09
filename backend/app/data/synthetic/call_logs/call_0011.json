@@ -1,0 +1,146 @@
+{
+  "id": "CALL-0011",
+  "device_owner": "Kiran Patel",
+  "phone_number": "+91-9642839767",
+  "case_id": "AIV-2004-14",
+  "date": "2025-05-22",
+  "calls": [
+    {
+      "timestamp": "2025-05-22T00:30:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8604981219",
+      "duration_seconds": 253,
+      "tower_id": "BLR_4337",
+      "signal_strength_dbm": -62
+    },
+    {
+      "timestamp": "2025-05-22T00:52:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7029171547",
+      "duration_seconds": 509,
+      "tower_id": "BLR_9350",
+      "signal_strength_dbm": -74
+    },
+    {
+      "timestamp": "2025-05-22T01:24:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8208985941",
+      "duration_seconds": 30,
+      "tower_id": "BLR_8522",
+      "signal_strength_dbm": -71
+    },
+    {
+      "timestamp": "2025-05-22T01:54:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8870781264",
+      "duration_seconds": 244,
+      "tower_id": "BLR_8522",
+      "signal_strength_dbm": -91
+    },
+    {
+      "timestamp": "2025-05-22T02:32:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7868115296",
+      "duration_seconds": 490,
+      "tower_id": "BLR_5883",
+      "signal_strength_dbm": -100
+    },
+    {
+      "timestamp": "2025-05-22T02:44:00",
+      "call_type": "MISSED",
+      "callee": "+91-7766294191",
+      "duration_seconds": 522,
+      "tower_id": "BLR_6915",
+      "signal_strength_dbm": -64
+    },
+    {
+      "timestamp": "2025-05-22T03:28:00",
+      "call_type": "INCOMING",
+      "callee": "+91-8703057196",
+      "duration_seconds": 475,
+      "tower_id": "BLR_6639",
+      "signal_strength_dbm": -71
+    },
+    {
+      "timestamp": "2025-05-22T03:45:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-9471221995",
+      "duration_seconds": 397,
+      "tower_id": "BLR_1075",
+      "signal_strength_dbm": -84
+    },
+    {
+      "timestamp": "2025-05-22T04:21:00",
+      "call_type": "MISSED",
+      "callee": "+91-8417291499",
+      "duration_seconds": 27,
+      "tower_id": "BLR_5883",
+      "signal_strength_dbm": -66
+    },
+    {
+      "timestamp": "2025-05-22T04:59:00",
+      "call_type": "MISSED",
+      "callee": "+91-7637739924",
+      "duration_seconds": 50,
+      "tower_id": "BLR_1373",
+      "signal_strength_dbm": -87
+    },
+    {
+      "timestamp": "2025-05-22T05:08:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7025578544",
+      "duration_seconds": 515,
+      "tower_id": "BLR_9698",
+      "signal_strength_dbm": -79
+    },
+    {
+      "timestamp": "2025-05-22T05:15:00",
+      "call_type": "MISSED",
+      "callee": "+91-9225599400",
+      "duration_seconds": 67,
+      "tower_id": "BLR_9350",
+      "signal_strength_dbm": -93
+    },
+    {
+      "timestamp": "2025-05-22T05:55:00",
+      "call_type": "MISSED",
+      "callee": "+91-8679001219",
+      "duration_seconds": 33,
+      "tower_id": "BLR_9698",
+      "signal_strength_dbm": -69
+    },
+    {
+      "timestamp": "2025-05-22T06:30:00",
+      "call_type": "MISSED",
+      "callee": "+91-9161025666",
+      "duration_seconds": 146,
+      "tower_id": "BLR_9698",
+      "signal_strength_dbm": -98
+    },
+    {
+      "timestamp": "2025-05-22T06:51:00",
+      "call_type": "INCOMING",
+      "callee": "+91-8594023841",
+      "duration_seconds": 457,
+      "tower_id": "BLR_4278",
+      "signal_strength_dbm": -64
+    },
+    {
+      "timestamp": "2025-05-22T07:13:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8108979930",
+      "duration_seconds": 452,
+      "tower_id": "BLR_1678",
+      "signal_strength_dbm": -70
+    }
+  ],
+  "total_calls": 16,
+  "silence_gaps": [
+    {
+      "gap_start": "2025-05-22T05:08:00",
+      "gap_duration_minutes": 30,
+      "anomaly": "suspicious_silence"
+    }
+  ],
+  "suspicious_activity": true
+}

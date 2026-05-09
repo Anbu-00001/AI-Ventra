@@ -1,0 +1,46 @@
+{
+  "id": "AR-0036",
+  "case_id": "AIV-2044-85",
+  "examiner": "Dr. Rajesh Choudhary",
+  "examination_date": "15 May 2025",
+  "subject_name": "Meena Pillai",
+  "subject_age": 23,
+  "subject_gender": "Female",
+  "body_temperature_celsius": 21.7,
+  "ambient_temperature_celsius": 25.9,
+  "rigor_mortis": "Post-rigor \u2014 decomposition stage 1",
+  "livor_mortis": "Fixed posterior \u2014 no repositioning",
+  "postmortem_interval_hours": 8.7,
+  "injuries": [
+    {
+      "region": "Abdominal",
+      "description": "Blunt force trauma with splenic laceration",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Neck",
+      "description": "Compression marks consistent with ligature strangulation",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Facial",
+      "description": "Periorbital ecchymosis bilateral",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Cranial",
+      "description": "Blunt force trauma with {severity} fracture",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Thoracic",
+      "description": "Multiple rib fractures with internal hemorrhage",
+      "severity": "SEVERE"
+    }
+  ],
+  "toxicology": [],
+  "cause_of_death": "Blunt force trauma with internal hemorrhage",
+  "manner_of_death": "homicide",
+  "tod_estimate": "03:30 AM \u00b1 1.8h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Meena Pillai | Age: 23\nBody Temperature at Scene: 21.7\u00b0C | Ambient Temperature: 25.9\u00b0C\nPostmortem Interval (estimated): 8.7 hours\n\nINJURIES IDENTIFIED:\n  1. Abdominal: Blunt force trauma with splenic laceration [MODERATE]\n  2. Neck: Compression marks consistent with ligature strangulation [SEVERE]\n  3. Facial: Periorbital ecchymosis bilateral [MODERATE]\n  4. Cranial: Blunt force trauma with {severity} fracture [SEVERE]\n  5. Thoracic: Multiple rib fractures with internal hemorrhage [SEVERE]\n\nTOXICOLOGY (Preliminary): None detected\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed posterior \u2014 no repositioning detected.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the victim. Toxicological findings show no intoxicating substances.\n"
+}

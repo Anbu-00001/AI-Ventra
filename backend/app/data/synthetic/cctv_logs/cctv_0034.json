@@ -1,0 +1,48 @@
+{
+  "id": "CCTV-0034",
+  "camera_id": "CAM_021",
+  "location": "Koramangala 5th Block",
+  "case_id": "AIV-2005-58",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.89,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 27
+    },
+    {
+      "timestamp": "2025-05-22T01:50:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.82,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 90
+    },
+    {
+      "timestamp": "2025-05-22T01:57:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.92,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 118
+    },
+    {
+      "timestamp": "2025-05-22T02:02:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.81,
+      "face_match": false,
+      "matched_id": "Priya Nair",
+      "duration_seconds": 117
+    }
+  ],
+  "total_events": 4,
+  "has_face_match": true,
+  "has_vehicle": true
+}

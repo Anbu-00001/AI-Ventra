@@ -1,0 +1,45 @@
+{
+  "id": "SUS-0012",
+  "name": "Deepa Iyer",
+  "age": 27,
+  "relationship_to_victim": "unknown",
+  "known_locations": [
+    "Doddanekundi Industrial Area",
+    "Phoenix Mall Area",
+    "Outer Ring Road, Marathahalli"
+  ],
+  "registered_devices": [
+    "DEVICE_28",
+    "DEVICE_54",
+    "DEVICE_33"
+  ],
+  "vehicle": {
+    "type": "Black hatchback",
+    "partial_plate": "KA-05-AB"
+  },
+  "behavioral_baseline": {
+    "night_activity_level": "moderate",
+    "normal_call_frequency_per_hour": 3.0,
+    "usual_radius_km": 17.3
+  },
+  "anomaly_flags": [
+    "vehicle observed near secondary deposition route",
+    "device powered down inside critical window",
+    "financial stressor detected in recent records",
+    "GPS route intersects CCTV blind zone"
+  ],
+  "risk_score": 75.2,
+  "risk_level": "HIGH",
+  "explainable_conflicts": [
+    {
+      "conflict": "claimed location conflicts with tower registration",
+      "supporting_source": "cctv_logs",
+      "confidence": 75.3
+    },
+    {
+      "conflict": "communication silence overlaps reconstructed TOD window",
+      "supporting_source": "call_logs",
+      "confidence": 93.4
+    }
+  ]
+}

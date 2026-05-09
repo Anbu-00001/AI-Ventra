@@ -1,0 +1,102 @@
+{
+  "id": "CCTV-0040",
+  "camera_id": "CAM_012",
+  "location": "Phoenix Mall Area",
+  "case_id": "AIV-2066-31",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.92,
+      "face_match": false,
+      "matched_id": "Priya Nair",
+      "duration_seconds": 59
+    },
+    {
+      "timestamp": "2025-05-22T02:00:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.84,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 40
+    },
+    {
+      "timestamp": "2025-05-22T02:06:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.89,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 28
+    },
+    {
+      "timestamp": "2025-05-22T02:11:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.78,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 119
+    },
+    {
+      "timestamp": "2025-05-22T02:18:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.84,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 53
+    },
+    {
+      "timestamp": "2025-05-22T02:30:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.8,
+      "face_match": false,
+      "matched_id": "Deepa Iyer",
+      "duration_seconds": 16
+    },
+    {
+      "timestamp": "2025-05-22T02:49:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.83,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 101
+    },
+    {
+      "timestamp": "2025-05-22T02:57:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.92,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 38
+    },
+    {
+      "timestamp": "2025-05-22T03:11:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.87,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 16
+    },
+    {
+      "timestamp": "2025-05-22T03:13:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.9,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 22
+    }
+  ],
+  "total_events": 10,
+  "has_face_match": true,
+  "has_vehicle": true
+}

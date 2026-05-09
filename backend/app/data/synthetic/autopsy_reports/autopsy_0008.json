@@ -1,0 +1,42 @@
+{
+  "id": "AR-0008",
+  "case_id": "AIV-2049-55",
+  "examiner": "Dr. Meena Pillai",
+  "examination_date": "29 May 2025",
+  "subject_name": "Divya Krishnan",
+  "subject_age": 33,
+  "subject_gender": "Male",
+  "body_temperature_celsius": 18.0,
+  "ambient_temperature_celsius": 30.6,
+  "rigor_mortis": "Post-rigor \u2014 decomposition stage 1",
+  "livor_mortis": "Unfixed \u2014 TOD within 4 hours",
+  "postmortem_interval_hours": 5.3,
+  "injuries": [
+    {
+      "region": "Thoracic",
+      "description": "Multiple rib fractures with internal hemorrhage",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Lower Limb",
+      "description": "Multiple contusions consistent with assault",
+      "severity": "MILD"
+    },
+    {
+      "region": "Abdominal",
+      "description": "Blunt force trauma with splenic laceration",
+      "severity": "MODERATE"
+    }
+  ],
+  "toxicology": [
+    {
+      "substance": "Ketamine",
+      "detected": true,
+      "level": "therapeutic"
+    }
+  ],
+  "cause_of_death": "Exsanguination from stab wounds",
+  "manner_of_death": "suicide",
+  "tod_estimate": "00:45 AM \u00b1 1.0h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Divya Krishnan | Age: 33\nBody Temperature at Scene: 18.0\u00b0C | Ambient Temperature: 30.6\u00b0C\nPostmortem Interval (estimated): 5.3 hours\n\nINJURIES IDENTIFIED:\n  1. Thoracic: Multiple rib fractures with internal hemorrhage [SEVERE]\n  2. Lower Limb: Multiple contusions consistent with assault [MILD]\n  3. Abdominal: Blunt force trauma with splenic laceration [MODERATE]\n\nTOXICOLOGY (Preliminary): Ketamine\n\nRIGOR MORTIS: Partial rigor \u2014 early stage.\nLIVOR MORTIS: Fixed posterior \u2014 no repositioning detected.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the victim. Toxicological findings suggest victim was sedated prior to the fatal assault.\n"
+}

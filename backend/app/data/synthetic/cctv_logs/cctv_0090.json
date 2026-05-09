@@ -1,0 +1,48 @@
+{
+  "id": "CCTV-0090",
+  "camera_id": "CAM_004",
+  "location": "Doddanekundi Industrial Area",
+  "case_id": "AIV-2050-60",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.73,
+      "face_match": false,
+      "matched_id": "Suresh Kumar",
+      "duration_seconds": 78
+    },
+    {
+      "timestamp": "2025-05-22T02:03:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.86,
+      "face_match": true,
+      "matched_id": "Kiran Patel",
+      "duration_seconds": 6
+    },
+    {
+      "timestamp": "2025-05-22T02:22:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.79,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 37
+    },
+    {
+      "timestamp": "2025-05-22T02:37:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.74,
+      "face_match": true,
+      "matched_id": "Priya Nair",
+      "duration_seconds": 64
+    }
+  ],
+  "total_events": 4,
+  "has_face_match": true,
+  "has_vehicle": true
+}

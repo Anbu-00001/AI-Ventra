@@ -1,0 +1,48 @@
+{
+  "id": "CASE-0019",
+  "case_id": "AIV-2009-95",
+  "case_date": "2025-07-25",
+  "victim": {
+    "name": "Aditya Gupta",
+    "age": 54,
+    "occupation": "Teacher",
+    "last_seen": "2025-07-23T01:00:00"
+  },
+  "suspects": [
+    {
+      "id": "SUSPECT_01",
+      "name": "Rohan Joshi",
+      "age": 20,
+      "relationship_to_victim": "colleague",
+      "alibi": "No alibi provided",
+      "risk_score": 83.4
+    },
+    {
+      "id": "SUSPECT_02",
+      "name": "Priya Nair",
+      "age": 41,
+      "relationship_to_victim": "colleague",
+      "alibi": "At home \u2014 unverified",
+      "risk_score": 55.9
+    }
+  ],
+  "evidence_count": 10,
+  "status": "SUSPENDED",
+  "risk_level": "HIGH",
+  "summary": "Case involving Aditya Gupta. Investigation ongoing. Key evidence collected from Doddanekundi Industrial Area. Primary suspect: Divya Krishnan.",
+  "entities": {
+    "suspects": [
+      "Divya Krishnan"
+    ],
+    "locations": [
+      "Outer Ring Road, Marathahalli",
+      "Hebbal Lake, Bangalore",
+      "MG Road, Bangalore"
+    ],
+    "devices": [
+      "DEVICE_10",
+      "DEVICE_35",
+      "DEVICE_11"
+    ]
+  }
+}

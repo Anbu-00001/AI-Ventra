@@ -1,0 +1,57 @@
+{
+  "id": "CCTV-0097",
+  "camera_id": "CAM_002",
+  "location": "Service Road, Whitefield",
+  "case_id": "AIV-2059-10",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.93,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 24
+    },
+    {
+      "timestamp": "2025-05-22T01:50:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.78,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 106
+    },
+    {
+      "timestamp": "2025-05-22T01:58:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.77,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 87
+    },
+    {
+      "timestamp": "2025-05-22T02:07:00",
+      "event_type": "FACE_MATCH",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.83,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 77
+    },
+    {
+      "timestamp": "2025-05-22T02:15:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.93,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 96
+    }
+  ],
+  "total_events": 5,
+  "has_face_match": true,
+  "has_vehicle": true
+}

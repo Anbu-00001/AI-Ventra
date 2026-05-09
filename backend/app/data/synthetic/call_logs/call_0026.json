@@ -1,0 +1,98 @@
+{
+  "id": "CALL-0026",
+  "device_owner": "Divya Krishnan",
+  "phone_number": "+91-9014335772",
+  "case_id": "AIV-2065-89",
+  "date": "2025-05-22",
+  "calls": [
+    {
+      "timestamp": "2025-05-22T00:30:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8758973666",
+      "duration_seconds": 518,
+      "tower_id": "BLR_6915",
+      "signal_strength_dbm": -91
+    },
+    {
+      "timestamp": "2025-05-22T00:39:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-7392950727",
+      "duration_seconds": 594,
+      "tower_id": "BLR_7371",
+      "signal_strength_dbm": -74
+    },
+    {
+      "timestamp": "2025-05-22T01:05:00",
+      "call_type": "MISSED",
+      "callee": "+91-8364700559",
+      "duration_seconds": 220,
+      "tower_id": "BLR_1373",
+      "signal_strength_dbm": -87
+    },
+    {
+      "timestamp": "2025-05-22T01:41:00",
+      "call_type": "MISSED",
+      "callee": "+91-8501279091",
+      "duration_seconds": 241,
+      "tower_id": "BLR_9500",
+      "signal_strength_dbm": -94
+    },
+    {
+      "timestamp": "2025-05-22T01:46:00",
+      "call_type": "MISSED",
+      "callee": "+91-9534389821",
+      "duration_seconds": 336,
+      "tower_id": "BLR_2518",
+      "signal_strength_dbm": -50
+    },
+    {
+      "timestamp": "2025-05-22T02:30:00",
+      "call_type": "MISSED",
+      "callee": "+91-9428004813",
+      "duration_seconds": 210,
+      "tower_id": "BLR_6915",
+      "signal_strength_dbm": -97
+    },
+    {
+      "timestamp": "2025-05-22T02:47:00",
+      "call_type": "MISSED",
+      "callee": "+91-7115555003",
+      "duration_seconds": 237,
+      "tower_id": "BLR_9500",
+      "signal_strength_dbm": -88
+    },
+    {
+      "timestamp": "2025-05-22T02:58:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-8777775640",
+      "duration_seconds": 187,
+      "tower_id": "BLR_5883",
+      "signal_strength_dbm": -54
+    },
+    {
+      "timestamp": "2025-05-22T03:09:00",
+      "call_type": "MISSED",
+      "callee": "+91-9232862803",
+      "duration_seconds": 83,
+      "tower_id": "BLR_4309",
+      "signal_strength_dbm": -94
+    },
+    {
+      "timestamp": "2025-05-22T03:23:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-7898796194",
+      "duration_seconds": 498,
+      "tower_id": "BLR_1678",
+      "signal_strength_dbm": -95
+    }
+  ],
+  "total_calls": 10,
+  "silence_gaps": [
+    {
+      "gap_start": "2025-05-22T02:30:00",
+      "gap_duration_minutes": 20,
+      "anomaly": "suspicious_silence"
+    }
+  ],
+  "suspicious_activity": true
+}

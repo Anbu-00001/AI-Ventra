@@ -1,0 +1,36 @@
+{
+  "id": "AR-0018",
+  "case_id": "AIV-2089-15",
+  "examiner": "Dr. Priya Nair",
+  "examination_date": "08 May 2025",
+  "subject_name": "Vikram Singh",
+  "subject_age": 43,
+  "subject_gender": "Female",
+  "body_temperature_celsius": 22.0,
+  "ambient_temperature_celsius": 20.7,
+  "rigor_mortis": "Post-rigor \u2014 decomposition stage 1",
+  "livor_mortis": "Unfixed \u2014 TOD within 4 hours",
+  "postmortem_interval_hours": 7.4,
+  "injuries": [
+    {
+      "region": "Cranial",
+      "description": "Blunt force trauma with {severity} fracture",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Thoracic",
+      "description": "Multiple rib fractures with internal hemorrhage",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Upper Limb",
+      "description": "Defensive bruising on forearms",
+      "severity": "MODERATE"
+    }
+  ],
+  "toxicology": [],
+  "cause_of_death": "Blunt force trauma with internal hemorrhage",
+  "manner_of_death": "homicide",
+  "tod_estimate": "01:00 AM \u00b1 1.9h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Vikram Singh | Age: 43\nBody Temperature at Scene: 22.0\u00b0C | Ambient Temperature: 20.7\u00b0C\nPostmortem Interval (estimated): 7.4 hours\n\nINJURIES IDENTIFIED:\n  1. Cranial: Blunt force trauma with {severity} fracture [SEVERE]\n  2. Thoracic: Multiple rib fractures with internal hemorrhage [SEVERE]\n  3. Upper Limb: Defensive bruising on forearms [MODERATE]\n\nTOXICOLOGY (Preliminary): None detected\n\nRIGOR MORTIS: Partial rigor \u2014 early stage.\nLIVOR MORTIS: Fixed pattern suggesting body repositioned post-mortem.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a premeditated assault by an attacker known to the victim. Toxicological findings show no intoxicating substances.\n"
+}

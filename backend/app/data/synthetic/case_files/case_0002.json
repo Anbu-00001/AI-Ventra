@@ -1,0 +1,40 @@
+{
+  "id": "CASE-0002",
+  "case_id": "AIV-2081-17",
+  "case_date": "2025-05-11",
+  "victim": {
+    "name": "Kiran Patel",
+    "age": 31,
+    "occupation": "Student",
+    "last_seen": "2025-05-09T10:00:00"
+  },
+  "suspects": [
+    {
+      "id": "SUSPECT_01",
+      "name": "Ananya Das",
+      "age": 42,
+      "relationship_to_victim": "ex-partner",
+      "alibi": "Working late \u2014 colleagues confirm",
+      "risk_score": 61.5
+    }
+  ],
+  "evidence_count": 10,
+  "status": "ACTIVE",
+  "risk_level": "HIGH",
+  "summary": "Case involving Kiran Patel. Investigation ongoing. Key evidence collected from Sarjapur Road, Bangalore. Primary suspect: Kavya Reddy.",
+  "entities": {
+    "suspects": [
+      "Kavya Reddy"
+    ],
+    "locations": [
+      "Hebbal Lake, Bangalore",
+      "Sarjapur Road, Bangalore",
+      "Koramangala 5th Block"
+    ],
+    "devices": [
+      "DEVICE_91",
+      "DEVICE_61",
+      "DEVICE_85"
+    ]
+  }
+}

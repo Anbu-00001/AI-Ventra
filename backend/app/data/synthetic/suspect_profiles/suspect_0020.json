@@ -1,0 +1,43 @@
+{
+  "id": "SUS-0020",
+  "name": "Ananya Das",
+  "age": 29,
+  "relationship_to_victim": "ex-partner",
+  "known_locations": [
+    "Doddanekundi Industrial Area",
+    "Electronic City Phase 2",
+    "Koramangala 5th Block"
+  ],
+  "registered_devices": [
+    "DEVICE_39",
+    "DEVICE_71"
+  ],
+  "vehicle": {
+    "type": "White SUV",
+    "partial_plate": "KA-02-ZX"
+  },
+  "behavioral_baseline": {
+    "night_activity_level": "high",
+    "normal_call_frequency_per_hour": 2.9,
+    "usual_radius_km": 15.7
+  },
+  "anomaly_flags": [
+    "unverified alibi during postmortem interval",
+    "prior communication spike with victim",
+    "GPS route intersects CCTV blind zone"
+  ],
+  "risk_score": 92.6,
+  "risk_level": "CRITICAL",
+  "explainable_conflicts": [
+    {
+      "conflict": "claimed location conflicts with tower registration",
+      "supporting_source": "cctv_logs",
+      "confidence": 94.6
+    },
+    {
+      "conflict": "communication silence overlaps reconstructed TOD window",
+      "supporting_source": "call_logs",
+      "confidence": 91.2
+    }
+  ]
+}

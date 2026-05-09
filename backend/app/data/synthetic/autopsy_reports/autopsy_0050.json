@@ -1,0 +1,52 @@
+{
+  "id": "AR-0050",
+  "case_id": "AIV-2024-49",
+  "examiner": "Dr. Meena Pillai",
+  "examination_date": "02 August 2025",
+  "subject_name": "Swathi Menon",
+  "subject_age": 54,
+  "subject_gender": "Male",
+  "body_temperature_celsius": 22.8,
+  "ambient_temperature_celsius": 28.3,
+  "rigor_mortis": "Full rigor",
+  "livor_mortis": "Fixed posterior \u2014 no repositioning",
+  "postmortem_interval_hours": 13.0,
+  "injuries": [
+    {
+      "region": "Lower Limb",
+      "description": "Multiple contusions consistent with assault",
+      "severity": "MILD"
+    },
+    {
+      "region": "Upper Limb",
+      "description": "Defensive bruising on forearms",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Cranial",
+      "description": "Blunt force trauma with {severity} fracture",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Facial",
+      "description": "Periorbital ecchymosis bilateral",
+      "severity": "MODERATE"
+    }
+  ],
+  "toxicology": [
+    {
+      "substance": "Chloroform",
+      "detected": true,
+      "level": "above therapeutic"
+    },
+    {
+      "substance": "Benzodiazepines",
+      "detected": true,
+      "level": "therapeutic"
+    }
+  ],
+  "cause_of_death": "Exsanguination from stab wounds",
+  "manner_of_death": "homicide",
+  "tod_estimate": "01:45 AM \u00b1 1.2h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Swathi Menon | Age: 54\nBody Temperature at Scene: 22.8\u00b0C | Ambient Temperature: 28.3\u00b0C\nPostmortem Interval (estimated): 13.0 hours\n\nINJURIES IDENTIFIED:\n  1. Lower Limb: Multiple contusions consistent with assault [MILD]\n  2. Upper Limb: Defensive bruising on forearms [MODERATE]\n  3. Cranial: Blunt force trauma with {severity} fracture [SEVERE]\n  4. Facial: Periorbital ecchymosis bilateral [MODERATE]\n\nTOXICOLOGY (Preliminary): Chloroform, Benzodiazepines\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed posterior \u2014 no repositioning detected.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a spontaneous violent altercation. Toxicological findings suggest victim was sedated prior to the fatal assault.\n"
+}

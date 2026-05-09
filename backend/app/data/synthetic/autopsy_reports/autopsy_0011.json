@@ -1,0 +1,57 @@
+{
+  "id": "AR-0011",
+  "case_id": "AIV-2095-26",
+  "examiner": "Dr. Rohan Joshi",
+  "examination_date": "24 June 2025",
+  "subject_name": "Rahul Sharma",
+  "subject_age": 60,
+  "subject_gender": "Male",
+  "body_temperature_celsius": 23.3,
+  "ambient_temperature_celsius": 23.9,
+  "rigor_mortis": "Post-rigor \u2014 decomposition stage 1",
+  "livor_mortis": "Fixed posterior \u2014 no repositioning",
+  "postmortem_interval_hours": 13.5,
+  "injuries": [
+    {
+      "region": "Neck",
+      "description": "Compression marks consistent with ligature strangulation",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Upper Limb",
+      "description": "Defensive bruising on forearms",
+      "severity": "MODERATE"
+    },
+    {
+      "region": "Thoracic",
+      "description": "Multiple rib fractures with internal hemorrhage",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Cranial",
+      "description": "Blunt force trauma with {severity} fracture",
+      "severity": "SEVERE"
+    },
+    {
+      "region": "Abdominal",
+      "description": "Blunt force trauma with splenic laceration",
+      "severity": "MODERATE"
+    }
+  ],
+  "toxicology": [
+    {
+      "substance": "Carbon Monoxide",
+      "detected": true,
+      "level": "therapeutic"
+    },
+    {
+      "substance": "Ketamine",
+      "detected": true,
+      "level": "lethal"
+    }
+  ],
+  "cause_of_death": "Asphyxiation due to ligature strangulation",
+  "manner_of_death": "homicide",
+  "tod_estimate": "02:15 AM \u00b1 2.0h",
+  "report_text": "POSTMORTEM EXAMINATION REPORT\n\nSubject: Rahul Sharma | Age: 60\nBody Temperature at Scene: 23.3\u00b0C | Ambient Temperature: 23.9\u00b0C\nPostmortem Interval (estimated): 13.5 hours\n\nINJURIES IDENTIFIED:\n  1. Neck: Compression marks consistent with ligature strangulation [SEVERE]\n  2. Upper Limb: Defensive bruising on forearms [MODERATE]\n  3. Thoracic: Multiple rib fractures with internal hemorrhage [SEVERE]\n  4. Cranial: Blunt force trauma with {severity} fracture [SEVERE]\n  5. Abdominal: Blunt force trauma with splenic laceration [MODERATE]\n\nTOXICOLOGY (Preliminary): Carbon Monoxide, Ketamine\n\nRIGOR MORTIS: Full rigor present in all muscle groups.\nLIVOR MORTIS: Fixed pattern suggesting body repositioned post-mortem.\n\nFORENSIC NOTES:\nThe pattern of injuries and postmortem indicators are consistent with a spontaneous violent altercation. Toxicological findings suggest victim was sedated prior to the fatal assault.\n"
+}

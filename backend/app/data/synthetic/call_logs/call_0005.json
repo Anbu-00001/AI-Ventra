@@ -1,0 +1,82 @@
+{
+  "id": "CALL-0005",
+  "device_owner": "Aditya Gupta",
+  "phone_number": "+91-8704097428",
+  "case_id": "AIV-2018-77",
+  "date": "2025-05-22",
+  "calls": [
+    {
+      "timestamp": "2025-05-22T00:30:00",
+      "call_type": "MISSED",
+      "callee": "+91-7733180324",
+      "duration_seconds": 592,
+      "tower_id": "BLR_5653",
+      "signal_strength_dbm": -76
+    },
+    {
+      "timestamp": "2025-05-22T00:42:00",
+      "call_type": "MISSED",
+      "callee": "+91-7905125643",
+      "duration_seconds": 334,
+      "tower_id": "BLR_7589",
+      "signal_strength_dbm": -60
+    },
+    {
+      "timestamp": "2025-05-22T01:11:00",
+      "call_type": "MISSED",
+      "callee": "+91-7145126826",
+      "duration_seconds": 273,
+      "tower_id": "BLR_1678",
+      "signal_strength_dbm": -58
+    },
+    {
+      "timestamp": "2025-05-22T01:34:00",
+      "call_type": "OUTGOING",
+      "callee": "+91-7209439396",
+      "duration_seconds": 30,
+      "tower_id": "BLR_4337",
+      "signal_strength_dbm": -55
+    },
+    {
+      "timestamp": "2025-05-22T02:18:00",
+      "call_type": "MISSED",
+      "callee": "+91-8629564776",
+      "duration_seconds": 265,
+      "tower_id": "BLR_7371",
+      "signal_strength_dbm": -79
+    },
+    {
+      "timestamp": "2025-05-22T03:00:00",
+      "call_type": "INCOMING",
+      "callee": "+91-7144801203",
+      "duration_seconds": 59,
+      "tower_id": "BLR_9500",
+      "signal_strength_dbm": -54
+    },
+    {
+      "timestamp": "2025-05-22T03:28:00",
+      "call_type": "MISSED",
+      "callee": "+91-8673963695",
+      "duration_seconds": 268,
+      "tower_id": "BLR_6790",
+      "signal_strength_dbm": -53
+    },
+    {
+      "timestamp": "2025-05-22T03:43:00",
+      "call_type": "MISSED",
+      "callee": "+91-8689106376",
+      "duration_seconds": 437,
+      "tower_id": "BLR_1075",
+      "signal_strength_dbm": -75
+    }
+  ],
+  "total_calls": 8,
+  "silence_gaps": [
+    {
+      "gap_start": "2025-05-22T02:18:00",
+      "gap_duration_minutes": 43,
+      "anomaly": "suspicious_silence"
+    }
+  ],
+  "suspicious_activity": true
+}

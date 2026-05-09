@@ -1,0 +1,39 @@
+{
+  "id": "CASE-0009",
+  "case_id": "AIV-2023-33",
+  "case_date": "2025-06-08",
+  "victim": {
+    "name": "Rahul Sharma",
+    "age": 55,
+    "occupation": "Business Owner",
+    "last_seen": "2025-06-07T14:00:00"
+  },
+  "suspects": [
+    {
+      "id": "SUSPECT_01",
+      "name": "Amit Shah",
+      "age": 36,
+      "relationship_to_victim": "colleague",
+      "alibi": "No alibi provided",
+      "risk_score": 80.5
+    }
+  ],
+  "evidence_count": 8,
+  "status": "ACTIVE",
+  "risk_level": "ELEVATED",
+  "summary": "Case involving Rahul Sharma. Investigation ongoing. Key evidence collected from Bellandur Lake Road. Primary suspect: Nikhil Bose.",
+  "entities": {
+    "suspects": [
+      "Nikhil Bose"
+    ],
+    "locations": [
+      "Electronic City Phase 2",
+      "Doddanekundi Industrial Area",
+      "Koramangala 5th Block"
+    ],
+    "devices": [
+      "DEVICE_59",
+      "DEVICE_16"
+    ]
+  }
+}

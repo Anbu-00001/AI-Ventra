@@ -1,0 +1,44 @@
+{
+  "id": "SUS-0018",
+  "name": "Aditya Gupta",
+  "age": 29,
+  "relationship_to_victim": "ex-partner",
+  "known_locations": [
+    "Bellandur Lake Road",
+    "Service Road, Whitefield",
+    "Hebbal Lake, Bangalore"
+  ],
+  "registered_devices": [
+    "DEVICE_58",
+    "DEVICE_95"
+  ],
+  "vehicle": {
+    "type": "Black hatchback",
+    "partial_plate": "KA-04-MN"
+  },
+  "behavioral_baseline": {
+    "night_activity_level": "low",
+    "normal_call_frequency_per_hour": 0.6,
+    "usual_radius_km": 2.1
+  },
+  "anomaly_flags": [
+    "GPS route intersects CCTV blind zone",
+    "device powered down inside critical window",
+    "unverified alibi during postmortem interval",
+    "vehicle observed near secondary deposition route"
+  ],
+  "risk_score": 40.1,
+  "risk_level": "MODERATE",
+  "explainable_conflicts": [
+    {
+      "conflict": "claimed location conflicts with tower registration",
+      "supporting_source": "cctv_logs",
+      "confidence": 84.0
+    },
+    {
+      "conflict": "communication silence overlaps reconstructed TOD window",
+      "supporting_source": "call_logs",
+      "confidence": 83.8
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+SensorID,Timestamp,Temperature(C),Humidity(%),LightLevel(Lux),SoundLevel(dB),Motion
+SN_901,2025-05-22 02:00:00,24.2,65,10,42,False
+SN_901,2025-05-22 02:10:00,24.1,65,12,45,False
+SN_901,2025-05-22 02:14:05,23.8,66,45,88,True
+SN_901,2025-05-22 02:14:10,23.8,66,80,95,True
+SN_901,2025-05-22 02:16:00,23.9,65,15,44,False

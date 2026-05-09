@@ -1,0 +1,76 @@
+{
+  "id": "GPS-0063",
+  "device_id": "DEVICE_30",
+  "case_id": "AIV-2068-55",
+  "owner": "Pooja Verma",
+  "date": "2025-05-22",
+  "pings": [
+    {
+      "timestamp": "2025-05-22T01:30:00",
+      "latitude": 13.02514,
+      "longitude": 77.504513,
+      "speed_kmh": 66.8,
+      "accuracy_m": 31,
+      "tower_id": "BLR_9500"
+    },
+    {
+      "timestamp": "2025-05-22T01:31:00",
+      "latitude": 13.057197,
+      "longitude": 77.482063,
+      "speed_kmh": 32.0,
+      "accuracy_m": 34,
+      "tower_id": "BLR_9500"
+    },
+    {
+      "timestamp": "2025-05-22T01:39:00",
+      "latitude": 13.038572,
+      "longitude": 77.514899,
+      "speed_kmh": 53.5,
+      "accuracy_m": 12,
+      "tower_id": "BLR_1373"
+    },
+    {
+      "timestamp": "2025-05-22T01:46:00",
+      "latitude": 13.02869,
+      "longitude": 77.493013,
+      "speed_kmh": 70.0,
+      "accuracy_m": 48,
+      "tower_id": "BLR_8037"
+    },
+    {
+      "timestamp": "2025-05-22T01:49:00",
+      "latitude": 13.110733,
+      "longitude": 77.520735,
+      "speed_kmh": 80.4,
+      "accuracy_m": 36,
+      "tower_id": "BLR_6812"
+    },
+    {
+      "timestamp": "2025-05-22T01:50:00",
+      "latitude": 13.172404,
+      "longitude": 77.516618,
+      "speed_kmh": 67.7,
+      "accuracy_m": 44,
+      "tower_id": "BLR_6915"
+    },
+    {
+      "timestamp": "2025-05-22T01:52:00",
+      "latitude": 13.047696,
+      "longitude": 77.514877,
+      "speed_kmh": 53.3,
+      "accuracy_m": 25,
+      "tower_id": "BLR_4309"
+    },
+    {
+      "timestamp": "2025-05-22T01:57:00",
+      "latitude": 13.050349,
+      "longitude": 77.486067,
+      "speed_kmh": 48.9,
+      "accuracy_m": 35,
+      "tower_id": "BLR_5653"
+    }
+  ],
+  "anomalies_detected": false,
+  "total_pings": 8,
+  "coverage_area_km2": 2.73
+}

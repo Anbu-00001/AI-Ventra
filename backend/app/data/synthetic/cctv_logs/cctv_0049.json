@@ -1,0 +1,102 @@
+{
+  "id": "CCTV-0049",
+  "camera_id": "CAM_020",
+  "location": "Hebbal Lake, Bangalore",
+  "case_id": "AIV-2044-89",
+  "date": "2025-05-22",
+  "events": [
+    {
+      "timestamp": "2025-05-22T01:45:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.87,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 74
+    },
+    {
+      "timestamp": "2025-05-22T01:51:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Vehicle: White SUV, partial plate visible",
+      "confidence": 0.8,
+      "face_match": false,
+      "matched_id": "Arjun Mehta",
+      "duration_seconds": 116
+    },
+    {
+      "timestamp": "2025-05-22T01:59:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.82,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 76
+    },
+    {
+      "timestamp": "2025-05-22T02:16:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.97,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 26
+    },
+    {
+      "timestamp": "2025-05-22T02:28:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Male, dark clothing, approximately 25-35",
+      "confidence": 0.91,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 95
+    },
+    {
+      "timestamp": "2025-05-22T02:46:00",
+      "event_type": "UNKNOWN_SUBJECT",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.89,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 88
+    },
+    {
+      "timestamp": "2025-05-22T02:48:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.95,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 44
+    },
+    {
+      "timestamp": "2025-05-22T03:07:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Unknown subject, face obscured",
+      "confidence": 0.9,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 110
+    },
+    {
+      "timestamp": "2025-05-22T03:20:00",
+      "event_type": "PERSON_DETECTED",
+      "subject_description": "Male, white shirt, partially obscured",
+      "confidence": 0.92,
+      "face_match": false,
+      "matched_id": null,
+      "duration_seconds": 54
+    },
+    {
+      "timestamp": "2025-05-22T03:33:00",
+      "event_type": "VEHICLE_DETECTED",
+      "subject_description": "Female, red jacket, carrying bag",
+      "confidence": 0.8,
+      "face_match": true,
+      "matched_id": null,
+      "duration_seconds": 90
+    }
+  ],
+  "total_events": 10,
+  "has_face_match": true,
+  "has_vehicle": true
+}
