@@ -1,0 +1,28 @@
+{
+  "threat_map": {
+    "NormalVideos": "normal",
+    "Arrest": "suspicious",
+    "Burglary": "suspicious",
+    "Abuse": "critical",
+    "Assault": "critical",
+    "Explosion": "critical",
+    "Fighting": "critical",
+    "RoadAccidents": "critical",
+    "Robbery": "critical",
+    "Shooting": "critical"
+  },
+  "label_to_idx": {
+    "normal": 0,
+    "suspicious": 1,
+    "critical": 2
+  },
+  "idx_to_label": {
+    "0": "normal",
+    "1": "suspicious",
+    "2": "critical"
+  },
+  "num_classes": 3,
+  "img_size": 48,
+  "model_arch": "ThreatClassifierCNN",
+  "best_val_acc": 0.4489
+}

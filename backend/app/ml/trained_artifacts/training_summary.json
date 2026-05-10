@@ -1,0 +1,21 @@
+{
+  "model": "ThreatClassifierCNN",
+  "params": 444195,
+  "device": "cpu",
+  "img_size": 48,
+  "batch_size": 256,
+  "epochs_trained": 10,
+  "best_val_acc": 0.4489,
+  "final_test_acc": 0.4489,
+  "training_time_min": 21.8,
+  "artifacts": [
+    "threat_classifier.pth",
+    "label_map.json",
+    "training_history.json",
+    "training_curves.png",
+    "epoch_accuracy.png",
+    "confusion_matrix.png",
+    "per_class_accuracy.png",
+    "classification_report.txt"
+  ]
+}

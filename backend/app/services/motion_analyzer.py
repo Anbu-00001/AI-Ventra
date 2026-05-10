@@ -42,6 +42,10 @@ class MotionAnalyzer:
 
         self._assign_tracks(detections)
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        h, w = gray.shape
+        if w > 640:
+            scale = 640.0 / w
+            gray = cv2.resize(gray, (int(w * scale), int(h * scale)))
         gray = cv2.GaussianBlur(gray, (21, 21), 0)
         motion_score = 0.0
         active_area_ratio = 0.0

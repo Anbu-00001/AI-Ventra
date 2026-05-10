@@ -1,0 +1,19 @@
+AIVENTRA Forensic Threat Classifier — Classification Report
+============================================================
+Best Validation Accuracy: 0.4489
+Final Test Accuracy: 0.4489
+Total Epochs: 10
+Training Time: 21.8 minutes
+Device: cpu
+Image Size: 48×48
+============================================================
+
+              precision    recall  f1-score   support
+
+      NORMAL     0.5151    0.7607    0.6143      1500
+  SUSPICIOUS     0.4094    0.2773    0.3307      1500
+    CRITICAL     0.3649    0.3087    0.3344      1500
+
+    accuracy                         0.4489      4500
+   macro avg     0.4298    0.4489    0.4265      4500
+weighted avg     0.4298    0.4489    0.4265      4500

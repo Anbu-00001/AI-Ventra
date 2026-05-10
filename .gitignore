@@ -21,3 +21,6 @@ backend/processed/
 backend/reports/
 backend/uploads/
 *.pt
+raw-data/
+models/
+outputs/

@@ -21,7 +21,15 @@ interface WsMsg {
   video_width?: number;
   video_height?: number;
   detections?: Array<{ label: string; confidence: number; bbox?: { x1: number; y1: number; x2: number; y2: number } }>;
+  behavior?: { class: string; confidence: number; threat_tier: string };
   report?: VideoAnalysisReport;
+}
+
+interface MlAnalysis {
+  dominant_class: string;
+  dominant_confidence: number;
+  class_distribution: Record<string, { count: number; pct: number }>;
+  frames_classified: number;
 }
 
 interface LiveEvent { label: string; conf: number; ts: string; }
@@ -29,11 +37,26 @@ interface LiveEvent { label: string; conf: number; ts: string; }
 interface LiveBox { label: string; confidence: number; x: number; y: number; w: number; h: number; }
 
 const STAGE_LABELS: Record<string, string> = {
-  video_loaded:    "Video Loaded — Initializing YOLOv8n",
-  yolo_motion_scan:"YOLOv8 Frame Scan + Optical Flow Analysis",
+  video_loaded:    "Video Loaded — Initializing YOLOv8n + ML Classifier",
+  yolo_motion_scan:"YOLOv8 + ML Behavioral Scan — Optical Flow Analysis",
+  yolo_ml_scan:    "YOLOv8 + ML Behavioral Scan — Optical Flow Analysis",
   anomaly_fusion:  "Forensic Anomaly Fusion Engine",
   overlay_render:  "Rendering Tactical HUD Overlay",
   complete:        "Intelligence Analysis Complete",
+};
+
+const TIER_COLOR: Record<string, string> = {
+  HIGH:    "text-red-400 border-red-500/40 bg-red-500/10",
+  MEDIUM:  "text-orange-400 border-orange-500/40 bg-orange-500/10",
+  LOW:     "text-teal-400 border-teal-400/40 bg-teal-400/10",
+  UNKNOWN: "text-slate-400 border-slate-500/40 bg-slate-500/10",
+};
+
+const TIER_BAR: Record<string, string> = {
+  HIGH:    "bg-red-500",
+  MEDIUM:  "bg-orange-400",
+  LOW:     "bg-teal-400",
+  UNKNOWN: "bg-slate-500",
 };
 
 const ENTITY_ICONS: Record<string, React.ElementType> = {
@@ -82,6 +105,7 @@ export default function VisualIntelligenceView() {
   const [glitch, setGlitch] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const [scanLine, setScanLine] = useState(0);
+  const [liveBehavior, setLiveBehavior] = useState<{ class: string; confidence: number; threat_tier: string } | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const wsRef = useRef<WebSocket | null>(null);
@@ -121,6 +145,7 @@ export default function VisualIntelligenceView() {
     setLiveEvents([]);
     setLiveBoxes([]);
     setVideoDims(null);
+    setLiveBehavior(null);
     reportRef.current = null;
     setVideoError(false);
 
@@ -137,6 +162,9 @@ export default function VisualIntelligenceView() {
             if (msg.detail) setStageDetail(msg.detail);
             if (msg.video_width && msg.video_height) {
               setVideoDims({ w: msg.video_width, h: msg.video_height });
+            }
+            if (msg.behavior?.class && msg.behavior.class !== "Unknown") {
+              setLiveBehavior(msg.behavior);
             }
             if (msg.detections?.length) {
               setLiveDetections(msg.detections);
@@ -227,6 +255,7 @@ export default function VisualIntelligenceView() {
     setLiveEvents([]);
     setLiveBoxes([]);
     setVideoDims(null);
+    setLiveBehavior(null);
     setVideoError(false);
     setActiveSnapshot(0);
     if (fileInputRef.current) fileInputRef.current.value = "";
@@ -250,10 +279,10 @@ export default function VisualIntelligenceView() {
         </div>
         <div className="flex items-center gap-3">
           {phase === "complete" && (
-            <div className="px-3 py-1 bg-teal-400/10 border border-teal-400/30 rounded text-[10px] font-mono text-teal-400">✓ YOLO ANALYSIS COMPLETE</div>
+            <div className="px-3 py-1 bg-teal-400/10 border border-teal-400/30 rounded text-[10px] font-mono text-teal-400">✓ YOLO + ML ANALYSIS COMPLETE</div>
           )}
           {phase === "analyzing" && (
-            <div className="px-3 py-1 bg-crimson/10 border border-crimson/30 rounded text-[10px] font-mono text-crimson animate-pulse">◉ YOLO SCANNING — {progress}%</div>
+            <div className="px-3 py-1 bg-crimson/10 border border-crimson/30 rounded text-[10px] font-mono text-crimson animate-pulse">◉ YOLO + ML SCANNING — {progress}%</div>
           )}
           {phase === "idle" && (
             <div className="px-3 py-1 bg-white/5 border border-white/10 rounded text-[10px] font-mono text-slate-500">STANDBY — AWAITING VIDEO</div>
@@ -294,13 +323,13 @@ export default function VisualIntelligenceView() {
               </motion.div>
               <div className="font-orbitron text-2xl text-slate-200 uppercase tracking-widest mb-3">Upload Incident Video</div>
               <div className="text-sm text-slate-400 mb-2 max-w-lg leading-relaxed">
-                Upload a CCTV / dashcam / incident video — AIVENTRA will run <span className="text-teal-400">YOLOv8</span> on every frame, draw <span className="text-red-400">bounding boxes</span> around suspects & vehicles, detect motion anomalies, and produce a full forensic report.
+                Upload a CCTV / dashcam / incident video — AIVENTRA will run <span className="text-teal-400">YOLOv8</span> on every frame, draw <span className="text-red-400">bounding boxes</span> around suspects &amp; vehicles, classify behavior with a <span className="text-amber-400">MobileNetV2 forensic ML model</span>, detect motion anomalies, and produce a full forensic report.
               </div>
               <div className="text-[10px] font-mono text-slate-600 uppercase tracking-widest mb-8">MP4 · MOV · AVI · MKV · WEBM</div>
               <div className="flex flex-wrap items-center justify-center gap-6 text-[10px] font-mono text-slate-500 uppercase tracking-widest">
                 <span className="flex items-center gap-2"><Scan size={14} className="text-teal-400" /> YOLOv8 Object Detection</span>
                 <span className="flex items-center gap-2"><Activity size={14} className="text-teal-400" /> Optical Flow Motion</span>
-                <span className="flex items-center gap-2"><Cpu size={14} className="text-teal-400" /> Forensic Reasoning + RAG</span>
+                <span className="flex items-center gap-2"><Cpu size={14} className="text-amber-400" /> MobileNetV2 ML Classifier</span>
                 <span className="flex items-center gap-2"><Eye size={14} className="text-teal-400" /> Bounding Box Overlay</span>
               </div>
             </div>
@@ -393,9 +422,13 @@ export default function VisualIntelligenceView() {
 
                 {/* Bottom status */}
                 <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between z-30">
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 flex-wrap">
                     <StatusBadge icon={Scan} label="YOLO Active" color="text-teal-400" />
                     <StatusBadge icon={Activity} label={`${liveDetections.length} Objects`} color="text-amber-400" />
+                    {liveBehavior && (
+                      <StatusBadge icon={Cpu} label={`ML: ${liveBehavior.class.toUpperCase()} ${Math.round(liveBehavior.confidence * 100)}%`}
+                        color={liveBehavior.threat_tier === "HIGH" ? "text-red-400" : liveBehavior.threat_tier === "MEDIUM" ? "text-orange-400" : "text-teal-400"} />
+                    )}
                   </div>
                   <div className="font-mono text-[9px] text-slate-600 uppercase">{stageLabel}</div>
                 </div>
@@ -538,6 +571,57 @@ export default function VisualIntelligenceView() {
                   </div>
                 </div>
               )}
+
+              {/* ML Behavioral Classification */}
+              {(() => {
+                const ml = report.meta?.ml_analysis as MlAnalysis | undefined;
+                if (!ml?.dominant_class) return null;
+                const tierCls = TIER_COLOR[ml.dominant_class in { Abuse:1,Assault:1,Shooting:1,Robbery:1,Fighting:1 } ? "HIGH" : ml.dominant_class in { Burglary:1,Arrest:1,Explosion:1 } ? "MEDIUM" : "LOW"] ?? TIER_COLOR.LOW;
+                const tier = ml.dominant_class in { Abuse:1,Assault:1,Shooting:1,Robbery:1,Fighting:1 } ? "HIGH" : ml.dominant_class in { Burglary:1,Arrest:1,Explosion:1 } ? "MEDIUM" : "LOW";
+                const dist = ml.class_distribution ?? {};
+                const classes = Object.entries(dist).sort((a, b) => b[1].pct - a[1].pct);
+                return (
+                  <div className="bg-black/40 rounded-xl border border-white/5 p-4">
+                    <div className="flex items-center gap-2 font-orbitron text-[10px] text-slate-400 uppercase tracking-widest mb-4">
+                      <Cpu size={12} />
+                      ML Behavioral Classification
+                      <span className="ml-auto text-[8px] font-mono text-slate-600">{ml.frames_classified} frames classified</span>
+                    </div>
+                    {/* Dominant class hero badge */}
+                    <div className={`flex items-center justify-between p-3 rounded border mb-4 ${tierCls}`}>
+                      <div>
+                        <div className="text-[8px] font-mono uppercase tracking-widest opacity-60 mb-0.5">Dominant Activity</div>
+                        <div className="font-orbitron text-base font-bold uppercase tracking-wider">{ml.dominant_class}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="font-mono text-2xl font-bold">{Math.round(ml.dominant_confidence * 100)}%</div>
+                        <div className={`text-[8px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded border mt-1 inline-block ${tierCls}`}>{tier} THREAT</div>
+                      </div>
+                    </div>
+                    {/* Class distribution bars */}
+                    <div className="space-y-2">
+                      {classes.map(([cls, info]) => {
+                        const clsTier = cls in { Abuse:1,Assault:1,Shooting:1,Robbery:1,Fighting:1 } ? "HIGH" : cls in { Burglary:1,Arrest:1,Explosion:1 } ? "MEDIUM" : "LOW";
+                        const barColor = TIER_BAR[clsTier];
+                        return (
+                          <div key={cls}>
+                            <div className="flex justify-between text-[9px] font-mono mb-0.5">
+                              <span className="text-slate-400 uppercase">{cls}</span>
+                              <span className="text-slate-500">{info.pct}%</span>
+                            </div>
+                            <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                              <motion.div initial={{ width: 0 }}
+                                animate={{ width: `${info.pct}%` }}
+                                transition={{ duration: 0.8, delay: classes.findIndex(([c]) => c === cls) * 0.05 }}
+                                className={`h-full rounded-full ${barColor} opacity-70`} />
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })()}
 
               {/* Snapshots grid — these now have YOLO bounding boxes drawn by OpenCV */}
               {report.snapshots.length > 0 && (
@@ -717,12 +801,32 @@ export default function VisualIntelligenceView() {
                   );
                 })}
 
+                {/* ML dominant class mini badge in sidebar */}
+                {(() => {
+                  const ml = report.meta?.ml_analysis as MlAnalysis | undefined;
+                  if (!ml?.dominant_class) return null;
+                  const tier = ml.dominant_class in { Abuse:1,Assault:1,Shooting:1,Robbery:1,Fighting:1 } ? "HIGH" : ml.dominant_class in { Burglary:1,Arrest:1,Explosion:1 } ? "MEDIUM" : "LOW";
+                  const tierCls = TIER_COLOR[tier];
+                  return (
+                    <div className={`flex items-center justify-between p-2 rounded border text-[9px] font-mono ${tierCls}`}>
+                      <span className="flex items-center gap-1.5"><Cpu size={10} /> ML CLASS</span>
+                      <span className="font-bold uppercase">{ml.dominant_class} {Math.round(ml.dominant_confidence * 100)}%</span>
+                    </div>
+                  );
+                })()}
+
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-2 pt-2">
                   <StatBox label="Frames" value={report.processed_frames.toString()} />
                   <StatBox label="Anomalies" value={report.movement_anomalies.length.toString()} />
                   <StatBox label="Duration" value={`${report.duration_seconds.toFixed(1)}s`} />
                   <StatBox label="FPS" value={Math.round(report.fps).toString()} />
+                  {(report.meta?.samples_per_sec as number | undefined) && (
+                    <StatBox label="Samples/s" value={String(report.meta.samples_per_sec)} />
+                  )}
+                  {(report.meta?.total_samples as number | undefined) && (
+                    <StatBox label="ML Scanned" value={String(report.meta.total_samples)} />
+                  )}
                 </div>
 
                 {/* Threat assessment */}
@@ -776,6 +880,13 @@ export default function VisualIntelligenceView() {
                   Scanning forensic object classes:<br />
                   <span className="text-red-400">PERSON</span> · <span className="text-teal-400">CAR</span> · <span className="text-teal-400">TRUCK</span> · <span className="text-cyan-400">MOTORCYCLE</span> · HANDBAG · CELLPHONE
                 </div>
+                {liveBehavior && (
+                  <div className={`p-2 rounded border text-[9px] font-mono ${TIER_COLOR[liveBehavior.threat_tier] ?? TIER_COLOR.UNKNOWN}`}>
+                    <div className="text-[7px] uppercase tracking-widest opacity-60 mb-0.5">Live ML Classification</div>
+                    <div className="font-bold uppercase">{liveBehavior.class} — {Math.round(liveBehavior.confidence * 100)}%</div>
+                    <div className="opacity-60">{liveBehavior.threat_tier} THREAT</div>
+                  </div>
+                )}
               </div>
             ) : (
               <div className="text-[10px] font-mono text-slate-600 text-center py-10 uppercase leading-relaxed">
