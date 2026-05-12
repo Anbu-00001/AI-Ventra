@@ -38,15 +38,13 @@ async def demo_anomalies():
 @router.get("/from-evidence")
 async def anomaly_from_evidence():
     """Build real anomaly report from uploaded forensic evidence files."""
+    from app.services.evidence_parser import parse_call_logs, parse_gps_trace
+    
+    # Try to parse evidence first to ensure files are processed
+    parse_call_logs()
+    parse_gps_trace()
+    
     report = build_anomaly_from_uploads()
-    # If no real uploaded data found, check if evidence_parser can help
-    if not report.anomalies or len(report.anomalies) < 2:
-        from app.services.evidence_parser import parse_call_logs, parse_gps_trace
-        calls = parse_call_logs()
-        gps = parse_gps_trace()
-        if calls or gps:
-            # Re-run with real data available
-            report = build_anomaly_from_uploads()
     return success(report.model_dump(), message="Anomaly report from uploaded evidence")
 
 

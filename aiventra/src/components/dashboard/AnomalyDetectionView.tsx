@@ -6,10 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Activity, AlertTriangle, TrendingUp, ShieldAlert, Radio, Zap,
   Smartphone, MapPin, Loader2, RefreshCw, Cpu, Wifi, Thermometer,
-  Volume2, Navigation, Clock, CheckCircle,
+  Volume2, Navigation, Clock, CheckCircle, Fingerprint, Layers
 } from "lucide-react";
 import { getAnomalyFromEvidence, explainConclusion } from "@/lib/api";
 import type { AnomalyReport, AnomalyFinding } from "@/lib/api";
+import GlassCard from "@/components/ui/GlassCard";
 
 // ── Chart helpers — 100% deterministic, no Math.random() ─────────────────────
 
@@ -165,7 +166,6 @@ export default function AnomalyDetectionView() {
     try {
       const r = await getAnomalyFromEvidence();
       setReport(r.data ?? null);
-      // Fetch RAG/Ollama explanation in parallel
       if (r.data) {
         setRagLoading(true);
         const level = r.data.overall_threat_level;
@@ -194,481 +194,393 @@ export default function AnomalyDetectionView() {
   const allFactors = anomalies.flatMap(a => a.contributing_factors ?? []);
 
   const threatColor = threatScore >= 80 ? "text-red-500" : threatScore >= 50 ? "text-amber-400" : "text-teal-400";
-  const threatBgClass = threatScore >= 80 ? "bg-red-500/10 border-red-500/20" : threatScore >= 50 ? "bg-amber-400/10 border-amber-400/20" : "bg-teal-400/10 border-teal-400/20";
+  const glowColor = threatScore >= 80 ? "crimson" : threatScore >= 50 ? "amber" : "teal";
 
   return (
-    <div className="flex flex-col h-full bg-[#05070b] text-slate-200 font-sans overflow-hidden">
+    <div className="flex flex-col h-full bg-[#020408] text-slate-200 font-sans overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between px-6 py-3 border-b border-white/5 bg-black/20 flex-shrink-0">
-        <div className="flex items-center gap-6">
-          <div className="flex items-center gap-2 text-crimson font-bold">
-            <ShieldAlert size={18} />
-            <span className="font-orbitron text-base tracking-[0.15em] uppercase">Anomaly Detection</span>
+      <header className="flex items-center justify-between px-8 py-4 border-b border-white/5 bg-black/40 backdrop-blur-md flex-shrink-0 z-20">
+        <div className="flex items-center gap-8">
+          <div className="flex items-center gap-3">
+            <div className="p-2 rounded-lg bg-crimson/10 border border-crimson/20">
+              <ShieldAlert className="text-crimson-glow" size={20} />
+            </div>
+            <div>
+              <h1 className="font-orbitron text-lg font-bold tracking-[0.2em] uppercase text-white leading-none">
+                Behavioral <span className="text-crimson-glow">Anomalies</span>
+              </h1>
+              <p className="font-mono text-[9px] text-slate-500 uppercase tracking-widest mt-1.5">
+                // Predictive Threat Intelligence Engine
+              </p>
+            </div>
           </div>
-          <div className="h-4 w-px bg-white/10" />
-          <div className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">
-            // Behavioral Threat Analysis Engine
-          </div>
-        </div>
-        <div className="flex items-center gap-6">
+          <div className="h-8 w-px bg-white/10 hidden md:block" />
           {report && (
-            <div className="flex gap-4 text-[10px] font-mono">
-              <span className="text-slate-500">Case: <span className="text-teal-400">{report.case_id}</span></span>
-              <span className="text-slate-500">Threat: <span className={threatColor}>{report.overall_threat_level}</span></span>
-              <span className="text-slate-500">Escalation: <span className="text-red-400">{escalation}%</span></span>
+            <div className="hidden md:flex gap-6 items-center">
+              <div className="flex flex-col">
+                <span className="text-[8px] font-mono text-slate-500 uppercase tracking-tighter">Current Case</span>
+                <span className="text-xs font-mono text-teal-400">{report.case_id}</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[8px] font-mono text-slate-500 uppercase tracking-tighter">Threat Level</span>
+                <span className={`text-xs font-mono font-bold ${threatColor}`}>{report.overall_threat_level}</span>
+              </div>
             </div>
           )}
-          <button onClick={fetchData} disabled={loading}
-            className="flex items-center gap-1.5 text-[10px] font-mono text-slate-500 hover:text-white border border-white/10 px-2.5 py-1 rounded transition disabled:opacity-40">
-            <RefreshCw size={11} className={loading ? "animate-spin" : ""} /> Refresh
+        </div>
+
+        <div className="flex items-center gap-6">
+          <button 
+            onClick={fetchData} 
+            disabled={loading}
+            className="flex items-center gap-2 text-[10px] font-mono text-slate-400 hover:text-white border border-white/10 bg-white/5 hover:bg-white/10 px-4 py-1.5 rounded-full transition-all disabled:opacity-40 active:scale-95"
+          >
+            <RefreshCw size={12} className={loading ? "animate-spin" : ""} /> 
+            {loading ? "SCANNING..." : "RE-SCAN EVIDENCE"}
           </button>
-          <div className="text-right font-mono text-xs text-slate-400">
-            <div>{time}</div>
-            <div className="text-[10px] text-slate-600">
-              {new Date().toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "numeric" }).toUpperCase()}
+          <div className="h-8 w-px bg-white/10" />
+          <div className="text-right font-mono">
+            <div className="text-sm font-bold text-white tracking-tighter">{time}</div>
+            <div className="text-[9px] text-slate-500 uppercase">
+              {new Date().toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "numeric" })}
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Body */}
-      <div className="flex-1 overflow-y-auto custom-scrollbar p-5 relative">
-        {loading && (
-          <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-black/70 backdrop-blur-sm gap-3">
-            <Loader2 size={30} className="animate-spin text-crimson" />
-            <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">
-              Analyzing uploaded evidence...
-            </div>
-          </div>
-        )}
-
-        {!loading && !report && (
-          <div className="flex flex-col items-center justify-center h-full gap-4 text-center">
-            <AlertTriangle size={44} className="text-slate-700" />
-            <div className="font-orbitron text-sm text-slate-500 uppercase tracking-widest">No Evidence Uploaded</div>
-            <div className="text-[11px] text-slate-600 max-w-sm">
-              Upload forensic evidence files (CSV, JSON, TXT) from the Case Intake Terminal to trigger anomaly analysis.
-            </div>
-          </div>
-        )}
-
-        {report && (
-          <div className="grid grid-cols-1 xl:grid-cols-[1fr_280px_300px] gap-5">
-
-            {/* ══ LEFT COLUMN ══════════════════════════════════════════ */}
-            <div className="flex flex-col gap-5">
-
-              {/* Live Call Activity Stream — real call_series data */}
-              <div className="bg-black/40 rounded-xl border border-white/5 p-4">
-                <div className="flex items-center justify-between mb-3">
-                  <div>
-                    <div className="flex items-center gap-2 font-orbitron text-[10px] text-slate-300 uppercase tracking-widest">
-                      <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                      Live Anomaly Stream
+      {/* Main Body */}
+      <div className="flex-1 overflow-y-auto custom-scrollbar p-6 relative">
+        <AnimatePresence mode="wait">
+          {loading ? (
+            <motion.div 
+              key="loading"
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#020408]/80 backdrop-blur-xl gap-6"
+            >
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-crimson/20 blur-2xl animate-pulse" />
+                <Loader2 size={48} className="animate-spin text-crimson-glow relative" />
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="font-orbitron text-sm text-white uppercase tracking-[0.3em] animate-pulse">Analyzing Neural Patterns</div>
+                <div className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Processing forensic data fragments...</div>
+              </div>
+            </motion.div>
+          ) : !report ? (
+            <motion.div 
+              key="empty"
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+              className="flex flex-col items-center justify-center h-full gap-6 text-center max-w-lg mx-auto"
+            >
+              <div className="p-6 rounded-full bg-slate-900/50 border border-white/5">
+                <AlertTriangle size={64} className="text-slate-700" />
+              </div>
+              <div>
+                <h2 className="font-orbitron text-xl text-slate-300 uppercase tracking-widest mb-3">No Evidence Vector Found</h2>
+                <p className="text-xs text-slate-500 leading-relaxed font-mono">
+                  The anomaly detection engine requires active forensic data. Please upload evidence files (CSV, JSON, TXT) via the Intake Terminal to initialize behavioral analysis.
+                </p>
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div 
+              key="content"
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+              className="grid grid-cols-1 xl:grid-cols-[1fr_300px_320px] gap-6"
+            >
+              {/* ══ LEFT COLUMN: Primary Intelligence ══════════════════════════ */}
+              <div className="flex flex-col gap-6">
+                {/* Live Activity Stream */}
+                <GlassCard glowColor="crimson" className="p-5 flex flex-col gap-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="font-orbitron text-[11px] text-white uppercase tracking-widest flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
+                        Behavioral Intelligence Stream
+                      </h3>
+                      <p className="text-[9px] font-mono text-slate-500 mt-1 uppercase">
+                        {anomalies.length} anomalous vectors detected · Source: {bp?.time_window ?? "—"}
+                      </p>
                     </div>
-                    <div className="text-[9px] font-mono text-slate-500 mt-0.5 uppercase">
-                      {anomalies.length} anomalies · Threat Score: {threatScore} · Source: {bp?.time_window ?? "—"}
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 text-[9px] font-mono">
-                    <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-red-500" />VOICE</span>
-                    <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-amber-500" />SMS</span>
-                    <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-slate-500" />MISSED</span>
-                    <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-violet-500" />POWER_OFF</span>
-                  </div>
-                </div>
-                <div className="h-36 w-full">
-                  <CallSeriesChart series={bp?.call_series ?? []} />
-                </div>
-                {/* Tower strip */}
-                {bp?.towers_active && (
-                  <div className="flex items-center gap-2 mt-3 pt-3 border-t border-white/5">
-                    <Wifi size={10} className="text-teal-400 flex-shrink-0" />
-                    <div className="flex gap-2 flex-wrap">
-                      {bp.towers_active.map((t: string) => (
-                        <span key={t} className="text-[8px] font-mono px-1.5 py-0.5 rounded border border-teal-400/20 bg-teal-400/5 text-teal-400 uppercase">
-                          {t}
+                    <div className="flex items-center gap-3 text-[8px] font-mono">
+                      {["VOICE", "SMS", "MISSED", "POWER"].map((label, i) => (
+                        <span key={label} className="flex items-center gap-1.5 opacity-80">
+                          <span className={`w-2 h-2 rounded-full ${["bg-red-500", "bg-amber-500", "bg-slate-500", "bg-violet-600"][i]}`} />
+                          {label}
                         </span>
                       ))}
                     </div>
-                    <span className="ml-auto text-[8px] font-mono text-slate-600 flex items-center gap-1">
-                      <MapPin size={8} /> {bp.last_known_location}
-                    </span>
                   </div>
-                )}
-              </div>
-
-              {/* Behavioral Drift Wave — real drift_points data */}
-              <div className="bg-black/40 rounded-xl border border-white/5 p-4">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="font-orbitron text-[10px] text-slate-300 uppercase tracking-widest">
-                    Behavioral Drift Wave
+                  <div className="h-40 w-full bg-black/20 rounded-lg border border-white/5 p-2 overflow-hidden">
+                    <CallSeriesChart series={bp?.call_series ?? []} />
                   </div>
-                  <div className="flex items-center gap-4 text-[8px] font-mono text-slate-500">
-                    <span className="text-teal-400">◀ Stability</span>
-                    <span className="text-red-500">Instability ▶</span>
-                  </div>
-                </div>
-                <div className="h-24 w-full">
-                  <DriftChart points={bp?.drift_points ?? []} />
-                </div>
-              </div>
-
-              {/* Environmental Sensor Readings — real sensor_series */}
-              {bp?.sensor_series?.length > 0 && (
-                <div className="bg-black/40 rounded-xl border border-white/5 p-4">
-                  <div className="font-orbitron text-[10px] text-slate-300 uppercase tracking-widest mb-3 flex items-center gap-2">
-                    <Thermometer size={12} className="text-amber-400" />
-                    Environmental Sensor Readings
-                    <span className="ml-auto text-[8px] font-mono text-slate-500">{bp.sensor_series.length} readings</span>
-                  </div>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-[9px] font-mono">
-                      <thead>
-                        <tr className="text-slate-600 uppercase">
-                          <th className="text-left py-1 pr-4">Time</th>
-                          <th className="text-left pr-4">
-                            <span className="flex items-center gap-1"><Volume2 size={8} /> Sound dB</span>
-                          </th>
-                          <th className="text-left pr-4">
-                            <span className="flex items-center gap-1"><Activity size={8} /> Motion</span>
-                          </th>
-                          <th className="text-left">
-                            <span className="flex items-center gap-1"><Thermometer size={8} /> Temp °C</span>
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-white/[0.03]">
-                        {bp.sensor_series.map((s: any, i: number) => (
-                          <tr key={i} className={s.motion ? "bg-red-500/5" : ""}>
-                            <td className="py-1 pr-4 text-slate-500">+{s.minute}m</td>
-                            <td className={`pr-4 font-bold ${s.sound_db > 70 ? "text-red-400" : s.sound_db > 55 ? "text-amber-400" : "text-slate-400"}`}>
-                              {s.sound_db} dB
-                            </td>
-                            <td className="pr-4">
-                              <span className={`px-1.5 py-0.5 rounded ${s.motion ? "bg-red-500/20 text-red-400" : "text-slate-600"}`}>
-                                {s.motion ? "DETECTED" : "NONE"}
-                              </span>
-                            </td>
-                            <td className="text-slate-400">{s.temp}°C</td>
-                          </tr>
+                  {bp?.towers_active && (
+                    <div className="flex items-center gap-3 pt-3 border-t border-white/5">
+                      <Wifi size={12} className="text-teal-400" />
+                      <div className="flex gap-1.5 flex-wrap">
+                        {bp.towers_active.map((t: string) => (
+                          <span key={t} className="text-[8px] font-mono px-2 py-0.5 rounded-full border border-teal-400/30 bg-teal-400/10 text-teal-300 uppercase">
+                            {t}
+                          </span>
                         ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              )}
-
-              {/* Anomaly Event Feed — all 4 anomalies with recommended_action */}
-              <div className="bg-black/40 rounded-xl border border-white/5 p-4">
-                <div className="flex items-center gap-2 font-orbitron text-[10px] text-slate-300 uppercase tracking-widest mb-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                  Anomaly Event Feed
-                  <span className="ml-auto text-[9px] font-mono text-slate-500">{anomalies.length} total</span>
-                </div>
-                <div className="space-y-2">
-                  {anomalies.map((a) => (
-                    <div key={a.anomaly_id}>
-                      <button
-                        className="w-full flex items-start gap-3 p-2.5 hover:bg-white/[0.02] rounded border border-white/[0.03] transition text-left"
-                        onClick={() => setExpanded(expanded === a.anomaly_id ? null : a.anomaly_id)}
-                      >
-                        <div className={`mt-0.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${SEV_DOT[a.severity] ?? "bg-slate-600"}`} />
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between gap-2 mb-0.5">
-                            <span className="text-[10px] font-bold text-slate-200 uppercase">{a.anomaly_type.replace(/_/g, " ")}</span>
-                            <span className={`text-[8px] font-orbitron px-1.5 py-0.5 rounded border ${SEV_COLOR[a.severity] ?? "text-slate-500 border-slate-500/20"}`}>{a.severity}</span>
-                          </div>
-                          <div className="text-[9px] text-slate-500 leading-relaxed line-clamp-2">{a.description}</div>
-                          <div className="flex gap-3 mt-1 text-[8px] font-mono text-slate-600">
-                            <span className="flex items-center gap-0.5"><Clock size={7} /> {a.detected_at}</span>
-                            <span>Conf: {Math.round(a.confidence)}%</span>
-                            <span className="text-teal-400/60">{a.evidence_source}</span>
-                          </div>
-                        </div>
-                      </button>
-                      <AnimatePresence>
-                        {expanded === a.anomaly_id && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.2 }}
-                            className="overflow-hidden"
-                          >
-                            <div className="ml-4 pl-3 border-l border-white/10 py-2 space-y-2">
-                              {/* Contributing factors */}
-                              {(a.contributing_factors ?? []).map((f: any, fi: number) => (
-                                <div key={fi} className="text-[9px]">
-                                  <div className="flex justify-between mb-0.5">
-                                    <span className="text-slate-300 font-bold">{f.factor}</span>
-                                    <span className="text-red-400 font-mono">{f.weight}%</span>
-                                  </div>
-                                  <div className="h-1 bg-white/5 rounded-full overflow-hidden mb-1">
-                                    <div className="h-full bg-red-500/60 rounded-full" style={{ width: `${f.weight}%` }} />
-                                  </div>
-                                  <div className="text-slate-600 leading-relaxed">{f.explanation}</div>
-                                </div>
-                              ))}
-                              {/* Recommended action */}
-                              {a.recommended_action && (
-                                <div className="flex items-start gap-2 mt-2 p-2 bg-teal-400/5 border border-teal-400/20 rounded">
-                                  <CheckCircle size={10} className="text-teal-400 flex-shrink-0 mt-0.5" />
-                                  <div className="text-[9px] text-teal-300 leading-relaxed">{a.recommended_action}</div>
-                                </div>
-                              )}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                      </div>
+                      <div className="ml-auto text-[9px] font-mono text-slate-500 flex items-center gap-1.5">
+                        <MapPin size={10} className="text-red-400" /> 
+                        {bp.last_known_location}
+                      </div>
                     </div>
-                  ))}
-                </div>
-              </div>
+                  )}
+                </GlassCard>
 
-              {/* RAG + Ollama AI Reasoning */}
-              <div className="bg-black/40 rounded-xl border border-white/5 p-4">
-                <div className="flex items-center gap-2 font-orbitron text-[10px] text-slate-300 uppercase tracking-widest mb-3">
-                  <Cpu size={12} className="text-teal-400" />
-                  AI Forensic Reasoning
-                  {ragLoading
-                    ? <span className="ml-auto flex items-center gap-1 text-[8px] font-mono text-amber-400"><Loader2 size={8} className="animate-spin" /> RAG + LLM</span>
-                    : ragText
-                      ? <span className="ml-auto text-[8px] font-mono text-teal-400">✓ RAG + OLLAMA</span>
-                      : <span className="ml-auto text-[8px] font-mono text-slate-600">HEURISTIC FALLBACK</span>
-                  }
-                </div>
-                {ragLoading && (
-                  <div className="space-y-2">
-                    {[100, 80, 90].map((w, i) => (
-                      <div key={i} className="h-2.5 rounded bg-white/5 animate-pulse" style={{ width: `${w}%` }} />
+                {/* Behavioral Drift Wave */}
+                <GlassCard glowColor="amber" className="p-5">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="font-orbitron text-[11px] text-white uppercase tracking-widest flex items-center gap-2">
+                      <Activity size={14} className="text-amber-400" />
+                      Pattern Deviation Wave
+                    </h3>
+                    <div className="flex items-center gap-6 text-[8px] font-mono text-slate-500 uppercase tracking-widest">
+                      <span className="text-teal-400">Stable Baseline</span>
+                      <span className="text-red-500">Anomaly Deviation</span>
+                    </div>
+                  </div>
+                  <div className="h-28 w-full bg-black/20 rounded-lg border border-white/5 p-2">
+                    <DriftChart points={bp?.drift_points ?? []} />
+                  </div>
+                </GlassCard>
+
+                {/* Anomaly Feed */}
+                <GlassCard glowColor="crimson" className="p-5">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Layers size={14} className="text-crimson-glow" />
+                    <h3 className="font-orbitron text-[11px] text-white uppercase tracking-widest">Anomaly Logic Fragments</h3>
+                    <span className="ml-auto font-mono text-[9px] text-slate-500">{anomalies.length} TOTAL VECTORS</span>
+                  </div>
+                  <div className="space-y-3">
+                    {anomalies.map((a) => (
+                      <div key={a.anomaly_id} className="group">
+                        <button
+                          className={`w-full flex flex-col gap-2 p-3 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all text-left ${expanded === a.anomaly_id ? "ring-1 ring-white/20 bg-white/[0.05]" : ""}`}
+                          onClick={() => setExpanded(expanded === a.anomaly_id ? null : a.anomaly_id)}
+                        >
+                          <div className="flex items-center justify-between w-full">
+                            <div className="flex items-center gap-3">
+                              <div className={`w-2 h-2 rounded-full ${SEV_DOT[a.severity] ?? "bg-slate-600"} shadow-[0_0_8px_rgba(255,255,255,0.2)]`} />
+                              <span className="text-[11px] font-bold text-slate-100 uppercase tracking-wide">{a.anomaly_type.replace(/_/g, " ")}</span>
+                            </div>
+                            <span className={`text-[8px] font-orbitron px-2 py-0.5 rounded-full border ${SEV_COLOR[a.severity] ?? "text-slate-500 border-slate-500/20"}`}>{a.severity}</span>
+                          </div>
+                          <p className="text-[10px] text-slate-400 leading-relaxed line-clamp-2">{a.description}</p>
+                          <div className="flex items-center justify-between mt-1">
+                            <div className="flex gap-3 text-[8px] font-mono text-slate-600">
+                              <span className="flex items-center gap-1"><Clock size={8} /> {a.detected_at}</span>
+                              <span className="text-teal-400/70">{a.evidence_source}</span>
+                            </div>
+                            <div className="text-[9px] font-mono text-red-400/80 font-bold">{Math.round(a.confidence)}% CONFIDENCE</div>
+                          </div>
+                        </button>
+                        <AnimatePresence>
+                          {expanded === a.anomaly_id && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="mt-2 ml-4 pl-4 border-l-2 border-white/5 py-3 space-y-4">
+                                {(a.contributing_factors ?? []).map((f: any, fi: number) => (
+                                  <div key={fi} className="space-y-1.5">
+                                    <div className="flex justify-between items-center text-[10px]">
+                                      <span className="text-slate-300 font-bold uppercase tracking-tight">{f.factor}</span>
+                                      <span className="text-red-400 font-mono">Impact: +{f.weight}%</span>
+                                    </div>
+                                    <div className="h-1 bg-white/5 rounded-full overflow-hidden">
+                                      <motion.div className="h-full bg-red-500/80" initial={{ width: 0 }} animate={{ width: `${f.weight}%` }} transition={{ duration: 1 }} />
+                                    </div>
+                                    <p className="text-[9px] text-slate-500 leading-relaxed italic">{f.explanation}</p>
+                                  </div>
+                                ))}
+                                {a.recommended_action && (
+                                  <div className="bg-teal-400/5 border border-teal-400/20 p-3 rounded-lg flex gap-3 items-start mt-4">
+                                    <CheckCircle size={14} className="text-teal-400 shrink-0 mt-0.5" />
+                                    <p className="text-[10px] text-teal-300 leading-relaxed">{a.recommended_action}</p>
+                                  </div>
+                                )}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
                     ))}
                   </div>
+                </GlassCard>
+              </div>
+
+              {/* ══ MIDDLE COLUMN: Predictive Analytics ═══════════════════════ */}
+              <div className="flex flex-col gap-6">
+                {/* Threat Meter */}
+                <GlassCard glowColor={glowColor} className="p-6 flex flex-col items-center">
+                  <h3 className="font-orbitron text-[10px] text-slate-400 uppercase tracking-widest mb-6">Threat Intensity Index</h3>
+                  <div className="relative w-16 h-52 mb-6 group">
+                    <div className="absolute inset-0 rounded-3xl border border-white/10 bg-black/40 overflow-hidden flex flex-col-reverse p-1">
+                      <motion.div
+                        className="w-full rounded-2xl bg-gradient-to-t from-teal-500 via-amber-400 to-red-600 shadow-[0_0_20px_rgba(255,25,54,0.3)]"
+                        initial={{ height: 0 }}
+                        animate={{ height: `${threatScore}%` }}
+                        transition={{ duration: 2, ease: "circOut" }}
+                      />
+                    </div>
+                    <div className="absolute left-full ml-4 top-0 bottom-0 flex flex-col justify-between py-2 font-mono text-[8px] text-slate-600 uppercase tracking-tighter">
+                      <span className="text-red-500 font-bold">CRITICAL</span>
+                      <span className="text-orange-400">SEVERE</span>
+                      <span className="text-amber-400">MODERATE</span>
+                      <span className="text-teal-400">MINIMAL</span>
+                    </div>
+                  </div>
+                  <motion.div
+                    className={`text-5xl font-mono font-bold ${threatColor} tabular-nums`}
+                    initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
+                  >
+                    {threatScore}
+                  </motion.div>
+                  <div className="mt-2 font-orbitron text-[9px] text-slate-500 uppercase tracking-[0.2em]">Aggregate Score</div>
+                </GlassCard>
+
+                {/* Escalation Probability */}
+                <GlassCard glowColor="amber" className="p-6">
+                  <h3 className="font-orbitron text-[10px] text-slate-400 uppercase tracking-widest mb-4">Predictive Escalation</h3>
+                  <div className="flex items-baseline gap-2 mb-4">
+                    <span className={`text-4xl font-mono font-bold ${threatColor}`}>{escalation}%</span>
+                    <span className="text-[10px] font-mono text-slate-600 uppercase">Probability</span>
+                  </div>
+                  <div className="space-y-4">
+                    {[
+                      { label: "T + 5 MIN", val: Math.min(100, Math.round(escalation * 0.85)) },
+                      { label: "T + 15 MIN", val: Math.min(100, Math.round(escalation * 0.95)) },
+                      { label: "T + 30 MIN", val: escalation },
+                    ].map(p => (
+                      <div key={p.label} className="space-y-1.5">
+                        <div className="flex justify-between text-[9px] font-mono text-slate-500">
+                          <span>{p.label}</span>
+                          <span className="text-red-400 font-bold">{p.val}%</span>
+                        </div>
+                        <div className="h-1 bg-white/5 rounded-full overflow-hidden">
+                          <motion.div className="h-full bg-red-500/60" initial={{ width: 0 }} animate={{ width: `${p.val}%` }} transition={{ duration: 1.2 }} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </GlassCard>
+
+                {/* Sensor Readings */}
+                {bp?.sensor_series?.length > 0 && (
+                  <GlassCard glowColor="teal" className="p-5">
+                    <h3 className="font-orbitron text-[10px] text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                      <Thermometer size={14} className="text-teal-400" />
+                      Environmental Log
+                    </h3>
+                    <div className="space-y-2.5 max-h-48 overflow-y-auto custom-scrollbar pr-2">
+                      {bp.sensor_series.slice(0, 8).map((s: any, i: number) => (
+                        <div key={i} className={`flex items-center justify-between p-2 rounded-lg border border-white/5 ${s.motion ? "bg-red-500/10 border-red-500/20" : "bg-white/[0.02]"}`}>
+                          <div className="flex flex-col gap-0.5">
+                            <span className="text-[8px] font-mono text-slate-600 uppercase">T + {s.minute}m</span>
+                            <span className="text-[10px] font-mono text-slate-300">{s.temp}°C · {s.sound_db}dB</span>
+                          </div>
+                          <span className={`text-[8px] font-mono px-2 py-0.5 rounded-full ${s.motion ? "text-red-400 bg-red-500/20" : "text-slate-600"}`}>
+                            {s.motion ? "MOTION DETECTED" : "STABLE"}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </GlassCard>
                 )}
-                {!ragLoading && (
-                  <div className="space-y-2">
-                    {ragText ? (
-                      ragText.split("\n").filter(Boolean).map((line, i) => (
-                        <p key={i} className="text-[10px] text-slate-400 leading-relaxed flex items-start gap-2">
-                          <span className="text-teal-400 flex-shrink-0 mt-0.5">›</span>{line}
-                        </p>
-                      ))
-                    ) : (
-                      /* Heuristic fallback built from real anomaly data */
-                      <div className="space-y-1.5">
-                        <p className="text-[10px] text-slate-400 leading-relaxed">
-                          <span className="text-teal-400">›</span> Threat score <span className="text-red-400 font-bold">{threatScore}/100</span> derived from {anomalies.length} independent evidence anomalies spanning call logs, GPS traces, and behavioral deviation analysis.
-                        </p>
-                        {anomalies.slice(0, 2).map((a, i) => (
-                          <p key={i} className="text-[10px] text-slate-400 leading-relaxed">
-                            <span className="text-teal-400">›</span> {a.description.slice(0, 160)}{a.description.length > 160 ? "…" : ""}
-                          </p>
+              </div>
+
+              {/* ══ RIGHT COLUMN: AI Reasoning ═══════════════════════════════ */}
+              <div className="flex flex-col gap-6">
+                {/* AI Reasoning */}
+                <GlassCard glowColor="teal" className="p-6 flex-1 flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-teal-400/10 border border-teal-400/20">
+                      <Cpu size={18} className="text-teal-400" />
+                    </div>
+                    <div>
+                      <h3 className="font-orbitron text-[11px] text-white uppercase tracking-widest">Cognitive Analysis</h3>
+                      <div className="flex items-center gap-2 mt-1">
+                        {ragLoading ? (
+                          <span className="flex items-center gap-1.5 text-[8px] font-mono text-amber-400 animate-pulse">
+                            <Loader2 size={8} className="animate-spin" /> SYNTHESIZING NEURAL EVIDENCE
+                          </span>
+                        ) : (
+                          <span className="text-[8px] font-mono text-teal-400 uppercase tracking-tighter tracking-widest flex items-center gap-1.5">
+                            <div className="w-1.5 h-1.5 rounded-full bg-teal-400" /> RAG + OLLAMA ACTIVE
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex-1 bg-black/40 rounded-xl border border-white/5 p-4 overflow-y-auto custom-scrollbar">
+                    {ragLoading ? (
+                      <div className="space-y-4">
+                        {[90, 70, 85, 60, 40].map((w, i) => (
+                          <div key={i} className="h-2 rounded bg-white/5 animate-pulse" style={{ width: `${w}%` }} />
                         ))}
-                        <p className="text-[10px] text-slate-400 leading-relaxed">
-                          <span className="text-teal-400">›</span> Escalation probability: <span className="text-red-400">{escalation}%</span>. {bp?.baseline_comparison ?? "Behavioral pattern deviation confirmed."}
-                        </p>
+                      </div>
+                    ) : (
+                      <div className="space-y-3">
+                        {(ragText || bp?.baseline_comparison || "").split("\n").filter(Boolean).map((line, i) => (
+                          <div key={i} className="flex gap-3 text-[11px] text-slate-400 leading-relaxed font-sans">
+                            <span className="text-teal-400 mt-1.5 shrink-0">
+                              <Zap size={10} />
+                            </span>
+                            <p>{line.trim().startsWith("›") ? line.trim().substring(1) : line.trim()}</p>
+                          </div>
+                        ))}
                       </div>
                     )}
                   </div>
-                )}
-              </div>
-            </div>
 
-            {/* ══ MIDDLE COLUMN ════════════════════════════════════════ */}
-            <div className="flex flex-col gap-5">
-              {/* Threat Escalation Meter */}
-              <div className="bg-black/40 rounded-xl border border-white/5 p-4 flex flex-col items-center">
-                <div className="font-orbitron text-[10px] text-slate-400 uppercase tracking-widest mb-4">
-                  Threat Escalation Meter
-                </div>
-                <div className="relative w-14 h-48 mb-5">
-                  <div className="absolute inset-0 rounded-full border border-white/10 bg-gradient-to-b from-white/5 to-transparent flex flex-col-reverse p-1">
-                    <motion.div
-                      className="w-full rounded-full bg-gradient-to-t from-green-500 via-yellow-400 via-orange-500 to-red-600"
-                      initial={{ height: 0 }}
-                      animate={{ height: `${threatScore}%` }}
-                      transition={{ duration: 1.5, ease: "easeOut" }}
-                    />
+                  <div className="grid grid-cols-2 gap-3 mt-auto">
+                    <StatBox label="Pattern Shift" value={bp?.pattern_shift ?? "—"} color={bp?.pattern_shift === "CRITICAL" ? "text-red-500" : "text-amber-400"} />
+                    <StatBox label="Deviation" value={bp ? `+${Math.round(bp.deviation_score)}%` : "—"} color="text-red-400" />
                   </div>
-                  <div className="absolute left-full ml-3 top-0 bottom-0 flex flex-col justify-between py-1 font-mono text-[8px] text-slate-500">
-                    <span className="text-red-500">Critical &gt;90</span>
-                    <span className="text-orange-400">Severe 70-90</span>
-                    <span className="text-amber-400">Moderate 40-70</span>
-                    <span className="text-yellow-500">Low 10-40</span>
-                    <span className="text-teal-400">Minimal &lt;10</span>
-                  </div>
-                </div>
-                <motion.div
-                  className={`text-4xl font-mono font-bold ${threatColor} px-5 py-2 rounded-lg border ${threatBgClass}`}
-                  initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                >
-                  {threatScore}
-                </motion.div>
-                <div className="mt-1.5 font-orbitron text-[9px] text-slate-500 uppercase tracking-widest">
-                  Threat Score
-                </div>
-              </div>
+                </GlassCard>
 
-              {/* Predictive Threat Projection */}
-              <div className="bg-black/40 rounded-xl border border-white/5 p-4">
-                <div className="font-orbitron text-[10px] text-slate-400 uppercase tracking-widest mb-3">
-                  Predictive Threat Projection
-                </div>
-                <div className="flex flex-col gap-2 mb-3">
-                  <div className="text-[9px] font-mono text-slate-500 uppercase">Probability of Escalation</div>
-                  <div className={`text-3xl font-mono font-bold ${threatColor}`}>{escalation}%</div>
-                </div>
-                <div className="space-y-2 mb-4">
-                  {[
-                    { label: "Next 5 MIN", val: Math.min(100, Math.round(escalation * 0.82)) },
-                    { label: "Next 15 MIN", val: Math.min(100, Math.round(escalation * 0.93)) },
-                    { label: "Next 30 MIN", val: Math.min(100, escalation) },
-                    { label: "Next 60 MIN", val: Math.min(100, Math.round(escalation * 1.05)) },
-                  ].map(p => (
-                    <div key={p.label}>
-                      <div className="flex items-center justify-between text-[9px] font-mono mb-1">
-                        <span className="text-slate-500 uppercase">{p.label}</span>
-                        <span className="font-bold text-red-400">{p.val}%</span>
-                      </div>
-                      <div className="h-1 bg-white/5 rounded-full overflow-hidden">
-                        <motion.div className="h-full bg-red-500/60 rounded-full"
-                          initial={{ width: 0 }} animate={{ width: `${p.val}%` }}
-                          transition={{ duration: 0.8, delay: 0.2 }} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex items-center gap-2 bg-red-500/5 border border-red-500/20 px-3 py-2 rounded">
-                  <AlertTriangle size={12} className="text-red-500" />
-                  <span className="font-orbitron text-[9px] text-red-400 uppercase tracking-widest">
-                    Trajectory: {escalation >= 70 ? "Escalating" : escalation >= 40 ? "Elevated" : "Stable"}
-                  </span>
-                </div>
-              </div>
-
-              {/* Anomaly source files */}
-              <div className="bg-black/40 rounded-xl border border-white/5 p-4">
-                <div className="font-orbitron text-[10px] text-slate-400 uppercase tracking-widest mb-3">
-                  Evidence Sources
-                </div>
-                <div className="space-y-2">
-                  {Array.from(new Set(anomalies.map(a => a.evidence_source))).map((src) => {
-                    const count = anomalies.filter(a => a.evidence_source === src).length;
-                    const maxSev = anomalies.filter(a => a.evidence_source === src)
-                      .map(a => a.severity).sort((a, b) => (a === "CRITICAL" ? -1 : b === "CRITICAL" ? 1 : 0))[0];
-                    return (
-                      <div key={src} className="flex items-center gap-3 p-2 bg-white/[0.02] rounded border border-white/[0.03]">
-                        <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${SEV_DOT[maxSev] ?? "bg-slate-600"}`} />
-                        <div className="flex-1 min-w-0">
-                          <div className="text-[9px] font-mono text-slate-300 truncate">{src}</div>
-                          <div className="text-[8px] text-slate-600">{count} anomal{count === 1 ? "y" : "ies"}</div>
-                        </div>
-                        <span className={`text-[8px] font-orbitron ${SEV_COLOR[maxSev]?.split(" ")[0] ?? "text-slate-500"}`}>{maxSev}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-
-            {/* ══ RIGHT COLUMN ═════════════════════════════════════════ */}
-            <div className="flex flex-col gap-5">
-              {/* Anomaly Reasons — contributing factors from all anomalies */}
-              <div className="bg-black/40 rounded-xl border border-white/5 p-4 flex-1">
-                <div className="font-orbitron text-[10px] text-slate-400 uppercase tracking-widest mb-3">
-                  Anomaly Reasons
-                </div>
-                <div className={`flex items-center gap-2 px-3 py-2 border rounded mb-4 ${threatBgClass}`}>
-                  <AlertTriangle size={13} className={threatColor} />
-                  <span className={`font-orbitron text-[10px] font-bold uppercase tracking-widest ${threatColor}`}>
-                    {report?.overall_threat_level} Anomaly
-                  </span>
-                </div>
-                <p className="text-[10px] text-slate-400 mb-4 leading-relaxed">
-                  {bp?.baseline_comparison ?? "Awaiting behavioral pattern analysis..."}
-                </p>
-                <div className="space-y-3">
-                  {allFactors.slice(0, 6).map((f: any, i: number) => {
-                    const Icon = REASON_ICONS[i % REASON_ICONS.length];
-                    return (
-                      <div key={`${f.factor}-${i}`} className="flex items-start gap-3 p-2 hover:bg-white/[0.02] rounded transition">
-                        <div className="w-8 h-8 shrink-0 rounded-lg border border-white/5 bg-white/[0.03] flex items-center justify-center text-red-400">
-                          <Icon size={15} strokeWidth={1.5} />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between mb-1">
-                            <span className="font-orbitron text-[9px] font-bold text-slate-300 uppercase">{f.factor}</span>
-                            <span className="text-[9px] font-mono text-red-400">+{f.weight}%</span>
+                {/* Evidence Sources */}
+                <GlassCard className="p-5">
+                  <h3 className="font-orbitron text-[10px] text-slate-400 uppercase tracking-widest mb-4">Evidence Matrix</h3>
+                  <div className="space-y-2">
+                    {Array.from(new Set(anomalies.map(a => a.evidence_source))).map((src) => {
+                      const count = anomalies.filter(a => a.evidence_source === src).length;
+                      return (
+                        <div key={src} className="flex items-center justify-between p-2.5 rounded-lg bg-white/[0.03] border border-white/5">
+                          <div className="flex items-center gap-3">
+                            <Fingerprint size={14} className="text-slate-500" />
+                            <div className="flex flex-col">
+                              <span className="text-[10px] font-mono text-slate-200 truncate max-w-[140px]">{src}</span>
+                              <span className="text-[8px] font-mono text-slate-600 uppercase">{count} anomaly hits</span>
+                            </div>
                           </div>
-                          <div className="h-1 bg-white/5 rounded-full overflow-hidden mb-1.5">
-                            <motion.div className="h-full bg-red-500/50 rounded-full"
-                              initial={{ width: 0 }} animate={{ width: `${f.weight}%` }}
-                              transition={{ duration: 0.6, delay: i * 0.08 }} />
-                          </div>
-                          <p className="text-[8px] text-slate-600 leading-relaxed">{f.explanation}</p>
+                          <div className="w-1.5 h-1.5 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(20,184,166,0.6)]" />
                         </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Behavior Baseline Comparison */}
-              <div className="bg-black/40 rounded-xl border border-white/5 p-4">
-                <div className="font-orbitron text-[10px] text-slate-400 uppercase tracking-widest mb-4">
-                  Behavior Baseline Comparison
-                </div>
-                <div className="grid grid-cols-3 gap-2 mb-4">
-                  <StatBox label="Deviation" value={bp ? `+${Math.round(bp.deviation_score)}%` : "—"}
-                    color={bp?.deviation_score > 60 ? "text-red-500" : "text-amber-400"} />
-                  <StatBox label="Pattern Shift" value={bp?.pattern_shift ?? "—"}
-                    color={bp?.pattern_shift === "CRITICAL" ? "text-red-500" : "text-amber-400"} />
-                  <StatBox label="Confidence"
-                    value={anomalies[0] ? `${Math.round(anomalies[0].confidence)}%` : "—"}
-                    color="text-teal-400" />
-                </div>
-                <div className="h-24 w-full">
-                  <BaselineChart deviation={bp?.deviation_score ?? 0} />
-                </div>
-                <div className="flex items-center gap-4 mt-2 text-[8px] font-mono text-slate-500">
-                  <span className="flex items-center gap-1"><span className="w-3 h-[1px] bg-teal-500 inline-block" /> Baseline</span>
-                  <span className="flex items-center gap-1"><span className="w-3 h-[1px] bg-white inline-block" /> Current</span>
-                </div>
-              </div>
-
-              {/* Location & Time Context */}
-              <div className="bg-black/40 rounded-xl border border-white/5 p-4">
-                <div className="font-orbitron text-[10px] text-slate-400 uppercase tracking-widest mb-3">
-                  Geospatial Context
-                </div>
-                <div className="space-y-3 text-[10px] font-mono">
-                  <div className="flex items-start gap-2">
-                    <MapPin size={11} className="text-red-400 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <div className="text-slate-500 text-[8px] uppercase mb-0.5">Last Known Location</div>
-                      <div className="text-slate-200">{bp?.last_known_location ?? "Unknown"}</div>
-                    </div>
+                      );
+                    })}
                   </div>
-                  <div className="flex items-start gap-2">
-                    <Clock size={11} className="text-amber-400 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <div className="text-slate-500 text-[8px] uppercase mb-0.5">Observation Window</div>
-                      <div className="text-slate-200">{bp?.time_window ?? "Unknown"}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Navigation size={11} className="text-teal-400 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <div className="text-slate-500 text-[8px] uppercase mb-0.5">Towers Active</div>
-                      <div className="text-slate-300">{(bp?.towers_active ?? []).join(" · ")}</div>
-                    </div>
-                  </div>
-                </div>
+                </GlassCard>
               </div>
-            </div>
-
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
+    </div>
+  );
+}
+
+function StatBox({ label, value, color }: { label: string; value: string; color: string }) {
+  return (
+    <div className="bg-black/40 border border-white/10 p-3 rounded-xl text-center group hover:border-white/20 transition-all">
+      <div className="text-[8px] font-orbitron text-slate-500 uppercase tracking-widest mb-1.5 group-hover:text-slate-400">{label}</div>
+      <div className={`text-sm font-mono font-bold ${color} tabular-nums tracking-tighter`}>{value}</div>
     </div>
   );
 }

@@ -4,13 +4,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Shield, AlertTriangle, CheckCircle, Target, FileText,
-  Brain, Activity, TrendingUp, Zap, RefreshCw, Search
+  Brain, Activity, TrendingUp, Zap, RefreshCw, Search,
+  Lock, Cpu, Fingerprint, Layers, ChevronRight
 } from "lucide-react";
 import { getDemoReport, getDemoAnomalies, queryRAG, explainConclusion, apiFetch } from "@/lib/api";
 import type { TriageReport, AnomalyReport, ApiResponse } from "@/lib/api";
+import GlassCard from "@/components/ui/GlassCard";
 
 export default function AITriageReportView({ initialReport = null }: { initialReport?: TriageReport | null }) {
   const [report, setReport] = useState<TriageReport | null>(initialReport);
@@ -22,11 +24,8 @@ export default function AITriageReportView({ initialReport = null }: { initialRe
 
   useEffect(() => {
     if (initialReport) {
-      // We have a REAL report from the dashboard — use it directly
       setReport(initialReport);
       setLoading(false);
-
-      // Build anomaly data dynamically from the real report
       const realAnomaly = {
         case_id: initialReport.case_id,
         overall_threat_level: initialReport.threat_level || "HIGH",
@@ -51,15 +50,10 @@ export default function AITriageReportView({ initialReport = null }: { initialRe
       };
       setAnomaly(realAnomaly as any);
     } else {
-      // No report passed — try to fetch the LATEST real report from backend
       const fetchLatestReport = async () => {
         try {
-          // First try to get a list of real reports
           const listRes = await apiFetch<ApiResponse<any[]>>("/reports/list");
           if (listRes.data && listRes.data.length > 0) {
-            // We have real saved reports — use the latest one
-            const latestId = listRes.data[listRes.data.length - 1].report_id;
-            // Generate a fresh report from real data
             const genRes = await apiFetch<ApiResponse<TriageReport>>("/report/generate", {
               method: "POST",
               body: JSON.stringify({ case_id: "AIV-2041-77" }),
@@ -71,16 +65,12 @@ export default function AITriageReportView({ initialReport = null }: { initialRe
             }
           }
         } catch {}
-        
-        // Only fall back to demo if no real reports exist
         getDemoReport()
           .then(res => setReport(res.data))
           .catch(() => setReport(STATIC_REPORT))
           .finally(() => setLoading(false));
       };
       fetchLatestReport();
-
-      // Fetch anomalies
       getDemoAnomalies()
         .then(res => setAnomaly(res.data))
         .catch(() => setAnomaly(STATIC_ANOMALY));
@@ -108,233 +98,342 @@ export default function AITriageReportView({ initialReport = null }: { initialRe
   };
 
   const threatColor = (level: string) => {
-    if (level === "CRITICAL") return "#ff2848";
-    if (level === "HIGH") return "#ff2848";
-    if (level === "ELEVATED") return "#f5a400";
-    return "#18f3e2";
+    if (level === "CRITICAL") return "text-red-500";
+    if (level === "HIGH") return "text-red-500";
+    if (level === "ELEVATED") return "text-amber-400";
+    return "text-teal-400";
+  };
+
+  const glowColor = (level: string) => {
+    if (level === "CRITICAL" || level === "HIGH") return "crimson";
+    if (level === "ELEVATED") return "amber";
+    return "teal";
   };
 
   if (loading) {
     return (
-      <div className="flex h-full items-center justify-center text-slate-400 font-mono text-sm">
-        <RefreshCw size={16} className="mr-2 animate-spin" />
-        Loading AI Triage Report...
+      <div className="flex flex-col h-full items-center justify-center bg-[#020408] text-slate-400 gap-6">
+        <div className="relative">
+          <div className="absolute inset-0 rounded-full bg-crimson/20 blur-2xl animate-pulse" />
+          <Loader2 size={48} className="animate-spin text-crimson-glow relative" />
+        </div>
+        <div className="flex flex-col items-center gap-2">
+          <div className="font-orbitron text-sm text-white uppercase tracking-[0.3em] animate-pulse">Generating Forensic Verdict</div>
+          <div className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Synthesizing multi-source evidence...</div>
+        </div>
       </div>
     );
   }
 
   const r = report ?? STATIC_REPORT;
   const a = anomaly ?? STATIC_ANOMALY;
-  const color = threatColor(r.threat_level);
+  const tColor = threatColor(r.threat_level);
+  const gColor = glowColor(r.threat_level);
 
   return (
-    <div className="flex flex-col h-full bg-[#05070b] text-slate-200 overflow-auto custom-scrollbar">
+    <div className="flex flex-col h-full bg-[#020408] text-slate-200 overflow-auto custom-scrollbar">
       {/* Header */}
-      <div className="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-black/20 shrink-0">
-        <div className="flex items-center gap-3">
-          <div className="grid h-10 w-10 place-items-center clip-hexagon border border-crimson/60 bg-crimson/15 text-crimson-glow">
-            <Shield size={20} />
-          </div>
-          <div>
-            <div className="font-orbitron text-sm font-bold uppercase tracking-[0.15em] text-white">
-              AI Triage Report
+      <header className="flex items-center justify-between px-8 py-4 border-b border-white/5 bg-black/40 backdrop-blur-md shrink-0 sticky top-0 z-20">
+        <div className="flex items-center gap-8">
+          <div className="flex items-center gap-3">
+            <div className="p-2 rounded-lg bg-crimson/10 border border-crimson/20">
+              <Shield className="text-crimson-glow" size={20} />
             </div>
-            <div className="font-mono text-[10px] text-slate-500 uppercase">
-              Case: {r.case_id} | Analyst: {(r as any).analyst_id ?? "AIVENTRA-OMEGA-7"}
-            </div>
-          </div>
-        </div>
-        <div className="text-right">
-          <div className="font-orbitron text-2xl" style={{ color }}>
-            {Math.round(r.risk_score)}
-            <span className="text-base text-slate-400">/100</span>
-          </div>
-          <div className="font-orbitron text-[10px] uppercase tracking-widest" style={{ color }}>
-            {r.threat_level} RISK
-          </div>
-        </div>
-      </div>
-
-      <div className="flex-1 grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-4 p-4 lg:p-6 min-h-0">
-        {/* Left: verdict + findings + evidence */}
-        <div className="flex flex-col gap-4">
-          {/* Verdict */}
-          <Panel title="AI Verdict" icon={Brain} iconColor="#ff2848">
-            <div className="border-l-2 border-crimson/60 pl-4">
-              <p className="font-mono text-sm text-slate-100 leading-relaxed">
-                &ldquo;{r.verdict}&rdquo;
+            <div>
+              <h1 className="font-orbitron text-lg font-bold tracking-[0.2em] uppercase text-white leading-none">
+                Forensic <span className="text-crimson-glow">Verdict</span>
+              </h1>
+              <p className="font-mono text-[9px] text-slate-500 uppercase tracking-widest mt-1.5">
+                // Final Intelligence Synthesis Report
               </p>
-              <div className="mt-3 font-mono text-[10px] text-slate-500">
-                Confidence: <span className="text-teal-400">{r.confidence_score}%</span>
+            </div>
+          </div>
+          <div className="h-8 w-px bg-white/10 hidden md:block" />
+          <div className="hidden md:flex gap-6 items-center">
+            <div className="flex flex-col">
+              <span className="text-[8px] font-mono text-slate-500 uppercase tracking-tighter">Case Reference</span>
+              <span className="text-xs font-mono text-teal-400">{r.case_id}</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[8px] font-mono text-slate-500 uppercase tracking-tighter">Assigned Analyst</span>
+              <span className="text-xs font-mono text-slate-300">{(r as any).analyst_id ?? "AIVENTRA-OMEGA-7"}</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-right">
+          <div className={`font-orbitron text-3xl font-bold ${tColor} tracking-tighter`}>
+            {Math.round(r.risk_score)}
+            <span className="text-sm text-slate-500 ml-1">/100</span>
+          </div>
+          <div className={`font-orbitron text-[10px] uppercase tracking-[0.2em] mt-1 ${tColor}`}>
+            {r.threat_level} PROBABILITY
+          </div>
+        </div>
+      </header>
+
+      <div className="flex-1 grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 p-6 min-h-0">
+        {/* Left Column: Verdict Details */}
+        <div className="flex flex-col gap-6">
+          {/* Main Verdict */}
+          <GlassCard glowColor={gColor} className="p-6">
+            <div className="flex items-center gap-3 mb-6">
+              <Brain size={18} className="text-crimson-glow" />
+              <h2 className="font-orbitron text-[11px] font-bold uppercase tracking-widest text-white">AI Forensic Conclusion</h2>
+            </div>
+            <div className="relative p-6 rounded-xl bg-white/[0.02] border border-white/5">
+              <div className="absolute top-4 left-4 text-4xl text-white/5 font-serif select-none">“</div>
+              <p className="font-mono text-base text-slate-100 leading-relaxed italic relative z-10 px-4">
+                {r.verdict}
+              </p>
+              <div className="absolute bottom-4 right-4 text-4xl text-white/5 font-serif select-none rotate-180">“</div>
+              <div className="mt-6 flex items-center justify-between border-t border-white/5 pt-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-[9px] font-mono text-slate-500 uppercase">Certainty Index</span>
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <div key={i} className={`w-3 h-1 rounded-full ${i < Math.floor(r.confidence_score / 20) ? "bg-teal-400" : "bg-white/10"}`} />
+                    ))}
+                  </div>
+                </div>
+                <span className="text-[10px] font-mono text-teal-400">{r.confidence_score}% CONFIDENCE</span>
               </div>
             </div>
-          </Panel>
+          </GlassCard>
 
-          {/* Reasoning */}
-          <Panel title="Forensic Reasoning" icon={FileText} iconColor="#f5a400">
-            <p className="font-mono text-[11px] text-slate-300 leading-relaxed">
-              {r.reasoning?.slice(0, 600)}{r.reasoning?.length > 600 ? "..." : ""}
-            </p>
-          </Panel>
+          {/* Detailed Reasoning */}
+          <GlassCard className="p-6">
+            <div className="flex items-center gap-3 mb-6">
+              <FileText size={18} className="text-amber-400" />
+              <h2 className="font-orbitron text-[11px] font-bold uppercase tracking-widest text-white">Neural Reasoning Path</h2>
+            </div>
+            <div className="space-y-4">
+              <p className="font-mono text-[11px] text-slate-400 leading-relaxed">
+                {r.reasoning}
+              </p>
+              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+                <div className="flex flex-col gap-1">
+                  <span className="text-[8px] font-mono text-slate-600 uppercase">Analysis Engine</span>
+                  <span className="text-[10px] font-mono text-teal-400 uppercase">RAG + OLLAMA v3.1</span>
+                </div>
+                <div className="flex flex-col gap-1 text-right">
+                  <span className="text-[8px] font-mono text-slate-600 uppercase">Generation Date</span>
+                  <span className="text-[10px] font-mono text-slate-400 uppercase">{new Date(r.generated_at).toLocaleDateString()}</span>
+                </div>
+              </div>
+            </div>
+          </GlassCard>
 
-          {/* Key findings */}
-          <Panel title="Key Findings" icon={Target} iconColor="#18f3e2">
-            <ul className="space-y-2">
+          {/* Key Findings List */}
+          <GlassCard glowColor="teal" className="p-6">
+            <div className="flex items-center gap-3 mb-6">
+              <Target size={18} className="text-teal-400" />
+              <h2 className="font-orbitron text-[11px] font-bold uppercase tracking-widest text-white">Critical Indicators</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {r.key_findings.map((f, i) => (
-                <li key={i} className="flex items-start gap-3 font-mono text-[11px] text-slate-300">
-                  <CheckCircle size={12} className="text-teal-400 mt-0.5 shrink-0" />
-                  {f}
-                </li>
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-start gap-3 p-3 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-all group"
+                >
+                  <CheckCircle size={14} className="text-teal-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                  <span className="font-mono text-[10px] text-slate-300 leading-tight uppercase tracking-tight">{f}</span>
+                </motion.div>
               ))}
-            </ul>
-          </Panel>
+            </div>
+          </GlassCard>
 
-          {/* Supporting evidence */}
-          <Panel title="Supporting Evidence" icon={Activity} iconColor="#c084fc">
-            <div className="grid gap-2">
+          {/* Evidence Grid */}
+          <GlassCard className="p-6">
+            <div className="flex items-center gap-3 mb-6">
+              <Activity size={18} className="text-violet-400" />
+              <h2 className="font-orbitron text-[11px] font-bold uppercase tracking-widest text-white">Evidence Weight Distribution</h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {r.supporting_evidence.map((ev, i) => (
-                <div key={i} className="grid grid-cols-[1fr_60px] items-center gap-3 border border-white/5 bg-black/20 p-3">
-                  <div>
-                    <div className="font-orbitron text-[10px] text-slate-200 uppercase">{ev.evidence_type}</div>
-                    <div className="font-mono text-[9px] text-slate-500 mt-1">{ev.description}</div>
+                <div key={i} className="flex flex-col gap-3 p-4 border border-white/5 bg-black/40 rounded-xl">
+                  <div className="flex items-center justify-between">
+                    <div className="font-orbitron text-[10px] text-slate-300 uppercase tracking-wider">{ev.evidence_type}</div>
+                    <span className="text-[10px] font-mono text-slate-500">#{i + 1}</span>
                   </div>
-                  <div className="text-right">
-                    <div className="font-orbitron text-sm" style={{ color }}>{ev.weight}%</div>
-                    <div className="mt-1 h-1 bg-white/8">
-                      <div className="h-full" style={{ width: `${ev.weight}%`, backgroundColor: color }} />
+                  <p className="text-[10px] text-slate-500 font-mono leading-relaxed line-clamp-2">{ev.description}</p>
+                  <div className="mt-1 space-y-1.5">
+                    <div className="flex justify-between text-[9px] font-mono">
+                      <span className="text-slate-600 uppercase">Impact Weight</span>
+                      <span className={tColor}>{ev.weight}%</span>
+                    </div>
+                    <div className="h-1 bg-white/5 rounded-full overflow-hidden">
+                      <motion.div 
+                        className={`h-full ${tColor.replace('text', 'bg')}`}
+                        initial={{ width: 0 }}
+                        animate={{ width: `${ev.weight}%` }}
+                        transition={{ duration: 1, delay: 0.5 + i * 0.1 }}
+                      />
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-          </Panel>
+          </GlassCard>
 
-          {/* RAG Intelligence Query */}
-          <Panel title="AI Intelligence Query" icon={Search} iconColor="#18f3e2">
-            {/* Suggested queries */}
-            <div className="flex flex-wrap gap-2 mb-3">
-              {["Cause of death?", "Who are the suspects?", "Toxicology findings?", "GPS anomalies?"].map((q) => (
+          {/* RAG Query Terminal */}
+          <GlassCard glowColor="teal" className="p-6">
+            <div className="flex items-center gap-3 mb-6">
+              <Search size={18} className="text-teal-400" />
+              <h2 className="font-orbitron text-[11px] font-bold uppercase tracking-widest text-white">AI Intelligence Query Terminal</h2>
+            </div>
+            
+            <div className="flex flex-wrap gap-2 mb-6">
+              {["Cause of death?", "Suspect profiles?", "GPS anomalies?", "Timeline gaps?"].map((q) => (
                 <button
                   key={q}
                   onClick={() => { setRagQuery(q); }}
-                  className="px-2 py-1 border border-white/10 bg-white/[0.03] font-mono text-[9px] text-slate-400 hover:border-teal-data/40 hover:text-teal-data transition"
+                  className="px-3 py-1.5 border border-white/10 bg-white/[0.03] rounded-full font-mono text-[9px] text-slate-400 hover:border-teal-data/60 hover:text-teal-data hover:bg-teal-data/5 transition-all active:scale-95"
                 >
                   {q}
                 </button>
               ))}
             </div>
-            <div className="flex gap-2 mb-3">
-              <input
-                type="text"
-                value={ragQuery}
-                onChange={(e) => setRagQuery(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleRAGQuery()}
-                placeholder="e.g. 'What is the cause of death?' or 'Who are the suspects?'"
-                className="flex-1 bg-black/40 border border-white/10 px-3 py-2 font-mono text-[11px] text-slate-200 placeholder-slate-600 outline-none focus:border-teal-data/50"
-              />
+
+            <div className="flex gap-3 mb-6">
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600" size={14} />
+                <input
+                  type="text"
+                  value={ragQuery}
+                  onChange={(e) => setRagQuery(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && handleRAGQuery()}
+                  placeholder="Query the forensic knowledge base..."
+                  className="w-full bg-black/40 border border-white/10 pl-9 pr-4 py-2.5 font-mono text-[11px] text-slate-200 placeholder-slate-700 rounded-lg outline-none focus:border-teal-data/40 transition-all shadow-inner"
+                />
+              </div>
               <button
                 onClick={handleRAGQuery}
                 disabled={ragLoading || !ragQuery.trim()}
-                className="px-4 py-2 border border-teal-data/40 bg-teal-data/10 font-orbitron text-[10px] text-teal-data uppercase tracking-widest hover:bg-teal-data/20 transition disabled:opacity-40"
+                className="px-6 py-2.5 rounded-lg border border-teal-data/40 bg-teal-data/10 font-orbitron text-[10px] text-teal-data uppercase tracking-widest hover:bg-teal-data/20 transition-all active:scale-95 disabled:opacity-40"
               >
-                {ragLoading ? <RefreshCw size={12} className="animate-spin" /> : "Query"}
+                {ragLoading ? <RefreshCw size={14} className="animate-spin" /> : "QUERY"}
               </button>
             </div>
 
-            {ragResult && (
-              <RAGResponsePanel result={ragResult} onFollowUp={(q) => setRagQuery(q)} />
-            )}
-          </Panel>
+            <AnimatePresence>
+              {ragResult && (
+                <RAGResponsePanel result={ragResult} onFollowUp={(q) => setRagQuery(q)} />
+              )}
+            </AnimatePresence>
+          </GlassCard>
         </div>
 
-        {/* Right: threat meter + actions */}
-        <div className="flex flex-col gap-4">
-          {/* Threat Score Gauge */}
-          <Panel title="Composite Threat Score" icon={AlertTriangle} iconColor={color}>
-            <div className="flex flex-col items-center py-4">
-              <div className="relative w-32 h-32">
-                <svg viewBox="0 0 120 120" className="w-full h-full -rotate-90">
-                  <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="10" />
-                  <circle
-                    cx="60" cy="60" r="50" fill="none" strokeWidth="10"
-                    stroke={color}
-                    strokeDasharray={314}
-                    strokeDashoffset={314 - (314 * r.risk_score / 100)}
-                    strokeLinecap="round"
-                    style={{ filter: `drop-shadow(0 0 8px ${color})` }}
-                  />
-                </svg>
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <div className="font-orbitron text-2xl font-bold" style={{ color }}>{Math.round(r.risk_score)}</div>
-                  <div className="font-mono text-[8px] text-slate-500 uppercase">Risk Score</div>
-                </div>
-              </div>
-              <div className="mt-4 font-orbitron text-lg uppercase tracking-widest" style={{ color }}>
-                {r.threat_level}
-              </div>
-              <div className="mt-1 font-mono text-[10px] text-slate-500">
-                Confidence: {r.confidence_score}%
+        {/* Right Column: Gauges and Actions */}
+        <div className="flex flex-col gap-6">
+          {/* Threat Gauge */}
+          <GlassCard glowColor={gColor} className="p-6 flex flex-col items-center">
+            <h3 className="font-orbitron text-[10px] text-slate-400 uppercase tracking-widest mb-8">Composite Risk Level</h3>
+            <div className="relative w-40 h-40 group">
+              <svg viewBox="0 0 120 120" className="w-full h-full -rotate-90">
+                <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(255,255,255,0.03)" strokeWidth="8" />
+                <motion.circle
+                  cx="60" cy="60" r="54" fill="none" strokeWidth="8"
+                  stroke="currentColor"
+                  className={tColor}
+                  strokeDasharray={339}
+                  initial={{ strokeDashoffset: 339 }}
+                  animate={{ strokeDashoffset: 339 - (339 * r.risk_score / 100) }}
+                  transition={{ duration: 1.5, ease: "easeOut" }}
+                  strokeLinecap="round"
+                  style={{ filter: `drop-shadow(0 0 12px currentColor)` }}
+                />
+              </svg>
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <motion.div 
+                  initial={{ scale: 0.5, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  className={`font-orbitron text-4xl font-bold ${tColor} tabular-nums`}
+                >
+                  {Math.round(r.risk_score)}
+                </motion.div>
+                <div className="font-mono text-[9px] text-slate-600 uppercase tracking-tighter">Aggregate Risk</div>
               </div>
             </div>
-            {/* Anomaly sub-metrics */}
-            <div className="mt-4 space-y-2">
-              {[
-                ["Threat Score", `${Math.round(a.overall_threat_score)}%`, a.overall_threat_score],
-                ["Escalation Risk", `${Math.round(a.escalation_probability)}%`, a.escalation_probability],
-                ["Anomalies Found", `${a.anomalies.length}`, Math.min(100, a.anomalies.length * 20)],
-              ].map(([label, val, pct]) => (
-                <div key={String(label)}>
-                  <div className="flex justify-between font-mono text-[9px] text-slate-400 mb-1">
-                    <span>{String(label)}</span><span style={{ color }}>{String(val)}</span>
-                  </div>
-                  <div className="h-1 bg-white/8">
-                    <div className="h-full" style={{ width: `${Number(pct)}%`, backgroundColor: color }} />
-                  </div>
-                </div>
-              ))}
+            <div className={`mt-8 font-orbitron text-xl uppercase tracking-[0.2em] font-bold ${tColor}`}>
+              {r.threat_level}
             </div>
-          </Panel>
+            <div className="mt-2 flex gap-4 w-full pt-6 border-t border-white/5">
+              <div className="flex-1 text-center">
+                <div className="text-[8px] font-mono text-slate-600 uppercase mb-1">Escalation</div>
+                <div className="text-[11px] font-mono text-red-400 font-bold">{Math.round(a.escalation_probability)}%</div>
+              </div>
+              <div className="w-px h-8 bg-white/5" />
+              <div className="flex-1 text-center">
+                <div className="text-[8px] font-mono text-slate-600 uppercase mb-1">Anomalies</div>
+                <div className="text-[11px] font-mono text-amber-400 font-bold">{a.anomalies.length} VECTORS</div>
+              </div>
+            </div>
+          </GlassCard>
 
-          {/* Recommended actions */}
-          <Panel title="Recommended Actions" icon={Zap} iconColor="#f5a400">
-            <ol className="space-y-3">
+          {/* Actions */}
+          <GlassCard glowColor="amber" className="p-6">
+            <div className="flex items-center gap-3 mb-6">
+              <Zap size={18} className="text-amber-400" />
+              <h2 className="font-orbitron text-[11px] font-bold uppercase tracking-widest text-white">Priority Recommendations</h2>
+            </div>
+            <div className="space-y-4">
               {r.recommended_actions.map((action, i) => (
-                <li key={i} className="flex gap-3 font-mono text-[10px] text-slate-300">
-                  <span className="flex-shrink-0 grid h-5 w-5 place-items-center rounded-full border border-amber/60 font-orbitron text-[9px] text-amber">
+                <div key={i} className="flex gap-4 p-3 rounded-lg bg-white/[0.02] border border-white/5 group hover:bg-white/[0.04] transition-all">
+                  <div className="flex-shrink-0 grid h-6 w-6 place-items-center rounded-lg border border-amber/40 bg-amber/10 font-orbitron text-[10px] text-amber font-bold group-hover:scale-110 transition-transform">
                     {i + 1}
-                  </span>
-                  {action}
-                </li>
+                  </div>
+                  <p className="font-mono text-[10px] text-slate-300 leading-relaxed uppercase tracking-tight">
+                    {action}
+                  </p>
+                </div>
               ))}
-            </ol>
-          </Panel>
+            </div>
+          </GlassCard>
 
-          {/* Anomaly breakdown */}
-          <Panel title="Anomaly Breakdown" icon={TrendingUp} iconColor="#ff2848">
-            {a.anomalies.slice(0, 4).map((an, i) => (
-              <div key={i} className="mb-3 last:mb-0 border border-white/5 bg-black/20 p-3">
-                <div className="flex justify-between items-start mb-1">
-                  <div className="font-orbitron text-[10px] text-slate-200 uppercase">
-                    {an.anomaly_type.replace(/_/g, " ")}
+          {/* Anomaly Timeline Summary */}
+          <GlassCard glowColor="crimson" className="p-6 flex-1">
+            <div className="flex items-center gap-3 mb-6">
+              <TrendingUp size={18} className="text-crimson-glow" />
+              <h2 className="font-orbitron text-[11px] font-bold uppercase tracking-widest text-white">Neural Anomaly Breakdown</h2>
+            </div>
+            <div className="space-y-3">
+              {a.anomalies.slice(0, 4).map((an, i) => (
+                <div key={i} className="group relative p-3 border border-white/5 bg-black/40 rounded-xl overflow-hidden hover:border-crimson/30 transition-all">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-crimson/50" />
+                  <div className="flex justify-between items-center mb-1">
+                    <span className="font-orbitron text-[9px] text-slate-200 uppercase font-bold tracking-wider truncate">
+                      {an.anomaly_type.replace(/_/g, " ")}
+                    </span>
+                    <span className={`font-mono text-[8px] px-1.5 py-0.5 rounded border ${an.severity === 'CRITICAL' ? 'text-red-400 border-red-400/30 bg-red-400/5' : 'text-amber-400 border-amber-400/30 bg-amber-400/5'}`}>
+                      {an.severity}
+                    </span>
                   </div>
-                  <div className="font-mono text-[9px]" style={{ color: threatColor(an.severity) }}>
-                    {an.severity}
+                  <p className="text-[10px] font-mono text-slate-500 leading-tight line-clamp-2 mb-2">
+                    {an.description}
+                  </p>
+                  <div className="flex items-center justify-between text-[8px] font-mono text-slate-600 mt-2 pt-2 border-t border-white/5">
+                    <span>SCORE: {Math.round(an.threat_score)}</span>
+                    <span className="flex items-center gap-1"><ChevronRight size={8} /> DETAILS</span>
                   </div>
                 </div>
-                <div className="font-mono text-[9px] text-slate-500 leading-tight line-clamp-2">
-                  {an.description}
-                </div>
-                <div className="mt-2 h-px bg-white/5" />
-                <div className="mt-1 font-mono text-[9px] text-amber">
-                  Score: {Math.round(an.threat_score)}
-                </div>
-              </div>
-            ))}
-          </Panel>
+              ))}
+            </div>
+            <button className="w-full mt-4 py-2 border border-white/10 font-orbitron text-[9px] text-slate-500 uppercase tracking-widest hover:text-white hover:border-white/30 transition-all">
+              View Full Anomaly Log
+            </button>
+          </GlassCard>
         </div>
       </div>
     </div>
   );
+}
+
+function Loader2({ size, className }: { size: number; className?: string }) {
+  return <RefreshCw size={size} className={className} />;
 }
 
 function RAGResponsePanel({ result, onFollowUp }: { result: any; onFollowUp: (q: string) => void }) {
