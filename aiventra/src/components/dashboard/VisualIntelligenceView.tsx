@@ -46,10 +46,10 @@ const STAGE_LABELS: Record<string, string> = {
 };
 
 const TIER_COLOR: Record<string, string> = {
-  HIGH:    "text-red-400 border-red-500/40 bg-red-500/10",
-  MEDIUM:  "text-orange-400 border-orange-500/40 bg-orange-500/10",
-  LOW:     "text-teal-400 border-teal-400/40 bg-teal-400/10",
-  UNKNOWN: "text-slate-400 border-slate-500/40 bg-slate-500/10",
+  HIGH:    "text-white border-red-500/40 bg-red-500/20",
+  MEDIUM:  "text-white border-orange-500/40 bg-orange-500/20",
+  LOW:     "text-white border-teal-400/40 bg-teal-400/20",
+  UNKNOWN: "text-white border-slate-500/40 bg-slate-500/20",
 };
 
 const TIER_BAR: Record<string, string> = {
@@ -588,14 +588,14 @@ export default function VisualIntelligenceView() {
                       <span className="ml-auto text-[8px] font-mono text-slate-600">{ml.frames_classified} frames classified</span>
                     </div>
                     {/* Dominant class hero badge */}
-                    <div className={`flex items-center justify-between p-3 rounded border mb-4 ${tierCls}`}>
+                    <div className={`flex items-center justify-between p-4 rounded-xl border mb-4 ${tierCls} shadow-[inset_0_0_20px_rgba(0,0,0,0.2)]`}>
                       <div>
-                        <div className="text-[8px] font-mono uppercase tracking-widest opacity-60 mb-0.5">Dominant Activity</div>
-                        <div className="font-orbitron text-base font-bold uppercase tracking-wider">{ml.dominant_class}</div>
+                        <div className="text-[9px] font-mono uppercase tracking-[0.2em] text-white/60 mb-1">Dominant Activity</div>
+                        <div className="font-orbitron text-2xl font-bold uppercase tracking-[0.1em] text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">{ml.dominant_class}</div>
                       </div>
                       <div className="text-right">
-                        <div className="font-mono text-2xl font-bold">{Math.round(ml.dominant_confidence * 100)}%</div>
-                        <div className={`text-[8px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded border mt-1 inline-block ${tierCls}`}>{tier} THREAT</div>
+                        <div className="font-mono text-3xl font-bold text-white tabular-nums">{Math.round(ml.dominant_confidence * 100)}%</div>
+                        <div className={`text-[10px] font-bold uppercase tracking-[0.15em] px-3 py-1 rounded-full border mt-2 inline-block ${tierCls.replace('text-white', 'text-white')}`}>{tier} THREAT</div>
                       </div>
                     </div>
                     {/* Class distribution bars */}
