@@ -584,12 +584,3 @@ function StatBox({ label, value, color }: { label: string; value: string; color:
     </div>
   );
 }
-
-function StatBox({ label, value, color }: { label: string; value: string; color: string }) {
-  return (
-    <div className="bg-black/30 border border-white/5 p-2.5 text-center rounded">
-      <div className="text-[7px] font-orbitron text-slate-600 uppercase tracking-tighter mb-1">{label}</div>
-      <div className={`text-xs font-mono font-bold ${color}`}>{value}</div>
-    </div>
-  );
-}
