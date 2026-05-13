@@ -1,6 +1,5 @@
 # AIVENTRA: AI-Powered Forensic Intelligence System
 
-![AIVentra Banner](assets/banner.png)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-crimson.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-000000.svg)](https://www.python.org/)
