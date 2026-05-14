@@ -26,6 +26,13 @@ function parseTimeToMinutes(ts: string): number {
   // ISO: "2025-05-08T01:52:00" → extract time part
   const isoMatch = ts.match(/T(\d{2}):(\d{2})/);
   if (isoMatch) return parseInt(isoMatch[1]) * 60 + parseInt(isoMatch[2]);
+  
+  // HH:MM:SS or HH:MM
+  const hhmmMatch = ts.match(/^(\d{2}):(\d{2})/);
+  if (hhmmMatch && !ts.includes("AM") && !ts.includes("PM")) {
+    return parseInt(hhmmMatch[1]) * 60 + parseInt(hhmmMatch[2]);
+  }
+
   const m = ts.match(/(\d+):(\d+)\s*(AM|PM)/i);
   if (!m) return 0;
   let h = parseInt(m[1]);

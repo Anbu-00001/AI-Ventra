@@ -12,6 +12,13 @@ from app.core.config import settings
 from app.core.logging import logger
 
 
+def safe_float(val: any, default: float = 0.0) -> float:
+    try:
+        return float(val)
+    except (ValueError, TypeError):
+        return default
+
+
 def _scan_extracted() -> list[dict]:
     """Load all extracted evidence files from the EXTRACTED_DIR."""
     results = []
@@ -62,17 +69,20 @@ def parse_autopsy() -> dict:
 
     # Subject info
     result["subject_name"] = _rx(text, r"(?:Name|SUBJECT)[:\s]*([A-Za-z ]+?)(?:\n|Age|\|)") or "Unknown"
-    result["subject_age"] = int(_rx(text, r"Age[:\s]*(\d+)") or "0")
+    try:
+        result["subject_age"] = int(_rx(text, r"Age[:\s]*(\d+)") or "0")
+    except ValueError:
+        result["subject_age"] = 0
 
     # Temperatures
     bt = _rx(text, r"[Bb]ody\s*[Tt]emp(?:erature)?[^:]*?:\s*([\d.]+)")
     at = _rx(text, r"[Aa]mbient\s*[Tt]emp(?:erature)?[^:]*?:\s*([\d.]+)")
-    result["body_temp"] = float(bt) if bt else 22.1
-    result["ambient_temp"] = float(at) if at else 24.2
+    result["body_temp"] = safe_float(bt, 22.1)
+    result["ambient_temp"] = safe_float(at, 24.2)
 
     # Weight
     wt = _rx(text, r"[Ww]eight[:\s]*([\d.]+)\s*kg")
-    result["body_weight_kg"] = float(wt) if wt else 72.0
+    result["body_weight_kg"] = safe_float(wt, 72.0)
 
     # TOD
     tod = _rx(text, r"(?:TIME\s*OF\s*DEATH|ESTIMATED\s*TIME)[^:]*?:\s*(.+?)(?:\n|CONFIDENCE)")
@@ -80,7 +90,7 @@ def parse_autopsy() -> dict:
 
     # PMI
     pmi = _rx(text, r"(?:Postmortem\s*Interval|PMI)[^:]*?:\s*([\d.]+)")
-    result["postmortem_interval_hours"] = float(pmi) if pmi else 9.0
+    result["postmortem_interval_hours"] = safe_float(pmi, 9.0)
 
     # Cause/manner
     cod = _rx(text, r"(?:IMMEDIATE\s*)?CAUSE[^:]*?:\s*(.+?)(?:\n)")
@@ -253,13 +263,13 @@ def parse_env_sensors() -> list[dict]:
                 "sensor_id": row.get("sensor_id", ""),
                 "timestamp": row.get("timestamp", ""),
                 "location": row.get("location", ""),
-                "lat": float(row.get("latitude", "0") or "0"),
-                "lon": float(row.get("longitude", "0") or "0"),
-                "temp_c": float(row.get("temperature_celsius", "0") or "0"),
-                "humidity": float(row.get("humidity_percent", "0") or "0"),
-                "wind_kmh": float(row.get("wind_speed_kmh", "0") or "0"),
-                "visibility_m": int(row.get("visibility_m", "0") or "0"),
-                "noise_db": float(row.get("noise_level_db", "0") or "0"),
+                "lat": safe_float(row.get("latitude"), 0.0),
+                "lon": safe_float(row.get("longitude"), 0.0),
+                "temp_c": safe_float(row.get("temperature_celsius"), 0.0),
+                "humidity": safe_float(row.get("humidity_percent"), 0.0),
+                "wind_kmh": safe_float(row.get("wind_speed_kmh"), 0.0),
+                "visibility_m": int(safe_float(row.get("visibility_m"), 0.0)),
+                "noise_db": safe_float(row.get("noise_level_db"), 0.0),
                 "anomaly": row.get("anomaly_flag", ""),
                 "notes": row.get("notes", ""),
             })

@@ -69,12 +69,18 @@ async def anomaly_from_case(case_id: str):
                     text = d.get("text", "")
                     if not text:
                         continue
-                    obj = json.loads(text)
-                    
-                    if "call" in original_name:
-                        real_calls.append(obj)
-                    elif "gps" in original_name:
-                        real_gps.append(obj)
+                    obj = None
+                    try:
+                        obj = json.loads(text)
+                    except json.JSONDecodeError:
+                        # If not JSON, it might be raw text; try to find keywords in text instead
+                        pass
+
+                    if obj:
+                        if "call" in original_name:
+                            real_calls.append(obj)
+                        elif "gps" in original_name:
+                            real_gps.append(obj)
                 except Exception:
                     pass
 
